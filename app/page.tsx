@@ -10,7 +10,6 @@ import { ScrollToTop } from "@/components/landing/scroll-to-top"
 
 export default function Home() {
   return (
-    {/* GoldBench Landing Page */}
     <main className="min-h-screen bg-obsidian">
       <Hero />
       <Friction />
