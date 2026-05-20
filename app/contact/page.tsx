@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Logo } from "@/components/landing/logo";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -84,20 +84,6 @@ export default function ContactPage() {
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 border border-glass-border flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-4 h-4 text-gold" />
-                    </div>
-                    <div>
-                      <p className="text-platinum text-sm font-medium mb-1">Paul Brent Design GmbH</p>
-                      <p className="text-platinum/60 text-sm">
-                        Hauptstrasse 33<br />
-                        9650 Nesslau, Switzerland<br />
-                        <span className="text-platinum/40">UID: CHE-155.525.301</span>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 border border-glass-border flex items-center justify-center flex-shrink-0">
                       <Mail className="w-4 h-4 text-gold" />
                     </div>
                     <div>
@@ -126,9 +112,10 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8 border-t border-glass-border">
-                <h3 className="text-lg text-platinum font-light mb-4">For Existing Customers</h3>
+                <h3 className="text-lg text-platinum font-light mb-4">Beta Project</h3>
                 <p className="text-platinum/60 text-sm mb-4">
-                  Access priority support through your dashboard or contact us directly:
+                  GoldBench is currently a free, non-commercial beta testing environment 
+                  operated as a private project by The Development Team.
                 </p>
                 <a 
                   href="mailto:contact@goldbench.ch" 

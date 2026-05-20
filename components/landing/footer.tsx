@@ -77,7 +77,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-[10px] tracking-[0.15em] text-platinum-dim/30">
-            &copy; 2026 GoldBench, Nesslau
+            &copy; 2026 Goldbench Beta Project
           </p>
         </div>
       </div>

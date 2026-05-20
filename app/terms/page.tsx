@@ -37,15 +37,25 @@ export default function TermsPage() {
           </p>
 
           <div className="space-y-10 text-platinum/70 text-[15px] leading-relaxed">
+            {/* Beta Disclaimer - Prominent */}
+            <section className="p-6 border-2 border-gold/30 bg-gold/5">
+              <h2 className="text-xl text-gold font-light mb-4">Beta Testing Disclaimer</h2>
+              <p className="text-platinum/80">
+                Goldbench is currently a free beta test environment. The service is provided strictly 
+                &quot;as is&quot; without any warranties, uptime guarantees, or commercial obligations. The 
+                developers reserve the right to modify, reset, or suspend the service at any time 
+                without notice. By participating in the beta, users acknowledge this is a testing phase.
+              </p>
+            </section>
+
             <section>
               <h2 className="text-xl text-platinum font-light mb-4">1. Agreement to Terms</h2>
               <p>
                 Welcome to GoldBench. These Terms and Conditions govern your use of the GoldBench platform, 
                 a voice-powered administration and clienteling tool designed exclusively for independent 
                 goldsmiths, jewelers, and ateliers. By using GoldBench, you agree to these terms with 
-                Paul Brent Design GmbH (UID: CHE-155.525.301). Our platform is built to respect your craft 
-                and protect your proprietary data, including custom alloy formulas and private client lists. 
-                All data processing is governed by Swiss law and hosted securely in Switzerland.
+                the Goldbench Beta Project. Our platform is built to respect your craft 
+                and protect your proprietary data, including custom alloy formulas and private client lists.
               </p>
             </section>
 
@@ -75,18 +85,18 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">4. Subscription &amp; Payments</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">4. Beta Access</h2>
               <p className="mb-4">
-                GoldBench operates on a subscription model. By subscribing, you agree to:
+                During the beta testing phase, GoldBench is provided free of charge. By participating, you acknowledge:
               </p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Pay all fees associated with your chosen plan</li>
-                <li>Automatic renewal unless cancelled before the billing cycle</li>
-                <li>No refunds for partial subscription periods</li>
-                <li>Price changes with 30 days advance notice</li>
+                <li>The service may be modified, reset, or discontinued at any time</li>
+                <li>No uptime or availability guarantees are provided</li>
+                <li>Features may change or be removed without notice</li>
+                <li>Data may be reset during the beta period</li>
               </ul>
               <p className="mt-4">
-                Early access members receive preferential pricing locked in for the first 24 months.
+                Early access members may receive preferential terms when commercial pricing is introduced.
               </p>
             </section>
 
@@ -112,43 +122,43 @@ export default function TermsPage() {
                 <li>Infringe on intellectual property rights of others</li>
                 <li>Store or transmit malicious code</li>
                 <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Use the service for any non-business or fraudulent purpose</li>
+                <li>Use the service for any fraudulent purpose</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl text-platinum font-light mb-4">7. Service Availability</h2>
               <p>
-                We strive to maintain 99.9% uptime but do not guarantee uninterrupted service. 
-                Scheduled maintenance will be communicated in advance. We are not liable for any 
-                damages resulting from service interruptions beyond our reasonable control.
+                As a beta service, we do not guarantee any specific level of uptime or availability. 
+                The service may be interrupted for maintenance, updates, or other reasons. 
+                We are not liable for any damages resulting from service interruptions.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl text-platinum font-light mb-4">8. Limitation of Liability</h2>
               <p>
-                To the maximum extent permitted by Swiss law, GoldBench shall not be liable for any 
-                indirect, incidental, special, consequential, or punitive damages, including loss of 
-                profits, data, or business opportunities, arising from your use of the service.
+                The GoldBench beta service is provided &quot;as is&quot; without warranties of any kind. 
+                The Development Team shall not be liable for any indirect, incidental, special, 
+                consequential, or punitive damages, including loss of profits, data, or business 
+                opportunities, arising from your use of the service.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl text-platinum font-light mb-4">9. Termination</h2>
               <p>
-                Either party may terminate the agreement at any time. Upon termination, you will have 
-                30 days to export your data before permanent deletion. We reserve the right to suspend 
-                or terminate accounts that violate these terms.
+                Either party may terminate participation in the beta at any time. Upon termination or 
+                at the end of the beta period, you will have the opportunity to export your data. 
+                We reserve the right to suspend or terminate accounts that violate these terms.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">10. Governing Law</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">10. Changes to Terms</h2>
               <p>
-                These Terms are governed by the laws of Switzerland. Any disputes shall be resolved 
-                in the courts of St. Gallen, Switzerland. The United Nations Convention on Contracts 
-                for the International Sale of Goods does not apply.
+                We may update these Terms from time to time. Continued use of the service after 
+                changes constitutes acceptance of the new terms.
               </p>
             </section>
 
@@ -158,10 +168,7 @@ export default function TermsPage() {
                 For questions about these Terms, please contact us:
               </p>
               <div className="mt-4 p-4 border border-glass-border bg-obsidian-light">
-                <p className="text-platinum font-medium">Paul Brent Design GmbH</p>
-                <p>Hauptstrasse 33</p>
-                <p>9650 Nesslau, Switzerland</p>
-                <p className="text-platinum/50">UID: CHE-155.525.301</p>
+                <p className="text-platinum font-medium">Goldbench Beta Project</p>
                 <p className="mt-2">
                   Email: <a href="mailto:contact@goldbench.ch" className="text-gold hover:underline">contact@goldbench.ch</a>
                 </p>
