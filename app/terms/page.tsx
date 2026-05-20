@@ -101,7 +101,18 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">5. Intellectual Property</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">5. Client Data Authority</h2>
+              <p>
+                By utilizing the GoldBench beta to process operational shop data, the participating beta 
+                user (the Data Controller) confirms they possess the necessary legal authority, consent, 
+                and rights under the Swiss nFADP to process their end-customers&apos; data through automated 
+                third-party AI pipelines. The beta user accepts full responsibility for the data entered 
+                into the testing environment.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl text-platinum font-light mb-4">6. Intellectual Property</h2>
               <p className="mb-4">
                 <strong className="text-platinum">Your Content:</strong> You retain full ownership of all data, 
                 images, formulas, and proprietary information you upload to GoldBench. We claim no 
@@ -115,7 +126,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">6. Acceptable Use</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">7. Acceptable Use</h2>
               <p className="mb-4">You agree not to use GoldBench to:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Violate any applicable laws or regulations</li>
@@ -127,7 +138,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">7. Service Availability</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">8. Service Availability</h2>
               <p>
                 As a beta service, we do not guarantee any specific level of uptime or availability. 
                 The service may be interrupted for maintenance, updates, or other reasons. 
@@ -136,7 +147,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">8. Limitation of Liability</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">9. Limitation of Liability</h2>
               <p>
                 The GoldBench beta service is provided &quot;as is&quot; without warranties of any kind. 
                 The Development Team shall not be liable for any indirect, incidental, special, 
@@ -146,7 +157,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">9. Termination</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">10. Termination</h2>
               <p>
                 Either party may terminate participation in the beta at any time. Upon termination or 
                 at the end of the beta period, you will have the opportunity to export your data. 
@@ -155,7 +166,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">10. Changes to Terms</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">11. Changes to Terms</h2>
               <p>
                 We may update these Terms from time to time. Continued use of the service after 
                 changes constitutes acceptance of the new terms.
@@ -163,7 +174,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">11. Contact</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">12. Contact</h2>
               <p>
                 For questions about these Terms, please contact us:
               </p>

@@ -103,7 +103,17 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">5. Data Sharing</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">5. Data Processing &amp; Sub-Processors</h2>
+              <p>
+                To provide automated structuring and administrative assistance, the GoldBench beta utilizes 
+                third-party AI processing infrastructure. All data processed through these pipelines is 
+                explicitly configured for Zero Data Retention (ZDR) and is processed ephemerally. We do not 
+                sell data or use beta input for commercial marketing.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl text-platinum font-light mb-4">6. Data Sharing</h2>
               <p>
                 We do not sell, trade, or otherwise transfer your personally identifiable information 
                 or proprietary business data to third parties. Your alloy formulas, client lists, and 
@@ -114,7 +124,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">6. Your Rights</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">7. Your Rights</h2>
               <p className="mb-4">Under the Swiss nFADP, you have the right to:</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>Access your personal data</li>
@@ -131,7 +141,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">7. Data Retention</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">8. Data Retention</h2>
               <p>
                 We retain your data for as long as you participate in the beta program. Upon request 
                 or at the end of the beta period, your data can be exported or deleted. We will provide 
@@ -140,7 +150,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">8. Contact Us</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">9. Contact Us</h2>
               <p>
                 For any questions about this Privacy Policy, our data practices, or to exercise your 
                 data rights, please contact us at:
@@ -154,7 +164,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">9. Impressum</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">10. Impressum</h2>
               <div className="p-4 border border-glass-border bg-obsidian-light">
                 <p className="text-platinum/80">
                   This website is a non-commercial, free beta testing environment operated as a private project.
