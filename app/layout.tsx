@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/language-context'
+import { LanguageSwitcher } from '@/components/landing/language-switcher'
 import './globals.css'
 
 const inter = Inter({ 
@@ -47,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className="bg-obsidian">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased bg-obsidian text-platinum selection:bg-gold/20 selection:text-gold`}>
         <LanguageProvider>
+          <LanguageSwitcher />
           {children}
         </LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

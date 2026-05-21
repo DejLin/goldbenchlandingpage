@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
-import { LanguageSwitcher } from "@/components/landing/language-switcher";
 
 export default function EarlyAccessPage() {
   const { t } = useLanguage();
@@ -48,7 +47,7 @@ export default function EarlyAccessPage() {
       </div>
 
       {/* Top Navigation */}
-      <div className="absolute top-6 left-6 right-6 z-20 flex items-center justify-between">
+      <div className="absolute top-6 left-6 z-20">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -61,14 +60,6 @@ export default function EarlyAccessPage() {
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
             <span className="text-sm tracking-wider">{t.earlyAccess.backToHome}</span>
           </Link>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          <LanguageSwitcher />
         </motion.div>
       </div>
 
