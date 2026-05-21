@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "./logo";
+import { useLanguage } from "@/lib/language-context";
 
 export function FinalCTA() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 bg-obsidian relative overflow-hidden">
       {/* Background Image */}
@@ -35,14 +38,14 @@ export function FinalCTA() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
-            Reclaim your time.
+            {t.finalCta.title1}
           </h2>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gold tracking-tight mb-6">
-            Protect your craft.
+            {t.finalCta.title2}
           </h2>
           
           <p className="text-platinum/60 text-lg mb-12 max-w-xl mx-auto">
-            Let GoldBench handle the admin so your hands can stay at the bench.
+            {t.finalCta.subtitle}
           </p>
 
           <div className="flex flex-col items-center">
@@ -52,14 +55,14 @@ export function FinalCTA() {
                 whileTap={{ scale: 0.98 }}
                 className="group relative px-10 py-4 bg-gold text-obsidian font-medium tracking-wider uppercase text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
               >
-                <span className="relative z-10">Secure Your Early Access</span>
+                <span className="relative z-10">{t.finalCta.cta}</span>
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </motion.button>
             </Link>
 
             <p className="text-platinum/50 text-sm mt-5 tracking-wide">
-              Join the exclusive waitlist for independent goldsmiths.
+              {t.finalCta.ctaSubtext}
             </p>
           </div>
         </motion.div>
@@ -77,18 +80,18 @@ export function FinalCTA() {
 
             <nav className="flex flex-col md:flex-row items-center gap-0 md:gap-8 text-platinum/40 text-xs tracking-wider relative z-[100]">
               <a href="/privacy" className="hover:text-gold active:text-gold transition-colors py-4 px-6 min-h-[52px] flex items-center justify-center">
-                Privacy
+                {t.footer.privacy}
               </a>
               <a href="/terms" className="hover:text-gold active:text-gold transition-colors py-4 px-6 min-h-[52px] flex items-center justify-center">
-                Terms
+                {t.footer.terms}
               </a>
               <a href="/contact" className="hover:text-gold active:text-gold transition-colors py-4 px-6 min-h-[52px] flex items-center justify-center">
-                Contact
+                {t.footer.contact}
               </a>
             </nav>
 
             <p className="text-platinum/30 text-xs">
-              Nesslau, Switzerland
+              {t.finalCta.location}
             </p>
           </div>
         </motion.div>

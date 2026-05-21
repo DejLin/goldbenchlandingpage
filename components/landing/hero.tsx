@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "./logo";
+import { LanguageSwitcher } from "./language-switcher";
+import { useLanguage } from "@/lib/language-context";
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-obsidian">
       {/* Banner Image */}
@@ -39,8 +43,12 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8"
       >
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-between">
+          <div className="w-24" /> {/* Spacer for balance */}
           <Logo size="sm" />
+          <div className="flex justify-end w-24">
+            <LanguageSwitcher />
+          </div>
         </div>
       </motion.nav>
 
@@ -54,9 +62,9 @@ export function Hero() {
           className="text-center max-w-3xl"
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum leading-tight tracking-tight mb-6">
-            Your hands craft the gold.
+            {t.hero.title1}
             <br />
-            <span className="text-gold">Your voice runs the business.</span>
+            <span className="text-gold">{t.hero.title2}</span>
           </h1>
           
           {/* Decorative line */}
@@ -74,8 +82,7 @@ export function Hero() {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-platinum/70 text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10"
           >
-            GoldBench is the first voice-powered workspace built exclusively for goldsmiths. 
-            Dictate quotes, track materials, and manage clients in seconds—without ever putting down your tools.
+            {t.hero.subtitle}
           </motion.p>
 
           {/* CTA */}
@@ -91,12 +98,12 @@ export function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="group relative px-8 py-4 bg-gold text-obsidian font-medium tracking-wider uppercase text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
               >
-                <span className="relative z-10">Request Early Access</span>
+                <span className="relative z-10">{t.hero.cta}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </motion.button>
             </Link>
             <p className="text-platinum/50 text-xs mt-4 tracking-wide">
-              Limited spots available for independent goldsmiths.
+              {t.hero.ctaSubtext}
             </p>
           </motion.div>
         </motion.div>
@@ -117,7 +124,7 @@ export function Hero() {
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-3"
         >
-          <span className="text-[9px] uppercase tracking-[0.3em] text-platinum/30">Scroll</span>
+          <span className="text-[9px] uppercase tracking-[0.3em] text-platinum/30">{t.hero.scroll}</span>
           <div className="w-px h-12 bg-gradient-to-b from-platinum/30 to-transparent" />
         </motion.div>
       </motion.div>

@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Send, Check, Volume2 } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
+// Demo messages stay in English as they represent the voice assistant interface
 const demoMessages = [
   {
     type: "voice",
@@ -28,6 +30,7 @@ const demoMessages = [
 ];
 
 export function WorkflowDemo() {
+  const { t } = useLanguage();
   const [visibleMessages, setVisibleMessages] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -59,13 +62,13 @@ export function WorkflowDemo() {
           className="text-center mb-16"
         >
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
-            How It Works
+            {t.workflow.label}
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
-            From Voice to Ledger. Instantly.
+            {t.workflow.title}
           </h2>
           <p className="text-platinum/70 text-lg max-w-xl mx-auto">
-            Speak into Telegram. Watch your dashboard update in real-time.
+            {t.workflow.subtitle}
           </p>
         </motion.div>
 
@@ -87,7 +90,7 @@ export function WorkflowDemo() {
                 <div className="w-3 h-3 rounded-full bg-platinum/20" />
               </div>
               <span className="text-platinum/40 text-xs tracking-wider">
-                GoldBench Voice Assistant
+                {t.workflow.assistant}
               </span>
               <div className="w-16" />
             </div>
@@ -116,7 +119,7 @@ export function WorkflowDemo() {
                         <div className="flex items-center gap-2 mb-1">
                           <Volume2 className="w-3 h-3 text-gold" />
                           <span className="text-gold text-[10px] tracking-wider uppercase">
-                            Voice Message
+                            {t.workflow.voiceMessage}
                           </span>
                         </div>
                       )}
@@ -139,7 +142,7 @@ export function WorkflowDemo() {
                 {visibleMessages === 0 && !isPlaying && (
                   <div className="flex items-center justify-center h-full min-h-[200px]">
                     <p className="text-platinum/40 text-sm">
-                      Click below to see the workflow
+                      {t.workflow.clickToSee}
                     </p>
                   </div>
                 )}
@@ -152,7 +155,7 @@ export function WorkflowDemo() {
                   >
                     <div className="flex items-center gap-2 text-gold">
                       <Check className="w-4 h-4" />
-                      <span className="text-sm">Invoice ready in 12 seconds</span>
+                      <span className="text-sm">{t.workflow.invoiceReady}</span>
                     </div>
                   </motion.div>
                 )}
@@ -167,7 +170,7 @@ export function WorkflowDemo() {
                 >
                   <Send className="w-4 h-4" />
                   <span className="text-sm tracking-wider">
-                    {isPlaying ? "Processing..." : "Play Demo"}
+                    {isPlaying ? t.workflow.processing : t.workflow.playDemo}
                   </span>
                 </button>
               </div>

@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useLanguage } from "@/lib/language-context";
 
 export function MidCTA() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 md:py-24 bg-obsidian relative overflow-hidden">
       {/* Subtle gradient glow */}
@@ -27,13 +30,13 @@ export function MidCTA() {
                 whileTap={{ scale: 0.98 }}
                 className="group relative px-10 py-4 bg-gold text-obsidian font-medium tracking-wider uppercase text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
               >
-                <span className="relative z-10">Request Early Access</span>
+                <span className="relative z-10">{t.midCta.cta}</span>
                 {/* Shimmer effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </motion.button>
             </Link>
             <p className="text-platinum/50 text-sm mt-5 tracking-wide">
-              Ditch the keyboard. Get back to the bench.
+              {t.midCta.subtitle}
             </p>
           </motion.div>
         </motion.div>

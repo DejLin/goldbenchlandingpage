@@ -3,39 +3,22 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
-const useCases = [
-  {
-    id: 1,
-    title: "Voice Logging",
-    description: "Log materials and time with a simple voice command",
-    videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-29%20at%208.28.22%20PM-0LshVna5Zbm0nbIHv9o9MDR7ADBvIO.mp4",
-  },
-  {
-    id: 2,
-    title: "Instant Invoicing",
-    description: "Generate professional invoices in seconds",
-    videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-30%20at%205.14.59%20PM-Fj12emcUZuD8aQM9QUhaTY7RdSOSfh.mp4",
-  },
-  {
-    id: 3,
-    title: "Material Tracking",
-    description: "Keep precise records of every gram",
-    videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-30%20at%205.27.52%20PM-KlHYxHeFShvR6gAyxveojksCnpxlpx.mp4",
-  },
-  {
-    id: 4,
-    title: "Client Gallery",
-    description: "Share curated pieces with one click",
-    videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-30%20at%205.21.07%20PM-yQ98PY9e99RzE7YVwKdVgieiVQdR0e.mp4",
-  },
+const videoUrls = [
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-29%20at%208.28.22%20PM-0LshVna5Zbm0nbIHv9o9MDR7ADBvIO.mp4",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-30%20at%205.14.59%20PM-Fj12emcUZuD8aQM9QUhaTY7RdSOSfh.mp4",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-30%20at%205.27.52%20PM-KlHYxHeFShvR6gAyxveojksCnpxlpx.mp4",
+  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-03-30%20at%205.21.07%20PM-yQ98PY9e99RzE7YVwKdVgieiVQdR0e.mp4",
 ];
 
 export function UseCases() {
+  const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const useCases = t.useCases.items;
   const activeCase = useCases[activeIndex];
 
   const handleVideoClick = () => {
@@ -79,13 +62,13 @@ export function UseCases() {
           className="text-center mb-16"
         >
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
-            Use Cases
+            {t.useCases.label}
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
-            The Master&apos;s Workflow.
+            {t.useCases.title}
           </h2>
           <p className="text-platinum/70 text-lg max-w-xl mx-auto">
-            Precision administration, without ever leaving the loupe.
+            {t.useCases.subtitle}
           </p>
         </motion.div>
 
@@ -110,7 +93,7 @@ export function UseCases() {
               >
                 <video
                   ref={videoRef}
-                  src={activeCase.videoUrl}
+                  src={videoUrls[activeIndex]}
                   className="w-full h-full object-cover"
                   playsInline
                   onEnded={handleVideoEnded}
@@ -182,7 +165,7 @@ export function UseCases() {
         >
           {useCases.map((useCase, index) => (
             <button
-              key={useCase.id}
+              key={index}
               onClick={() => selectCase(index)}
               className={`group relative p-4 border transition-all duration-300 text-left ${
                 index === activeIndex
