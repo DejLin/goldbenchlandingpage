@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { languages, Language } from "@/lib/translations";
 
@@ -45,98 +44,50 @@ const flags: Record<Language, JSX.Element> = {
 
 export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const currentLang = languages.find((l) => l.code === language);
 
   return (
-    <div className="relative">
-      {/* Current language button */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 border border-platinum/20 hover:border-gold/40 bg-obsidian/80 backdrop-blur-sm transition-all duration-300"
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        <span className="flex items-center justify-center w-5 h-3 overflow-hidden rounded-[2px]">
-          {flags[language]}
-        </span>
-        <span className="text-[10px] tracking-[0.2em] text-platinum/80 uppercase font-medium">
-          {currentLang?.label}
-        </span>
-        <motion.svg
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="w-3 h-3 text-platinum/50"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1 bg-obsidian/90 backdrop-blur-md border border-platinum/20 p-1.5 rounded-sm"
+    >
+      {/* Gold accent line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+      
+      {languages.map((lang) => (
+        <motion.button
+          key={lang.code}
+          onClick={() => setLanguage(lang.code)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={`relative flex items-center gap-2 px-2 py-1.5 rounded-sm transition-all duration-200 ${
+            language === lang.code
+              ? "bg-gold/15 text-gold"
+              : "text-platinum/60 hover:bg-platinum/10 hover:text-platinum"
+          }`}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </motion.svg>
-      </motion.button>
-
-      {/* Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* Backdrop */}
+          {/* Active indicator bar */}
+          {language === lang.code && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-40"
-              onClick={() => setIsOpen(false)}
+              layoutId="activeLang"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gold rounded-full"
             />
-            
-            {/* Dropdown menu */}
-            <motion.div
-              initial={{ opacity: 0, y: -8, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8, scale: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute top-full right-0 mt-2 z-50 min-w-[120px] bg-obsidian/95 backdrop-blur-md border border-platinum/20 overflow-hidden"
-            >
-              {/* Gold accent line at top */}
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-              
-              {languages.map((lang, index) => (
-                <motion.button
-                  key={lang.code}
-                  onClick={() => {
-                    setLanguage(lang.code);
-                    setIsOpen(false);
-                  }}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className={`w-full flex items-center gap-3 px-4 py-3 transition-all duration-200 ${
-                    language === lang.code
-                      ? "bg-gold/10 text-gold"
-                      : "text-platinum/70 hover:bg-platinum/5 hover:text-platinum"
-                  }`}
-                >
-                  <span className="flex items-center justify-center w-5 h-3 overflow-hidden rounded-[2px]">
-                    {flags[lang.code]}
-                  </span>
-                  <span className="text-[11px] tracking-[0.15em] uppercase font-medium">
-                    {lang.label}
-                  </span>
-                  {language === lang.code && (
-                    <motion.div
-                      layoutId="activeLanguage"
-                      className="ml-auto w-1.5 h-1.5 bg-gold rounded-full"
-                    />
-                  )}
-                </motion.button>
-              ))}
-              
-              {/* Gold accent line at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-    </div>
+          )}
+          
+          <span className="flex items-center justify-center w-5 h-3 overflow-hidden rounded-[2px] ml-1">
+            {flags[lang.code]}
+          </span>
+          
+          {/* Show label on larger screens only */}
+          <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase font-medium">
+            {lang.code}
+          </span>
+        </motion.button>
+      ))}
+      
+      {/* Gold accent line at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+    </motion.div>
   );
 }
