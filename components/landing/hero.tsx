@@ -44,11 +44,11 @@ export function Hero() {
         className="absolute top-0 left-0 right-0 z-20 p-3 md:p-4"
       >
         <div className="flex items-center justify-between">
-          <div className="w-24">
+          <div className="w-24" /> {/* Spacer for balance */}
+          <Logo size="sm" />
+          <div className="flex justify-end w-24 -mr-8">
             <LanguageSwitcher />
           </div>
-          <Logo size="sm" />
-          <div className="w-24" /> {/* Spacer for balance */}
         </div>
       </motion.nav>
 
