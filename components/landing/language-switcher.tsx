@@ -95,7 +95,7 @@ export function LanguageSwitcher() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.95 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="absolute top-full right-0 mt-2 z-50 min-w-[120px] bg-obsidian/95 backdrop-blur-md border border-platinum/20 overflow-hidden"
+              className="absolute top-full right-0 mt-1 z-50 min-w-[120px] bg-obsidian/95 backdrop-blur-md border border-platinum/20 overflow-hidden"
             >
               {/* Gold accent line at top */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
