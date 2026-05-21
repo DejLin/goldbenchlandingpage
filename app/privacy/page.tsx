@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Logo } from "@/components/landing/logo";
+import { useLanguage } from "@/lib/language-context";
 
 export default function PrivacyPage() {
+  const { t } = useLanguage();
+  
   return (
     <main className="min-h-screen bg-obsidian">
       {/* Header */}
@@ -17,7 +20,7 @@ export default function PrivacyPage() {
             href="/" 
             className="text-[11px] uppercase tracking-[0.2em] text-platinum/70 hover:text-gold transition-colors"
           >
-            Back to Home
+            {t.common.backToHome}
           </Link>
         </div>
       </nav>
@@ -30,10 +33,10 @@ export default function PrivacyPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-3xl md:text-4xl font-light text-platinum tracking-tight mb-4">
-            Privacy Policy
+            {t.privacy.title}
           </h1>
           <p className="text-platinum/50 text-sm mb-12">
-            Last updated: May 2026
+            {t.common.lastUpdated}
           </p>
 
           <div className="space-y-10 text-platinum/70 text-[15px] leading-relaxed">

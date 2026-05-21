@@ -6,8 +6,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { Logo } from "@/components/landing/logo";
 import { Mail, Clock } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -54,7 +56,7 @@ export default function ContactPage() {
             href="/" 
             className="text-[11px] uppercase tracking-[0.2em] text-platinum/70 hover:text-gold transition-colors"
           >
-            Back to Home
+            {t.common.backToHome}
           </Link>
         </div>
       </nav>
@@ -68,11 +70,10 @@ export default function ContactPage() {
         >
           <div className="text-center mb-16">
             <h1 className="text-3xl md:text-4xl font-light text-platinum tracking-tight mb-4">
-              Get in Touch
+              {t.contact.title}
             </h1>
             <p className="text-platinum/50 text-[15px] max-w-lg mx-auto">
-              Ready to transform your atelier workflow? We&apos;d love to hear from you 
-              and discuss how GoldBench can serve your craft.
+              {t.contact.subtitle}
             </p>
           </div>
 
@@ -80,14 +81,14 @@ export default function ContactPage() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-xl text-platinum font-light mb-6">Contact Information</h2>
+                <h2 className="text-xl text-platinum font-light mb-6">{t.contact.contactInfo}</h2>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 border border-glass-border flex items-center justify-center flex-shrink-0">
                       <Mail className="w-4 h-4 text-gold" />
                     </div>
                     <div>
-                      <p className="text-platinum text-sm font-medium mb-1">Email</p>
+                      <p className="text-platinum text-sm font-medium mb-1">{t.contact.email}</p>
                       <a 
                         href="mailto:contact@goldbench.ch" 
                         className="text-platinum/60 text-sm hover:text-gold transition-colors"
@@ -102,9 +103,9 @@ export default function ContactPage() {
                       <Clock className="w-4 h-4 text-gold" />
                     </div>
                     <div>
-                      <p className="text-platinum text-sm font-medium mb-1">Response Time</p>
+                      <p className="text-platinum text-sm font-medium mb-1">{t.contact.responseTime}</p>
                       <p className="text-platinum/60 text-sm">
-                        We typically respond within 24 hours
+                        {t.contact.responseTimeValue}
                       </p>
                     </div>
                   </div>
@@ -112,10 +113,9 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8 border-t border-glass-border">
-                <h3 className="text-lg text-platinum font-light mb-4">Beta Project</h3>
+                <h3 className="text-lg text-platinum font-light mb-4">{t.contact.betaProject}</h3>
                 <p className="text-platinum/60 text-sm mb-4">
-                  GoldBench is currently a free, non-commercial beta testing environment 
-                  operated as a private project by The Development Team.
+                  {t.contact.betaDescription}
                 </p>
                 <a 
                   href="mailto:contact@goldbench.ch" 
@@ -139,18 +139,18 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-xl text-platinum font-light mb-2">Message Sent</h3>
+                  <h3 className="text-xl text-platinum font-light mb-2">{t.contact.messageSent}</h3>
                   <p className="text-platinum/60 text-sm">
-                    Thank you for reaching out. We&apos;ll be in touch shortly.
+                    {t.contact.thankYou}
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <h2 className="text-xl text-platinum font-light mb-6">Send a Message</h2>
+                  <h2 className="text-xl text-platinum font-light mb-6">{t.contact.sendMessage}</h2>
                   
                   <div>
                     <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
-                      Name *
+                      {t.contact.nameLabel} *
                     </label>
                     <input
                       type="text"
@@ -158,13 +158,13 @@ export default function ContactPage() {
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
-                      placeholder="Your name"
+                      placeholder={t.contact.namePlaceholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
-                      Email *
+                      {t.contact.emailLabel} *
                     </label>
                     <input
                       type="email"
@@ -172,26 +172,26 @@ export default function ContactPage() {
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
-                      placeholder="your@email.com"
+                      placeholder={t.contact.emailPlaceholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
-                      Atelier / Company
+                      {t.contact.companyLabel}
                     </label>
                     <input
                       type="text"
                       value={formState.company}
                       onChange={(e) => setFormState({ ...formState, company: e.target.value })}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
-                      placeholder="Your atelier or company name"
+                      placeholder={t.contact.companyPlaceholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
-                      Message *
+                      {t.contact.messageLabel} *
                     </label>
                     <textarea
                       required
@@ -199,7 +199,7 @@ export default function ContactPage() {
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors resize-none"
-                      placeholder="Tell us about your atelier and how we can help..."
+                      placeholder={t.contact.messagePlaceholder}
                     />
                   </div>
 
@@ -208,12 +208,12 @@ export default function ContactPage() {
                     disabled={isSubmitting}
                     className="w-full bg-gold text-obsidian py-4 font-medium text-sm uppercase tracking-wider hover:bg-gold-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? t.contact.sending : t.contact.sendButton}
                   </button>
 
                   <p className="text-platinum/40 text-xs text-center">
-                    By submitting, you agree to our{" "}
-                    <Link href="/privacy" className="text-gold hover:underline">Privacy Policy</Link>
+                    {t.contact.privacyAgree}{" "}
+                    <Link href="/privacy" className="text-gold hover:underline">{t.footer.privacy}</Link>
                   </p>
                 </form>
               )}
