@@ -46,48 +46,75 @@ export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.5, duration: 0.5 }}
-      className="fixed right-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-1 bg-obsidian/90 backdrop-blur-md border border-platinum/20 p-1.5 rounded-sm"
-    >
-      {/* Gold accent line at top */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-      
-      {languages.map((lang) => (
-        <motion.button
-          key={lang.code}
-          onClick={() => setLanguage(lang.code)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className={`relative flex items-center gap-2 px-2 py-1.5 rounded-sm transition-all duration-200 ${
-            language === lang.code
-              ? "bg-gold/15 text-gold"
-              : "text-platinum/60 hover:bg-platinum/10 hover:text-platinum"
-          }`}
-        >
-          {/* Active indicator bar */}
-          {language === lang.code && (
-            <motion.div
-              layoutId="activeLang"
-              className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gold rounded-full"
-            />
-          )}
-          
-          <span className="flex items-center justify-center w-5 h-3 overflow-hidden rounded-[2px] ml-1">
-            {flags[lang.code]}
-          </span>
-          
-          {/* Show label on larger screens only */}
-          <span className="hidden md:block text-[10px] tracking-[0.15em] uppercase font-medium">
-            {lang.code}
-          </span>
-        </motion.button>
-      ))}
-      
-      {/* Gold accent line at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
-    </motion.div>
+    <>
+      {/* Desktop: Vertical floating widget on right side */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="hidden md:flex fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col gap-1 bg-obsidian/90 backdrop-blur-md border border-platinum/20 p-1.5 rounded-sm"
+      >
+        {languages.map((lang) => (
+          <motion.button
+            key={lang.code}
+            onClick={() => setLanguage(lang.code)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`relative flex items-center gap-2 px-2 py-1.5 rounded-sm transition-all duration-200 ${
+              language === lang.code
+                ? "bg-gold/15 text-gold"
+                : "text-platinum/60 hover:bg-platinum/10 hover:text-platinum"
+            }`}
+          >
+            {language === lang.code && (
+              <motion.div
+                layoutId="activeLangDesktop"
+                className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gold rounded-full"
+              />
+            )}
+            
+            <span className="flex items-center justify-center w-5 h-3 overflow-hidden rounded-[2px] ml-1">
+              {flags[lang.code]}
+            </span>
+            
+            <span className="text-[10px] tracking-[0.15em] uppercase font-medium">
+              {lang.code}
+            </span>
+          </motion.button>
+        ))}
+      </motion.div>
+
+      {/* Mobile: Horizontal bar at bottom */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 bg-obsidian/95 backdrop-blur-md border border-platinum/20 px-3 py-2 rounded-full"
+      >
+        {languages.map((lang) => (
+          <motion.button
+            key={`mobile-${lang.code}`}
+            onClick={() => setLanguage(lang.code)}
+            whileTap={{ scale: 0.9 }}
+            className={`relative flex items-center justify-center w-10 h-8 rounded-full transition-all duration-200 ${
+              language === lang.code
+                ? "bg-gold/20"
+                : "hover:bg-platinum/10"
+            }`}
+          >
+            {language === lang.code && (
+              <motion.div
+                layoutId="activeLangMobile"
+                className="absolute inset-0 rounded-full border border-gold/50"
+              />
+            )}
+            
+            <span className="flex items-center justify-center w-6 h-4 overflow-hidden rounded-[2px]">
+              {flags[lang.code]}
+            </span>
+          </motion.button>
+        ))}
+      </motion.div>
+    </>
   );
 }

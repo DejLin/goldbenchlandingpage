@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "./logo";
-import { LanguageSwitcher } from "./language-switcher";
 import { useLanguage } from "@/lib/language-context";
 
 export function Hero() {
@@ -43,12 +42,8 @@ export function Hero() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8"
       >
-        <div className="flex items-center justify-between">
-          <div className="w-24" /> {/* Spacer for balance */}
+        <div className="flex items-center justify-center">
           <Logo size="sm" />
-          <div className="flex justify-end w-24">
-            <LanguageSwitcher />
-          </div>
         </div>
       </motion.nav>
 
@@ -111,23 +106,6 @@ export function Hero() {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-obsidian to-transparent pointer-events-none" />
-      
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-3"
-        >
-          <span className="text-[9px] uppercase tracking-[0.3em] text-platinum/30">{t.hero.scroll}</span>
-          <div className="w-px h-12 bg-gradient-to-b from-platinum/30 to-transparent" />
-        </motion.div>
-      </motion.div>
 
       {/* Corner accents */}
       <div className="absolute top-24 md:top-28 left-8 w-12 h-12 border-l border-t border-gold/20" />
