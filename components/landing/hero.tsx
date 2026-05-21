@@ -41,12 +41,12 @@ export function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="absolute top-0 left-0 right-0 z-20 p-3 md:p-4"
+        className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8"
       >
         <div className="flex items-center justify-between">
           <div className="w-24" /> {/* Spacer for balance */}
           <Logo size="sm" />
-          <div className="flex justify-end w-24 -mr-8">
+          <div className="flex justify-end w-24">
             <LanguageSwitcher />
           </div>
         </div>
