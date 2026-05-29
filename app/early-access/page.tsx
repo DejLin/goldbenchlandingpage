@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export default function EarlyAccessPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,21 +46,22 @@ export default function EarlyAccessPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,5,5,0.6)_100%)]" />
       </div>
 
-      {/* Back to Home Link */}
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        className="absolute top-6 left-6 z-20"
-      >
-        <Link
-          href="/"
-          className="group flex items-center gap-2 text-platinum/60 hover:text-gold transition-colors duration-300"
+      {/* Top Navigation */}
+      <div className="absolute top-6 left-6 z-20">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
-          <span className="text-sm tracking-wider">Back to Home</span>
-        </Link>
-      </motion.div>
+          <Link
+            href="/"
+            className="group flex items-center gap-2 text-platinum/60 hover:text-gold transition-colors duration-300"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
+            <span className="text-sm tracking-wider">{t.earlyAccess.backToHome}</span>
+          </Link>
+        </motion.div>
+      </div>
 
       {/* Form Card */}
       <motion.div
@@ -83,10 +86,10 @@ export default function EarlyAccessPage() {
                 {/* Header */}
                 <div className="text-center mb-8">
                   <h1 className="text-2xl md:text-3xl font-light text-platinum tracking-tight mb-4">
-                    Join the <span className="text-gold">GoldBench</span> Waitlist
+                    {t.earlyAccess.title} <span className="text-gold">{t.earlyAccess.titleHighlight}</span> {t.earlyAccess.titleEnd}
                   </h1>
                   <p className="text-platinum/60 text-sm leading-relaxed">
-                    We are onboarding a limited number of independent goldsmiths for our early access beta. Secure your spot to reclaim your bench time.
+                    {t.earlyAccess.subtitle}
                   </p>
                 </div>
 
@@ -98,7 +101,7 @@ export default function EarlyAccessPage() {
                       htmlFor="name"
                       className="block text-[11px] uppercase tracking-[0.2em] text-platinum/50 mb-2"
                     >
-                      Name
+                      {t.earlyAccess.nameLabel}
                     </label>
                     <input
                       type="text"
@@ -109,7 +112,7 @@ export default function EarlyAccessPage() {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       className="w-full bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
-                      placeholder="Your full name"
+                      placeholder={t.earlyAccess.namePlaceholder}
                     />
                   </div>
 
@@ -119,7 +122,7 @@ export default function EarlyAccessPage() {
                       htmlFor="email"
                       className="block text-[11px] uppercase tracking-[0.2em] text-platinum/50 mb-2"
                     >
-                      Email Address
+                      {t.earlyAccess.emailLabel}
                     </label>
                     <input
                       type="email"
@@ -130,7 +133,7 @@ export default function EarlyAccessPage() {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       className="w-full bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
-                      placeholder="you@atelier.com"
+                      placeholder={t.earlyAccess.emailPlaceholder}
                     />
                   </div>
 
@@ -140,8 +143,8 @@ export default function EarlyAccessPage() {
                       htmlFor="atelier"
                       className="block text-[11px] uppercase tracking-[0.2em] text-platinum/50 mb-2"
                     >
-                      Name of Atelier / Workshop{" "}
-                      <span className="text-platinum/30">(Optional)</span>
+                      {t.earlyAccess.atelierLabel}{" "}
+                      <span className="text-platinum/30">{t.earlyAccess.atelierOptional}</span>
                     </label>
                     <input
                       type="text"
@@ -151,7 +154,7 @@ export default function EarlyAccessPage() {
                         setFormData({ ...formData, atelier: e.target.value })
                       }
                       className="w-full bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
-                      placeholder="Your workshop or business name"
+                      placeholder={t.earlyAccess.atelierPlaceholder}
                     />
                   </div>
 
@@ -167,10 +170,10 @@ export default function EarlyAccessPage() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="w-4 h-4 animate-spin" />
-                          Submitting...
+                          {t.earlyAccess.submitting}
                         </>
                       ) : (
-                        "Request My Invitation"
+                        t.earlyAccess.submitButton
                       )}
                     </span>
                     {/* Shimmer effect */}
@@ -180,7 +183,7 @@ export default function EarlyAccessPage() {
 
                 {/* Privacy note */}
                 <p className="text-platinum/30 text-[10px] text-center mt-6 tracking-wide">
-                  Your information is secure and will never be shared.
+                  {t.earlyAccess.privacyNote}
                 </p>
               </motion.div>
             ) : (
@@ -200,16 +203,16 @@ export default function EarlyAccessPage() {
                   <CheckCircle2 className="w-16 h-16 text-gold mx-auto" />
                 </motion.div>
                 <h2 className="text-2xl font-light text-platinum mb-4">
-                  You&apos;re on the List
+                  {t.earlyAccess.successTitle}
                 </h2>
                 <p className="text-platinum/60 text-sm leading-relaxed mb-8">
-                  Thank you, {formData.name.split(" ")[0]}. We&apos;ll be in touch soon with your exclusive early access invitation.
+                  {t.earlyAccess.successMessage.replace("{name}", formData.name.split(" ")[0])}
                 </p>
                 <Link
                   href="/"
                   className="inline-block text-gold text-sm tracking-wider hover:underline underline-offset-4"
                 >
-                  Return to Homepage
+                  {t.earlyAccess.returnHome}
                 </Link>
               </motion.div>
             )}

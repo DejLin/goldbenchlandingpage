@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Shield, Database, Lock } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export function Security() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 md:py-32 bg-obsidian relative overflow-hidden">
       {/* Background pattern */}
@@ -57,17 +60,15 @@ export function Security() {
           </div>
 
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
-            Data Sovereignty
+            {t.security.label}
           </p>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-8">
-            Swiss-Grade Data Integrity
+            {t.security.title}
           </h2>
 
           <p className="text-platinum/70 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
-            Custom alloy formulas. Elite client lists. Pricing structures.
-            Everything locked in your sovereign Swiss database. You own the
-            data. Bank-grade encryption. GDPR compliant.
+            {t.security.description}
           </p>
 
           <motion.p
@@ -77,7 +78,7 @@ export function Security() {
             transition={{ delay: 0.5 }}
             className="text-gold text-lg font-medium tracking-wide"
           >
-            Your assets are yours alone.
+            {t.security.tagline}
           </motion.p>
 
           {/* Trust badges */}
@@ -88,22 +89,12 @@ export function Security() {
             transition={{ delay: 0.6 }}
             className="flex flex-wrap items-center justify-center gap-6 mt-12 pt-12 border-t border-platinum/10"
           >
-            <div className="flex items-center gap-2 text-platinum/50 text-sm">
-              <div className="w-2 h-2 bg-gold/60 rounded-full" />
-              <span>256-bit Encryption</span>
-            </div>
-            <div className="flex items-center gap-2 text-platinum/50 text-sm">
-              <div className="w-2 h-2 bg-gold/60 rounded-full" />
-              <span>Swiss Hosted</span>
-            </div>
-            <div className="flex items-center gap-2 text-platinum/50 text-sm">
-              <div className="w-2 h-2 bg-gold/60 rounded-full" />
-              <span>GDPR Compliant</span>
-            </div>
-            <div className="flex items-center gap-2 text-platinum/50 text-sm">
-              <div className="w-2 h-2 bg-gold/60 rounded-full" />
-              <span>Daily Backups</span>
-            </div>
+            {t.security.badges.map((badge, index) => (
+              <div key={index} className="flex items-center gap-2 text-platinum/50 text-sm">
+                <div className="w-2 h-2 bg-gold/60 rounded-full" />
+                <span>{badge}</span>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

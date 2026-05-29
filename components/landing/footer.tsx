@@ -1,8 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { useLanguage } from "@/lib/language-context";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="relative py-32 bg-obsidian">
       {/* Glass border top */}
@@ -18,27 +22,29 @@ export function Footer() {
           className="text-center mb-24"
         >
           <p className="text-[11px] uppercase tracking-[0.4em] text-platinum-dim/60 mb-4">
-            Exclusive Access
+            {t.footer.label}
           </p>
           <h2 className="text-[28px] font-light tracking-[-0.02em] text-platinum mb-6">
-            Ready to Elevate Your Atelier?
+            {t.footer.title}
           </h2>
           <p className="text-[13px] leading-relaxed text-platinum-dim/60 max-w-md mx-auto mb-10">
-            Join the select goldsmiths who have transformed their workflow.
+            {t.footer.subtitle}
           </p>
           
           {/* CTA Button */}
-          <button className="group relative border border-glass-border hover:border-gold/50 bg-transparent px-12 py-4 transition-all duration-500 overflow-hidden">
-            <span className="relative z-10 text-[11px] uppercase tracking-[0.3em] text-platinum group-hover:text-gold transition-colors duration-500">
-              Request Access
-            </span>
-            <div 
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-              style={{
-                background: 'radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%)',
-              }}
-            />
-          </button>
+          <Link href="/early-access">
+            <button className="group relative border border-glass-border hover:border-gold/50 bg-transparent px-12 py-4 transition-all duration-500 overflow-hidden">
+              <span className="relative z-10 text-[11px] uppercase tracking-[0.3em] text-platinum group-hover:text-gold transition-colors duration-500">
+                {t.footer.cta}
+              </span>
+              <div 
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%)',
+                }}
+              />
+            </button>
+          </Link>
         </motion.div>
 
         {/* Bottom bar */}
@@ -59,19 +65,19 @@ export function Footer() {
               href="/privacy"
               className="block text-[12px] md:text-[10px] uppercase tracking-[0.2em] text-platinum-dim/50 hover:text-gold active:text-gold transition-colors duration-300 py-4 px-6 min-h-[52px] flex items-center justify-center"
             >
-              Privacy
+              {t.footer.privacy}
             </a>
             <a
               href="/terms"
               className="block text-[12px] md:text-[10px] uppercase tracking-[0.2em] text-platinum-dim/50 hover:text-gold active:text-gold transition-colors duration-300 py-4 px-6 min-h-[52px] flex items-center justify-center"
             >
-              Terms
+              {t.footer.terms}
             </a>
             <a
               href="/contact"
               className="block text-[12px] md:text-[10px] uppercase tracking-[0.2em] text-platinum-dim/50 hover:text-gold active:text-gold transition-colors duration-300 py-4 px-6 min-h-[52px] flex items-center justify-center"
             >
-              Contact
+              {t.footer.contact}
             </a>
           </nav>
 

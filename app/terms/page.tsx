@@ -3,8 +3,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Logo } from "@/components/landing/logo";
+import { useLanguage } from "@/lib/language-context";
+import { legalTranslations } from "@/lib/legal-translations";
 
 export default function TermsPage() {
+  const { language, t } = useLanguage();
+  const lt = legalTranslations[language].terms;
+  
   return (
     <main className="min-h-screen bg-obsidian">
       {/* Header */}
@@ -17,7 +22,7 @@ export default function TermsPage() {
             href="/" 
             className="text-[11px] uppercase tracking-[0.2em] text-platinum/70 hover:text-gold transition-colors"
           >
-            Back to Home
+            {t.common.backToHome}
           </Link>
         </div>
       </nav>
@@ -30,143 +35,98 @@ export default function TermsPage() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-3xl md:text-4xl font-light text-platinum tracking-tight mb-4">
-            Terms of Service
+            {lt.title}
           </h1>
           <p className="text-platinum/50 text-sm mb-12">
-            Last updated: January 2026
+            {t.common.lastUpdated}
           </p>
 
           <div className="space-y-10 text-platinum/70 text-[15px] leading-relaxed">
-            {/* Beta Disclaimer - Prominent */}
+            {/* Beta Disclaimer */}
             <section className="p-6 border-2 border-gold/30 bg-gold/5">
-              <h2 className="text-xl text-gold font-light mb-4">Beta Testing Disclaimer</h2>
-              <p className="text-platinum/80">
-                Goldbench is currently a free beta test environment. The service is provided strictly 
-                &quot;as is&quot; without any warranties, uptime guarantees, or commercial obligations. The 
-                developers reserve the right to modify, reset, or suspend the service at any time 
-                without notice. By participating in the beta, users acknowledge this is a testing phase.
-              </p>
+              <h2 className="text-xl text-gold font-light mb-4">{lt.betaDisclaimer.title}</h2>
+              <p className="text-platinum/80">{lt.betaDisclaimer.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">1. Agreement to Terms</h2>
-              <p>
-                Welcome to GoldBench. These Terms and Conditions govern your use of the GoldBench platform, 
-                a voice-powered administration and clienteling tool designed exclusively for independent 
-                goldsmiths, jewelers, and ateliers. By using GoldBench, you agree to these terms with 
-                the Goldbench Beta Project. Our platform is built to respect your craft 
-                and protect your proprietary data, including custom alloy formulas and private client lists.
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.agreement.title}</h2>
+              <p>{lt.sections.agreement.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">2. Description of Service</h2>
-              <p className="mb-4">
-                GoldBench provides a voice-activated business management platform that includes:
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.description.title}</h2>
+              <p className="mb-4">{lt.sections.description.intro}</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Voice-to-ledger inventory tracking</li>
-                <li>Automated invoice generation</li>
-                <li>Client gallery management with privacy controls</li>
-                <li>Material and time tracking</li>
-                <li>Secure storage of proprietary information (alloy formulas, techniques)</li>
-                <li>AI-assisted client communication tools</li>
+                {lt.sections.description.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">3. Account Registration</h2>
-              <p>
-                To use GoldBench, you must create an account with accurate and complete information. 
-                You are responsible for maintaining the confidentiality of your account credentials and 
-                for all activities under your account. You must notify us immediately of any unauthorized 
-                use of your account.
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.account.title}</h2>
+              <p>{lt.sections.account.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">4. Beta Access</h2>
-              <p className="mb-4">
-                During the beta testing phase, GoldBench is provided free of charge. By participating, you acknowledge:
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.betaAccess.title}</h2>
+              <p className="mb-4">{lt.sections.betaAccess.intro}</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>The service may be modified, reset, or discontinued at any time</li>
-                <li>No uptime or availability guarantees are provided</li>
-                <li>Features may change or be removed without notice</li>
-                <li>Data may be reset during the beta period</li>
+                {lt.sections.betaAccess.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
-              <p className="mt-4">
-                Early access members may receive preferential terms when commercial pricing is introduced.
-              </p>
+              <p className="mt-4">{lt.sections.betaAccess.note}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">5. Intellectual Property</h2>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.clientData.title}</h2>
+              <p>{lt.sections.clientData.text}</p>
+            </section>
+
+            <section>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.ip.title}</h2>
               <p className="mb-4">
-                <strong className="text-platinum">Your Content:</strong> You retain full ownership of all data, 
-                images, formulas, and proprietary information you upload to GoldBench. We claim no 
-                intellectual property rights over your materials.
+                <strong className="text-platinum">{lt.sections.ip.yourContent}</strong> {lt.sections.ip.yourContentText}
               </p>
               <p>
-                <strong className="text-platinum">Our Platform:</strong> GoldBench, including its design, 
-                features, and underlying technology, is protected by intellectual property laws. You may 
-                not copy, modify, or reverse engineer any part of our service.
+                <strong className="text-platinum">{lt.sections.ip.ourPlatform}</strong> {lt.sections.ip.ourPlatformText}
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">6. Acceptable Use</h2>
-              <p className="mb-4">You agree not to use GoldBench to:</p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.acceptableUse.title}</h2>
+              <p className="mb-4">{lt.sections.acceptableUse.intro}</p>
               <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Violate any applicable laws or regulations</li>
-                <li>Infringe on intellectual property rights of others</li>
-                <li>Store or transmit malicious code</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Use the service for any fraudulent purpose</li>
+                {lt.sections.acceptableUse.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">7. Service Availability</h2>
-              <p>
-                As a beta service, we do not guarantee any specific level of uptime or availability. 
-                The service may be interrupted for maintenance, updates, or other reasons. 
-                We are not liable for any damages resulting from service interruptions.
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.availability.title}</h2>
+              <p>{lt.sections.availability.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">8. Limitation of Liability</h2>
-              <p>
-                The GoldBench beta service is provided &quot;as is&quot; without warranties of any kind. 
-                The Development Team shall not be liable for any indirect, incidental, special, 
-                consequential, or punitive damages, including loss of profits, data, or business 
-                opportunities, arising from your use of the service.
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.liability.title}</h2>
+              <p>{lt.sections.liability.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">9. Termination</h2>
-              <p>
-                Either party may terminate participation in the beta at any time. Upon termination or 
-                at the end of the beta period, you will have the opportunity to export your data. 
-                We reserve the right to suspend or terminate accounts that violate these terms.
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.termination.title}</h2>
+              <p>{lt.sections.termination.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">10. Changes to Terms</h2>
-              <p>
-                We may update these Terms from time to time. Continued use of the service after 
-                changes constitutes acceptance of the new terms.
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.changes.title}</h2>
+              <p>{lt.sections.changes.text}</p>
             </section>
 
             <section>
-              <h2 className="text-xl text-platinum font-light mb-4">11. Contact</h2>
-              <p>
-                For questions about these Terms, please contact us:
-              </p>
+              <h2 className="text-xl text-platinum font-light mb-4">{lt.sections.contact.title}</h2>
+              <p>{lt.sections.contact.text}</p>
               <div className="mt-4 p-4 border border-glass-border bg-obsidian-light">
                 <p className="text-platinum font-medium">Goldbench Beta Project</p>
                 <p className="mt-2">
