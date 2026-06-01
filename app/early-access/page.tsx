@@ -7,10 +7,10 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
-// EmailJS configuration - you'll need to set these
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+// EmailJS configuration (Infomaniak SMTP relay)
+const EMAILJS_SERVICE_ID = "infomaniak_smtp";
+const EMAILJS_TEMPLATE_ID = "template_x1bcqqa";
+const EMAILJS_PUBLIC_KEY = "AT_FdPCSJQQuYbNzd";
 
 export default function EarlyAccessPage() {
   const { t } = useLanguage();
