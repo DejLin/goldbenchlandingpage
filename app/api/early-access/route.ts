@@ -40,6 +40,9 @@ export async function POST(request: NextRequest) {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
 
     // Email to you (notification of new signup)
@@ -89,8 +92,18 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error sending email:", error);
+    
+    // Check if SMTP is configured
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASSWORD) {
+      console.error("SMTP not configured. Missing environment variables.");
+      return NextResponse.json(
+        { error: "Email service not configured. Please contact support." },
+        { status: 500 }
+      );
+    }
+    
     return NextResponse.json(
-      { error: "Failed to process request" },
+      { error: "Failed to send email. Please try again later." },
       { status: 500 }
     );
   }
