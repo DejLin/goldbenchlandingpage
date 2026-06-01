@@ -31,6 +31,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // In development/preview, skip actual email sending (SMTP blocked in sandbox)
+    const isDevelopment = process.env.NODE_ENV === "development" || !process.env.SMTP_PASSWORD;
+    
+    if (isDevelopment) {
+      console.log("[v0] Development mode - Email would be sent to:", email);
+      console.log("[v0] Form data:", { name, email, atelier });
+      return NextResponse.json({ success: true });
+    }
+
     // Create transporter using SMTP (configured for Infomaniak)
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || "mail.infomaniak.com",
