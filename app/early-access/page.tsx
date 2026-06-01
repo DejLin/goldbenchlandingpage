@@ -15,12 +15,13 @@ export default function EarlyAccessPage() {
     atelier: "",
     captchaAnswer: "",
   });
-  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: 0 });
+  const [captcha, setCaptcha] = useState<{ num1: number; num2: number; answer: number } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Generate new captcha
+  // Generate new captcha - only runs client-side
   const generateCaptcha = () => {
     const num1 = Math.floor(Math.random() * 10) + 1;
     const num2 = Math.floor(Math.random() * 10) + 1;
@@ -29,6 +30,7 @@ export default function EarlyAccessPage() {
   };
 
   useEffect(() => {
+    setIsMounted(true);
     generateCaptcha();
   }, []);
 
@@ -48,7 +50,7 @@ export default function EarlyAccessPage() {
           email: formData.email,
           atelier: formData.atelier,
           captchaAnswer: formData.captchaAnswer,
-          expectedAnswer: captcha.answer,
+          expectedAnswer: captcha?.answer ?? 0,
         }),
       });
 
@@ -204,40 +206,42 @@ export default function EarlyAccessPage() {
                   </div>
 
                   {/* Captcha Field */}
-                  <div>
-                    <label
-                      htmlFor="captcha"
-                      className="block text-[11px] uppercase tracking-[0.2em] text-platinum/50 mb-2"
-                    >
-                      {t.earlyAccess.captchaLabel}
-                    </label>
-                    <div className="flex items-center gap-3">
-                      <div className="flex-1 bg-obsidian/50 border border-white/10 px-4 py-3 text-sm text-gold font-medium">
-                        {t.earlyAccess.captchaQuestion
-                          .replace("{num1}", captcha.num1.toString())
-                          .replace("{num2}", captcha.num2.toString())}
-                      </div>
-                      <button
-                        type="button"
-                        onClick={generateCaptcha}
-                        className="p-3 bg-obsidian/50 border border-white/10 hover:border-gold/50 text-platinum/50 hover:text-gold transition-colors duration-300"
-                        title="New question"
+                  {isMounted && captcha && (
+                    <div>
+                      <label
+                        htmlFor="captcha"
+                        className="block text-[11px] uppercase tracking-[0.2em] text-platinum/50 mb-2"
                       >
-                        <RefreshCw className="w-4 h-4" />
-                      </button>
+                        {t.earlyAccess.captchaLabel}
+                      </label>
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1 bg-obsidian/50 border border-white/10 px-4 py-3 text-sm text-gold font-medium">
+                          {t.earlyAccess.captchaQuestion
+                            .replace("{num1}", captcha.num1.toString())
+                            .replace("{num2}", captcha.num2.toString())}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={generateCaptcha}
+                          className="p-3 bg-obsidian/50 border border-white/10 hover:border-gold/50 text-platinum/50 hover:text-gold transition-colors duration-300"
+                          title="New question"
+                        >
+                          <RefreshCw className="w-4 h-4" />
+                        </button>
+                      </div>
+                      <input
+                        type="text"
+                        id="captcha"
+                        required
+                        value={formData.captchaAnswer}
+                        onChange={(e) =>
+                          setFormData({ ...formData, captchaAnswer: e.target.value })
+                        }
+                        className="w-full mt-2 bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
+                        placeholder={t.earlyAccess.captchaPlaceholder}
+                      />
                     </div>
-                    <input
-                      type="text"
-                      id="captcha"
-                      required
-                      value={formData.captchaAnswer}
-                      onChange={(e) =>
-                        setFormData({ ...formData, captchaAnswer: e.target.value })
-                      }
-                      className="w-full mt-2 bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
-                      placeholder={t.earlyAccess.captchaPlaceholder}
-                    />
-                  </div>
+                  )}
 
                   {/* Error Message */}
                   {error && (
