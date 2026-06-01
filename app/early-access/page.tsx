@@ -7,6 +7,11 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
+// EmailJS configuration - you'll need to set these
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+
 export default function EarlyAccessPage() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -37,34 +42,39 @@ export default function EarlyAccessPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+
+    // Validate captcha client-side
+    if (!captcha || parseInt(formData.captchaAnswer) !== captcha.answer) {
+      setError(t.earlyAccess.captchaError);
+      generateCaptcha();
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/early-access", {
+      // Send email via EmailJS REST API
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          atelier: formData.atelier,
-          captchaAnswer: formData.captchaAnswer,
-          expectedAnswer: captcha?.answer ?? 0,
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            from_name: formData.name,
+            from_email: formData.email,
+            atelier: formData.atelier || "Not provided",
+            message: `New early access request from ${formData.name} (${formData.email})${formData.atelier ? ` - Atelier: ${formData.atelier}` : ""}`,
+            to_email: "contact@goldbench.ch",
+          },
         }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        if (data.error === "Incorrect captcha answer") {
-          setError(t.earlyAccess.captchaError);
-          generateCaptcha();
-        } else {
-          setError(data.error || "Something went wrong");
-        }
-        setIsSubmitting(false);
-        return;
+        throw new Error("Failed to send email");
       }
 
       setIsSubmitting(false);
