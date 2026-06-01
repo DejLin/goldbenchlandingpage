@@ -8,6 +8,11 @@ import { Logo } from "@/components/landing/logo";
 import { Mail, Clock } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
+// EmailJS configuration (same as early-access, Infomaniak SMTP relay)
+const EMAILJS_SERVICE_ID = "infomaniak_smtp";
+const EMAILJS_TEMPLATE_ID = "template_x1bcqqa";
+const EMAILJS_PUBLIC_KEY = "AT_FdPCSJQQuYbNzd";
+
 export default function ContactPage() {
   const { t } = useLanguage();
   const [formState, setFormState] = useState({
@@ -18,14 +23,45 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setError("");
+
+    try {
+      // Send via EmailJS REST API
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          service_id: EMAILJS_SERVICE_ID,
+          template_id: EMAILJS_TEMPLATE_ID,
+          user_id: EMAILJS_PUBLIC_KEY,
+          template_params: {
+            from_name: formState.name,
+            from_email: formState.email,
+            atelier: formState.company || "Not provided",
+            message: formState.message,
+            to_email: "contact@goldbench.ch",
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -147,6 +183,12 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <h2 className="text-xl text-platinum font-light mb-6">{t.contact.sendMessage}</h2>
+                  
+                  {error && (
+                    <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 text-sm">
+                      {error}
+                    </div>
+                  )}
                   
                   <div>
                     <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
