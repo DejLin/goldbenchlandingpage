@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
 export default function EarlyAccessPage() {
@@ -13,19 +13,64 @@ export default function EarlyAccessPage() {
     name: "",
     email: "",
     atelier: "",
+    captchaAnswer: "",
   });
+  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0, answer: 0 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  // Generate new captcha
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptcha({ num1, num2, answer: num1 + num2 });
+    setFormData((prev) => ({ ...prev, captchaAnswer: "" }));
+  };
+
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+
+    try {
+      const response = await fetch("/api/early-access", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          atelier: formData.atelier,
+          captchaAnswer: formData.captchaAnswer,
+          expectedAnswer: captcha.answer,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (data.error === "Incorrect captcha answer") {
+          setError(t.earlyAccess.captchaError);
+          generateCaptcha();
+        } else {
+          setError(data.error || "Something went wrong");
+        }
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+    } catch {
+      setError("Failed to submit. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -157,6 +202,53 @@ export default function EarlyAccessPage() {
                       placeholder={t.earlyAccess.atelierPlaceholder}
                     />
                   </div>
+
+                  {/* Captcha Field */}
+                  <div>
+                    <label
+                      htmlFor="captcha"
+                      className="block text-[11px] uppercase tracking-[0.2em] text-platinum/50 mb-2"
+                    >
+                      {t.earlyAccess.captchaLabel}
+                    </label>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 bg-obsidian/50 border border-white/10 px-4 py-3 text-sm text-gold font-medium">
+                        {t.earlyAccess.captchaQuestion
+                          .replace("{num1}", captcha.num1.toString())
+                          .replace("{num2}", captcha.num2.toString())}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={generateCaptcha}
+                        className="p-3 bg-obsidian/50 border border-white/10 hover:border-gold/50 text-platinum/50 hover:text-gold transition-colors duration-300"
+                        title="New question"
+                      >
+                        <RefreshCw className="w-4 h-4" />
+                      </button>
+                    </div>
+                    <input
+                      type="text"
+                      id="captcha"
+                      required
+                      value={formData.captchaAnswer}
+                      onChange={(e) =>
+                        setFormData({ ...formData, captchaAnswer: e.target.value })
+                      }
+                      className="w-full mt-2 bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
+                      placeholder={t.earlyAccess.captchaPlaceholder}
+                    />
+                  </div>
+
+                  {/* Error Message */}
+                  {error && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-red-400 text-sm text-center"
+                    >
+                      {error}
+                    </motion.p>
+                  )}
 
                   {/* Submit Button */}
                   <motion.button
