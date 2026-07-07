@@ -23,7 +23,7 @@ export function Friction() {
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
             {t.friction.label}
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-platinum mb-6 tracking-tight">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-platinum mb-6 tracking-tight">
             {t.friction.title}
           </h2>
           <p className="text-platinum/60 text-lg md:text-xl max-w-2xl mx-auto">

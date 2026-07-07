@@ -7,6 +7,41 @@ import { useLanguage } from "@/lib/language-context";
 const icons = [Mic, FileCheck, Lock, ToggleRight, Sparkles];
 const comingSoonIndex = 4;
 
+/** Card with a gold spotlight that follows the cursor. */
+function SpotlightCard({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--my", `${e.clientY - rect.top}px`);
+  };
+
+  return (
+    <div
+      onMouseMove={handleMove}
+      className={`group relative bg-obsidian border border-white/[0.06] hover:border-gold/30 transition-all duration-500 overflow-hidden ${className}`}
+    >
+      {/* Cursor-following gold glow */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{
+          background:
+            "radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(212,175,55,0.10), transparent 65%)",
+        }}
+      />
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-gold/50" />
+      <div className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-gold/50" />
+      {children}
+    </div>
+  );
+}
+
 export function RevenueEngine() {
   const { t } = useLanguage();
 
@@ -26,15 +61,17 @@ export function RevenueEngine() {
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
             {t.features.label}
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight">
             {t.features.title}
           </h2>
         </motion.div>
 
+        {/* Bento grid: first feature is the hero card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {t.features.items.map((feature, index) => {
             const IconComponent = icons[index];
             const isComingSoon = index === comingSoonIndex;
+            const isFeatured = index === 0;
             return (
               <motion.div
                 key={index}
@@ -42,36 +79,46 @@ export function RevenueEngine() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative p-8 md:p-10 bg-obsidian border border-white/[0.06] hover:border-gold/30 transition-all duration-500 ${
-                  index === 4 ? "md:col-span-2 lg:col-span-1" : ""
-                }`}
+                className={
+                  isFeatured
+                    ? "md:col-span-2"
+                    : index === comingSoonIndex
+                      ? "md:col-span-2 lg:col-span-1"
+                      : ""
+                }
               >
-                {/* Corner accents - top left and bottom right, always visible */}
-                <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-gold/50" />
-                <div className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-gold/50" />
+                <SpotlightCard className="h-full p-8 md:p-10">
+                  {/* Coming soon badge */}
+                  {isComingSoon && (
+                    <span className="absolute top-4 right-4 text-[9px] tracking-[0.25em] uppercase text-gold/80 border border-gold/20 px-3 py-1.5 bg-gold/[0.05]">
+                      {t.features.comingSoon}
+                    </span>
+                  )}
 
-                {/* Coming soon badge */}
-                {isComingSoon && (
-                  <span className="absolute top-4 right-4 text-[9px] tracking-[0.25em] uppercase text-gold/80 border border-gold/20 px-3 py-1.5 bg-gold/[0.05]">
-                    {t.features.comingSoon}
-                  </span>
-                )}
+                  {/* Icon */}
+                  <div className="relative w-12 h-12 mb-8 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
+                    <IconComponent
+                      className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
+                      strokeWidth={1.5}
+                    />
+                  </div>
 
-                {/* Icon */}
-                <div className="relative w-12 h-12 mb-8 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
-                  <IconComponent
-                    className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
-                    strokeWidth={1.5}
-                  />
-                </div>
+                  <h3
+                    className={`font-medium mb-4 tracking-wide text-platinum group-hover:text-white transition-colors duration-500 ${
+                      isFeatured ? "text-xl md:text-2xl" : "text-lg"
+                    }`}
+                  >
+                    {feature.title}
+                  </h3>
 
-                <h3 className="text-lg font-medium mb-4 tracking-wide text-platinum group-hover:text-white transition-colors duration-500">
-                  {feature.title}
-                </h3>
-
-                <p className="leading-relaxed text-sm text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500">
-                  {feature.description}
-                </p>
+                  <p
+                    className={`leading-relaxed text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500 ${
+                      isFeatured ? "text-sm md:text-base max-w-2xl" : "text-sm"
+                    }`}
+                  >
+                    {feature.description}
+                  </p>
+                </SpotlightCard>
               </motion.div>
             );
           })}

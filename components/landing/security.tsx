@@ -63,7 +63,7 @@ export function Security() {
             {t.security.label}
           </p>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-8">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-8">
             {t.security.title}
           </h2>
 

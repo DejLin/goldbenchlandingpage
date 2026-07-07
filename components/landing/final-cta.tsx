@@ -37,11 +37,11 @@ export function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
             {t.finalCta.title1}
           </h2>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-gold tracking-tight mb-6">
-            {t.finalCta.title2}
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-6">
+            <span className="text-molten italic">{t.finalCta.title2}</span>
           </h2>
           
           <p className="text-platinum/60 text-lg mb-12 max-w-xl mx-auto">
