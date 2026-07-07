@@ -48,7 +48,7 @@ export function Hero() {
       </motion.nav>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pt-32 md:pt-0">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pt-44 pb-16 md:pt-24 md:pb-24 md:justify-end">
         {/* Main Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

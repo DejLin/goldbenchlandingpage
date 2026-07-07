@@ -1,4 +1,5 @@
 import { Hero } from "@/components/landing/hero"
+import { VideoShowcase } from "@/components/landing/video-showcase"
 import { Friction } from "@/components/landing/friction"
 import { RevenueEngine } from "@/components/landing/revenue-engine"
 import { WorkflowDemo } from "@/components/landing/workflow-demo"
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-obsidian">
       <Hero />
+      <VideoShowcase />
       <Friction />
       <RevenueEngine />
       <WorkflowDemo />
