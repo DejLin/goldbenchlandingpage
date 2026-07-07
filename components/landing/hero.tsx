@@ -127,6 +127,25 @@ function GoldEmbers() {
   );
 }
 
+/**
+ * Heat shimmer over the torch flame: soft blur bands drift upward behind a
+ * radial mask, so the air above the flame appears to ripple.
+ */
+function HeatShimmer() {
+  return (
+    <div
+      className="absolute left-[30%] right-[8%] top-[25%] bottom-[25%] z-[4] pointer-events-none overflow-hidden hidden md:block motion-reduce:hidden"
+      aria-hidden="true"
+    >
+      <div className="heat-haze absolute inset-0" style={{ animationDuration: "3.4s" }} />
+      <div
+        className="heat-haze absolute inset-0"
+        style={{ animationDuration: "4.6s", animationDelay: "-1.7s" }}
+      />
+    </div>
+  );
+}
+
 /** Cycles through real voice commands with a typewriter effect. */
 function VoiceCommandTicker({ commands }: { commands: readonly string[] }) {
   const [index, setIndex] = useState(0);
@@ -200,6 +219,9 @@ export function Hero() {
         {/* Vignette effect */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(5,5,5,0.7)_100%)]" />
       </div>
+
+      {/* Heat shimmer above the flame */}
+      <HeatShimmer />
 
       {/* Interactive gold embers */}
       <GoldEmbers />

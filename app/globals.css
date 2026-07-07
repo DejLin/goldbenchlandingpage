@@ -261,6 +261,34 @@ html {
   box-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
 }
 
+/* Heat shimmer haze — blurred bands drifting upward behind a soft mask */
+.heat-haze {
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  mask-image: radial-gradient(
+    ellipse 55% 45% at 50% 55%,
+    rgba(0, 0, 0, 0.85),
+    transparent 72%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 55% 45% at 50% 55%,
+    rgba(0, 0, 0, 0.85),
+    transparent 72%
+  );
+  animation: heat-rise 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes heat-rise {
+  0%,
+  100% {
+    transform: translateY(7px) skewX(0.7deg) scaleY(1);
+  }
+  50% {
+    transform: translateY(-7px) skewX(-0.7deg) scaleY(1.02);
+  }
+}
+
 /* Update flash for live dashboard cards */
 @keyframes gold-flash {
   0% {

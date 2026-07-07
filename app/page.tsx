@@ -9,10 +9,12 @@ import { UseCases } from "@/components/landing/use-cases"
 import { Security } from "@/components/landing/security"
 import { FinalCTA } from "@/components/landing/final-cta"
 import { ScrollToTop } from "@/components/landing/scroll-to-top"
+import { MoltenProgress } from "@/components/landing/ambient-effects"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-obsidian">
+      <MoltenProgress />
       <Hero />
       <VideoShowcase />
       <Friction />
