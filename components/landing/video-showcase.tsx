@@ -17,7 +17,7 @@ export function VideoShowcase() {
   };
 
   return (
-    <section className="bg-obsidian py-20 md:py-28">
+    <section className="bg-obsidian pt-4 pb-24 md:pt-8 md:pb-32">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
