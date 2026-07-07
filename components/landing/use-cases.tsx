@@ -64,7 +64,7 @@ export function UseCases() {
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
             {t.useCases.label}
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
             {t.useCases.title}
           </h2>
           <p className="text-platinum/70 text-lg max-w-xl mx-auto">

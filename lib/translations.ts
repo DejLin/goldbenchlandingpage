@@ -17,6 +17,31 @@ export const translations = {
       cta: "Request Early Access",
       ctaSubtext: "Limited spots available for independent goldsmiths.",
       scroll: "Scroll",
+      commands: [
+        "Log 14 grams of 18k gold, Miller ring",
+        "Draft an invoice for the sapphire setting",
+        "What did I quote Mrs. Weber in March?",
+        "Add 6 hours of labor to the signet ring",
+      ],
+    },
+    // Video Showcase
+    videoShowcase: {
+      label: "The Product",
+      title: "Watch a voice note become an invoice.",
+      subtitle: "Ninety seconds inside GoldBench — no keyboard touched.",
+    },
+    // Bench Loss Calculator
+    calculator: {
+      label: "The Bench Loss",
+      title: "What is your admin really costing you?",
+      subtitle: "Move the sliders. This is the gold you leave on the table every year.",
+      hoursLabel: "Admin hours per week",
+      rateLabel: "Your bench rate per hour",
+      hoursPerYear: "hours lost per year",
+      moneyPerYear: "of bench time burned on paperwork",
+      reclaimTitle: "GoldBench gives you back",
+      reclaimUnit: "hours a year",
+      footnote: "Based on 46 working weeks. Early users automate roughly 8 of every 10 admin hours.",
     },
     // Friction section
     friction: {
@@ -81,6 +106,19 @@ export const translations = {
       clickToSee: "Click below to see the workflow",
       invoiceReady: "Invoice ready in 12 seconds",
       assistant: "GoldBench Voice Assistant",
+      dashboard: {
+        title: "Your GoldBench Workspace",
+        live: "Live",
+        inventoryLabel: "Inventory — 18K Gold",
+        inventoryUnit: "g in stock",
+        projectLabel: "Active Commission",
+        projectName: "Miller Engagement Ring",
+        materialCost: "Material cost",
+        laborLabel: "Labor",
+        invoiceLabel: "Invoice INV-2847",
+        invoiceReady: "PDF ready to send",
+        waiting: "Waiting for your voice…",
+      },
     },
     // Mid CTA
     midCta: {
@@ -194,6 +232,31 @@ export const translations = {
       cta: "Frühzugang anfragen",
       ctaSubtext: "Begrenzte Plätze für unabhängige Goldschmiede.",
       scroll: "Scrollen",
+      commands: [
+        "Erfasse 14 Gramm 18k Gold, Ring Miller",
+        "Erstelle eine Rechnung für die Saphir-Fassung",
+        "Was habe ich Frau Weber im März offeriert?",
+        "Füge 6 Stunden Arbeit zum Siegelring hinzu",
+      ],
+    },
+    // Video Showcase
+    videoShowcase: {
+      label: "Das Produkt",
+      title: "Sieh zu, wie eine Sprachnachricht zur Rechnung wird.",
+      subtitle: "Neunzig Sekunden in GoldBench – ohne eine Tastatur zu berühren.",
+    },
+    // Bench Loss Calculator
+    calculator: {
+      label: "Der Werkbank-Verlust",
+      title: "Was kostet dich deine Verwaltung wirklich?",
+      subtitle: "Bewege die Regler. So viel Gold lässt du jedes Jahr liegen.",
+      hoursLabel: "Admin-Stunden pro Woche",
+      rateLabel: "Dein Stundensatz an der Werkbank",
+      hoursPerYear: "verlorene Stunden pro Jahr",
+      moneyPerYear: "an Werkbank-Zeit, verbrannt für Papierkram",
+      reclaimTitle: "GoldBench gibt dir zurück",
+      reclaimUnit: "Stunden pro Jahr",
+      footnote: "Basierend auf 46 Arbeitswochen. Frühe Nutzer automatisieren rund 8 von 10 Admin-Stunden.",
     },
     // Friction section
     friction: {
@@ -258,6 +321,19 @@ export const translations = {
       clickToSee: "Klicke unten, um den Ablauf zu sehen",
       invoiceReady: "Rechnung bereit in 12 Sekunden",
       assistant: "GoldBench Sprachassistent",
+      dashboard: {
+        title: "Dein GoldBench Arbeitsplatz",
+        live: "Live",
+        inventoryLabel: "Inventar – 18K Gold",
+        inventoryUnit: "g an Lager",
+        projectLabel: "Aktiver Auftrag",
+        projectName: "Verlobungsring Miller",
+        materialCost: "Materialkosten",
+        laborLabel: "Arbeit",
+        invoiceLabel: "Rechnung INV-2847",
+        invoiceReady: "PDF bereit zum Versand",
+        waiting: "Warte auf deine Stimme…",
+      },
     },
     // Mid CTA
     midCta: {
@@ -371,6 +447,31 @@ export const translations = {
       cta: "Demander un accès anticipé",
       ctaSubtext: "Places limitées pour les orfèvres indépendants.",
       scroll: "Défiler",
+      commands: [
+        "Enregistre 14 grammes d'or 18k, bague Miller",
+        "Prépare une facture pour le sertissage saphir",
+        "Qu'ai-je proposé à Mme Weber en mars ?",
+        "Ajoute 6 heures de travail à la chevalière",
+      ],
+    },
+    // Video Showcase
+    videoShowcase: {
+      label: "Le Produit",
+      title: "Regardez un message vocal devenir une facture.",
+      subtitle: "Quatre-vingt-dix secondes dans GoldBench — sans toucher un clavier.",
+    },
+    // Bench Loss Calculator
+    calculator: {
+      label: "La perte à l'établi",
+      title: "Combien votre administration vous coûte-t-elle vraiment ?",
+      subtitle: "Déplacez les curseurs. Voici l'or que vous laissez sur la table chaque année.",
+      hoursLabel: "Heures d'administration par semaine",
+      rateLabel: "Votre taux horaire à l'établi",
+      hoursPerYear: "heures perdues par an",
+      moneyPerYear: "de temps d'établi brûlé en paperasse",
+      reclaimTitle: "GoldBench vous rend",
+      reclaimUnit: "heures par an",
+      footnote: "Basé sur 46 semaines de travail. Les premiers utilisateurs automatisent environ 8 heures d'administration sur 10.",
     },
     // Friction section
     friction: {
@@ -435,6 +536,19 @@ export const translations = {
       clickToSee: "Cliquez ci-dessous pour voir le flux de travail",
       invoiceReady: "Facture prête en 12 secondes",
       assistant: "Assistant vocal GoldBench",
+      dashboard: {
+        title: "Votre espace GoldBench",
+        live: "En direct",
+        inventoryLabel: "Inventaire — Or 18K",
+        inventoryUnit: "g en stock",
+        projectLabel: "Commande en cours",
+        projectName: "Bague de fiançailles Miller",
+        materialCost: "Coût des matériaux",
+        laborLabel: "Main-d'œuvre",
+        invoiceLabel: "Facture INV-2847",
+        invoiceReady: "PDF prêt à envoyer",
+        waiting: "En attente de votre voix…",
+      },
     },
     // Mid CTA
     midCta: {
@@ -548,6 +662,31 @@ export const translations = {
       cta: "Richiedi accesso anticipato",
       ctaSubtext: "Posti limitati per orafi indipendenti.",
       scroll: "Scorri",
+      commands: [
+        "Registra 14 grammi di oro 18k, anello Miller",
+        "Prepara una fattura per l'incastonatura zaffiro",
+        "Cosa ho preventivato alla signora Weber a marzo?",
+        "Aggiungi 6 ore di lavoro all'anello con sigillo",
+      ],
+    },
+    // Video Showcase
+    videoShowcase: {
+      label: "Il Prodotto",
+      title: "Guarda un messaggio vocale diventare una fattura.",
+      subtitle: "Novanta secondi dentro GoldBench — senza toccare una tastiera.",
+    },
+    // Bench Loss Calculator
+    calculator: {
+      label: "La perdita al banco",
+      title: "Quanto ti costa davvero l'amministrazione?",
+      subtitle: "Muovi i cursori. Questo è l'oro che lasci sul tavolo ogni anno.",
+      hoursLabel: "Ore di amministrazione a settimana",
+      rateLabel: "La tua tariffa oraria al banco",
+      hoursPerYear: "ore perse all'anno",
+      moneyPerYear: "di tempo al banco bruciato in scartoffie",
+      reclaimTitle: "GoldBench ti restituisce",
+      reclaimUnit: "ore all'anno",
+      footnote: "Basato su 46 settimane lavorative. I primi utenti automatizzano circa 8 ore di amministrazione su 10.",
     },
     // Friction section
     friction: {
@@ -612,6 +751,19 @@ export const translations = {
       clickToSee: "Clicca sotto per vedere il flusso di lavoro",
       invoiceReady: "Fattura pronta in 12 secondi",
       assistant: "Assistente vocale GoldBench",
+      dashboard: {
+        title: "Il tuo spazio GoldBench",
+        live: "In diretta",
+        inventoryLabel: "Inventario — Oro 18K",
+        inventoryUnit: "g in magazzino",
+        projectLabel: "Commissione attiva",
+        projectName: "Anello di fidanzamento Miller",
+        materialCost: "Costo materiali",
+        laborLabel: "Manodopera",
+        invoiceLabel: "Fattura INV-2847",
+        invoiceReady: "PDF pronto da inviare",
+        waiting: "In attesa della tua voce…",
+      },
     },
     // Mid CTA
     midCta: {

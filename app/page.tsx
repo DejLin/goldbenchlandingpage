@@ -1,6 +1,7 @@
 import { Hero } from "@/components/landing/hero"
 import { VideoShowcase } from "@/components/landing/video-showcase"
 import { Friction } from "@/components/landing/friction"
+import { BenchCalculator } from "@/components/landing/bench-calculator"
 import { RevenueEngine } from "@/components/landing/revenue-engine"
 import { WorkflowDemo } from "@/components/landing/workflow-demo"
 import { MidCTA } from "@/components/landing/mid-cta"
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <VideoShowcase />
       <Friction />
+      <BenchCalculator />
       <RevenueEngine />
       <WorkflowDemo />
       <MidCTA />
