@@ -141,7 +141,7 @@ export const translations = {
     security: {
       label: "Data Sovereignty",
       title: "Swiss-Grade Data Integrity",
-      description: "Custom alloy formulas. Elite client lists. Pricing structures. Everything locked in your sovereign Swiss database. You own the data. Bank-grade encryption. GDPR compliant.",
+      description: "Everything locked in your sovereign Swiss database. You own the data. Bank-grade encryption. GDPR compliant.",
       tagline: "Your assets are yours alone.",
       badges: ["256-bit Encryption", "Swiss Hosted", "GDPR Compliant", "Daily Backups"],
     },
@@ -356,7 +356,7 @@ export const translations = {
     security: {
       label: "Datensouveränität",
       title: "Schweizer Datenintegrität",
-      description: "Individuelle Legierungsformeln. Elite-Kundenlisten. Preisstrukturen. Alles gesichert in deiner souveränen Schweizer Datenbank. Du besitzt die Daten. Bankgrad-Verschlüsselung. DSGVO-konform.",
+      description: "Alles gesichert in deiner souveränen Schweizer Datenbank. Du besitzt die Daten. Bankgrad-Verschlüsselung. DSGVO-konform.",
       tagline: "Deine Werte gehören dir allein.",
       badges: ["256-Bit Verschlüsselung", "Schweizer Hosting", "DSGVO-konform", "Tägliche Backups"],
     },
@@ -571,7 +571,7 @@ export const translations = {
     security: {
       label: "Souveraineté des données",
       title: "Intégrité des données de qualité suisse",
-      description: "Formules d'alliages personnalisées. Listes de clients d'élite. Structures de prix. Tout est verrouillé dans votre base de données suisse souveraine. Vous possédez les données. Cryptage de niveau bancaire. Conforme au RGPD.",
+      description: "Tout est verrouillé dans votre base de données suisse souveraine. Vous possédez les données. Cryptage de niveau bancaire. Conforme au RGPD.",
       tagline: "Vos actifs n'appartiennent qu'à vous.",
       badges: ["Cryptage 256 bits", "Hébergé en Suisse", "Conforme RGPD", "Sauvegardes quotidiennes"],
     },
@@ -786,7 +786,7 @@ export const translations = {
     security: {
       label: "Sovranità dei dati",
       title: "Integrità dei dati di grado svizzero",
-      description: "Formule di leghe personalizzate. Liste clienti d'élite. Strutture di prezzo. Tutto bloccato nel tuo database svizzero sovrano. Tu possiedi i dati. Crittografia di livello bancario. Conforme al GDPR.",
+      description: "Tutto bloccato nel tuo database svizzero sovrano. Tu possiedi i dati. Crittografia di livello bancario. Conforme al GDPR.",
       tagline: "I tuoi beni sono solo tuoi.",
       badges: ["Crittografia 256 bit", "Hosting svizzero", "Conforme GDPR", "Backup giornalieri"],
     },
