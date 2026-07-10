@@ -4,7 +4,6 @@ import { Friction } from "@/components/landing/friction"
 import { BenchCalculator } from "@/components/landing/bench-calculator"
 import { RevenueEngine } from "@/components/landing/revenue-engine"
 import { WorkflowDemo } from "@/components/landing/workflow-demo"
-import { MidCTA } from "@/components/landing/mid-cta"
 // import { UseCases } from "@/components/landing/use-cases"
 import { Security } from "@/components/landing/security"
 import { FinalCTA } from "@/components/landing/final-cta"
@@ -21,7 +20,6 @@ export default function Home() {
       <BenchCalculator />
       <RevenueEngine />
       <WorkflowDemo />
-      <MidCTA />
       {/* <UseCases /> */}
       <Security />
       <FinalCTA />
