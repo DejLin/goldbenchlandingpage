@@ -40,13 +40,9 @@ export function FinalCTA() {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4">
             {t.finalCta.title1}
           </h2>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-6">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light tracking-tight mb-12">
             <span className="text-molten italic">{t.finalCta.title2}</span>
           </h2>
-          
-          <p className="text-platinum/60 text-lg mb-12 max-w-xl mx-auto">
-            {t.finalCta.subtitle}
-          </p>
 
           <div className="flex flex-col items-center">
             <Link href="/early-access">
