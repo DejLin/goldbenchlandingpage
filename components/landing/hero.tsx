@@ -239,7 +239,7 @@ export function Hero() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
-        className="absolute top-0 left-0 right-0 z-20 p-6 md:p-8"
+        className="absolute top-0 left-0 right-0 z-20 px-6 pt-3 pb-6 md:px-8 md:pt-4 md:pb-8"
       >
         <div className="flex items-center justify-center">
           <Logo size="sm" />
@@ -247,7 +247,7 @@ export function Hero() {
       </motion.nav>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pt-40 pb-20 md:pt-24 md:pb-24 md:justify-end">
+      <div className="relative z-10 h-full flex flex-col items-center justify-start px-6 pt-56 pb-20 md:pt-72 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
