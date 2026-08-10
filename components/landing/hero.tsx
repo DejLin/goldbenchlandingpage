@@ -247,7 +247,7 @@ export function Hero() {
       </motion.nav>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 pt-48 pb-20 md:pt-56 md:pb-24">
+      <div className="relative z-10 h-full flex flex-col items-center justify-start px-6 pt-56 pb-20 md:pt-72 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
