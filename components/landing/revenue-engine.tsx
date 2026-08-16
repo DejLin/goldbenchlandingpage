@@ -110,38 +110,64 @@ export function RevenueEngine() {
           </h2>
         </motion.div>
 
-        {/* Uniform feature grid — every capability shown at equal weight */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {t.features.items.map((feature, index) => {
-            const IconComponent = icons[index % icons.length];
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-              >
-                <SpotlightCard className="h-full p-8">
-                  {/* Icon */}
-                  <div className="relative w-12 h-12 mb-6 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
-                    <IconComponent
-                      className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-
-                  <h3 className="font-medium mb-3 tracking-wide text-lg text-platinum group-hover:text-white transition-colors duration-500">
-                    {feature.title}
+        {/* Features grouped by category */}
+        <div className="flex flex-col gap-16 md:gap-20">
+          {(() => {
+            // Running index so each feature gets a distinct icon from the flat list.
+            let globalIndex = -1;
+            return t.features.categories.map((group, groupIndex) => (
+              <div key={groupIndex}>
+                {/* Category heading */}
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5 }}
+                  className="flex items-center gap-4 mb-8"
+                >
+                  <h3 className="font-serif text-xl md:text-2xl font-light text-platinum tracking-tight whitespace-nowrap">
+                    {group.category}
                   </h3>
+                  <span className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
+                </motion.div>
 
-                  <p className="leading-relaxed text-sm text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500">
-                    {feature.description}
-                  </p>
-                </SpotlightCard>
-              </motion.div>
-            );
-          })}
+                {/* Cards for this category */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                  {group.items.map((feature, itemIndex) => {
+                    globalIndex += 1;
+                    const IconComponent = icons[globalIndex % icons.length];
+                    return (
+                      <motion.div
+                        key={itemIndex}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-60px" }}
+                        transition={{ duration: 0.5, delay: (itemIndex % 3) * 0.08 }}
+                      >
+                        <SpotlightCard className="h-full p-8">
+                          {/* Icon */}
+                          <div className="relative w-12 h-12 mb-6 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
+                            <IconComponent
+                              className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
+                              strokeWidth={1.5}
+                            />
+                          </div>
+
+                          <h4 className="font-medium mb-3 tracking-wide text-lg text-platinum group-hover:text-white transition-colors duration-500">
+                            {feature.title}
+                          </h4>
+
+                          <p className="leading-relaxed text-sm text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500">
+                            {feature.description}
+                          </p>
+                        </SpotlightCard>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            ));
+          })()}
         </div>
       </div>
     </section>
