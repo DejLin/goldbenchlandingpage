@@ -74,24 +74,88 @@ export const translations = {
       comingSoon: "Coming Soon",
       items: [
         {
-          title: "Voice-to-Inventory",
-          description: "Speak the weights. Log every gram of 18k gold, platinum, and sweeps instantly. No keyboards. No breaking your flow.",
+          title: "Voice-to-Data Entry",
+          description: "Send a quick voice note to log a task, update a client, or check your stock. GoldBench listens and does the typing for you.",
         },
         {
-          title: "Instant Quotes & Invoices",
-          description: '"Draft a quote for Miller: 14g platinum, custom sapphire setting." Done. A pristine PDF is created with current metal prices while your hands are still at the bench.',
+          title: "Snap Your Receipts",
+          description: "Take a photo of any receipt and GoldBench reads the shop, amount, and VAT automatically. It only asks one thing: cash or card?",
         },
         {
-          title: "The Bench Vault",
-          description: "Your digital memory, perfected. Securely store client ring sizes, exact custom alloy ratios, and repair histories in one private database.",
+          title: "Instant PDFs",
+          description: "Ask for a valuation, invoice, or letter and get a polished, branded PDF back in seconds—ready to send straight to your client.",
         },
         {
-          title: "1-Click Portfolio",
-          description: 'Toggle a piece from "Private Bench" to "Public Gallery" in a single click. Your online catalog syncs instantly without writing a single line of web copy.',
+          title: "Just Ask Your Numbers",
+          description: 'Ask "How much cash do I have?" or "What did I sell this month?" and get an exact answer—no spreadsheets to open.',
         },
         {
-          title: "Smart Clienteling",
-          description: "The system remembers past commissions and automatically drafts personalized messages to top clients—like suggesting matching opal earrings for a previously crafted ring.",
+          title: "One-Tap Corrections",
+          description: "Every time GoldBench logs something for you, it gives you a direct link to open it and fine-tune the details yourself.",
+        },
+        {
+          title: "One-Tap Background Removal",
+          description: "Automatically cut your jewelry out of messy workbench photos into clean, professional images with a transparent background.",
+        },
+        {
+          title: "Beautiful Backgrounds",
+          description: "Drop your piece onto stunning backdrops—marble, velvet, wood, rose petals—for instant, share-ready social media photos.",
+        },
+        {
+          title: "Cinematic Videos",
+          description: "Upload a single photo of a ring and get a polished reveal video with movement, lighting, and sparkle—ready for Instagram Reels.",
+        },
+        {
+          title: "Instagram Made Easy",
+          description: 'GoldBench writes on-brand captions and prepares your posts from a photo. Nothing ever goes live until you tap "Yes."',
+        },
+        {
+          title: "Automatic Pricing",
+          description: "Enter the cost of gold, stones, and labor, set your markup, and GoldBench calculates the suggested retail price for you.",
+        },
+        {
+          title: "Effortless Stone Tracking",
+          description: "Register your small stones once and add them to any piece. Prices stay locked in to protect your future margins.",
+        },
+        {
+          title: "Smart Materials List",
+          description: "Link stones from your inventory to each piece. Remove a stone or delete a piece and it returns to your stock automatically.",
+        },
+        {
+          title: "Copy a Piece",
+          description: "Duplicate any design in one tap—materials, weights, and descriptions included—to quickly create variations of your best sellers.",
+        },
+        {
+          title: "Keep Custom Work Private",
+          description: "Flag bespoke commissions as private so they never accidentally show up on your public-facing catalog.",
+        },
+        {
+          title: "Full Cashbook",
+          description: "Track your cash till and bank balance together—sales, deposits, vouchers, private drawings, and transfers all in one place.",
+        },
+        {
+          title: "Easy Till Counts",
+          description: "Count your physical cash, type in the number, and GoldBench works out and records any difference for you.",
+        },
+        {
+          title: "Review Before You Approve",
+          description: "Expenses you captured on your phone wait for you in the app. Check the photo, then approve them with one click.",
+        },
+        {
+          title: "Ready for Your Accountant",
+          description: "Export a clean file mapped to Swiss accounting standards and VAT codes—ready to hand straight to your accountant.",
+        },
+        {
+          title: "Private Client Lookbooks",
+          description: "Pick a selection of pieces and send your client a secure link—then see exactly when they've viewed it.",
+        },
+        {
+          title: "Service & Repair History",
+          description: "Track every cleaning, repair, and engraving across the full life of a customer's jewelry, including outside partner work.",
+        },
+        {
+          title: "Document Vault",
+          description: "Keep appraisals, certificates, and heirloom documents attached to each client's profile for instant retrieval.",
         },
       ],
     },
@@ -289,24 +353,88 @@ export const translations = {
       comingSoon: "Bald verfügbar",
       items: [
         {
-          title: "Sprache-zu-Inventar",
-          description: "Sprich die Gewichte. Erfasse jedes Gramm 18k Gold, Platin und Abfälle sofort. Keine Tastaturen. Kein Unterbrechen deines Flows.",
+          title: "Spracheingabe von Daten",
+          description: "Sende eine kurze Sprachnachricht, um eine Aufgabe zu erfassen, einen Kunden zu aktualisieren oder deinen Bestand zu prüfen. GoldBench hört zu und tippt für dich.",
         },
         {
-          title: "Sofortige Angebote & Rechnungen",
-          description: '"Erstelle ein Angebot für Müller: 14g Platin, individuelle Saphir-Fassung." Erledigt. Ein makelloses PDF wird mit aktuellen Metallpreisen erstellt, während deine Hände noch an der Werkbank sind.',
+          title: "Belege einfach abfotografieren",
+          description: "Fotografiere einen beliebigen Beleg und GoldBench erkennt Geschäft, Betrag und MWST automatisch. Es fragt nur eines: bar oder Karte?",
         },
         {
-          title: "Der Werkbank-Tresor",
-          description: "Dein digitales Gedächtnis, perfektioniert. Speichere Kundenringgrössen, exakte Legierungsrezepturen und Reparaturhistorien sicher in einer privaten Datenbank.",
+          title: "Sofortige PDFs",
+          description: "Fordere eine Schätzung, Rechnung oder einen Brief an und erhalte in Sekunden ein sauberes, gebrandetes PDF – bereit, direkt an deinen Kunden zu senden.",
         },
         {
-          title: "1-Klick Portfolio",
-          description: 'Schalte ein Stück mit einem Klick von "Private Werkbank" zu "Öffentliche Galerie". Dein Online-Katalog synchronisiert sich sofort, ohne eine einzige Zeile Webtext zu schreiben.',
+          title: "Frag einfach nach deinen Zahlen",
+          description: 'Frage "Wie viel Bargeld habe ich?" oder "Was habe ich diesen Monat verkauft?" und erhalte eine exakte Antwort – ganz ohne Tabellen.',
         },
         {
-          title: "Intelligente Kundenbetreuung",
-          description: "Das System merkt sich vergangene Aufträge und entwirft automatisch personalisierte Nachrichten an Top-Kunden – wie den Vorschlag passender Opal-Ohrringe zu einem zuvor gefertigten Ring.",
+          title: "Korrekturen mit einem Klick",
+          description: "Jedes Mal, wenn GoldBench etwas für dich erfasst, erhältst du einen direkten Link, um es zu öffnen und die Details selbst anzupassen.",
+        },
+        {
+          title: "Hintergrund mit einem Tipp entfernen",
+          description: "Schneide deinen Schmuck automatisch aus unruhigen Werkbank-Fotos frei – zu sauberen, professionellen Bildern mit transparentem Hintergrund.",
+        },
+        {
+          title: "Wunderschöne Hintergründe",
+          description: "Setze dein Stück auf beeindruckende Hintergründe – Marmor, Samt, Holz, Rosenblätter – für sofort teilbare Social-Media-Fotos.",
+        },
+        {
+          title: "Kinoreife Videos",
+          description: "Lade ein einziges Foto eines Rings hoch und erhalte ein poliertes Enthüllungsvideo mit Bewegung, Licht und Funkeln – bereit für Instagram Reels.",
+        },
+        {
+          title: "Instagram leicht gemacht",
+          description: 'GoldBench schreibt markengerechte Bildtexte und bereitet deine Beiträge aus einem Foto vor. Nichts geht online, bevor du auf "Ja" tippst.',
+        },
+        {
+          title: "Automatische Preisberechnung",
+          description: "Gib die Kosten für Gold, Steine und Arbeit ein, lege deinen Aufschlag fest, und GoldBench berechnet den empfohlenen Verkaufspreis für dich.",
+        },
+        {
+          title: "Mühelose Steinverwaltung",
+          description: "Erfasse deine kleinen Steine einmal und füge sie jedem Stück hinzu. Die Preise bleiben fixiert, um deine künftigen Margen zu schützen.",
+        },
+        {
+          title: "Intelligente Materialliste",
+          description: "Verknüpfe Steine aus deinem Bestand mit jedem Stück. Entfernst du einen Stein oder löschst ein Stück, kehrt er automatisch in deinen Bestand zurück.",
+        },
+        {
+          title: "Ein Stück kopieren",
+          description: "Dupliziere jedes Design mit einem Tipp – inklusive Materialien, Gewichte und Beschreibungen – um schnell Varianten deiner Bestseller zu erstellen.",
+        },
+        {
+          title: "Auftragsarbeiten privat halten",
+          description: "Markiere massgefertigte Auftragsarbeiten als privat, damit sie niemals versehentlich in deinem öffentlichen Katalog erscheinen.",
+        },
+        {
+          title: "Vollständiges Kassenbuch",
+          description: "Verwalte Kasse und Bankguthaben zusammen – Verkäufe, Anzahlungen, Gutscheine, Privatentnahmen und Überweisungen an einem Ort.",
+        },
+        {
+          title: "Einfache Kassenzählung",
+          description: "Zähle dein Bargeld, gib die Zahl ein, und GoldBench berechnet und protokolliert etwaige Differenzen für dich.",
+        },
+        {
+          title: "Prüfen, bevor du freigibst",
+          description: "Auf dem Handy erfasste Ausgaben warten in der App auf dich. Prüfe das Foto und gib sie dann mit einem Klick frei.",
+        },
+        {
+          title: "Bereit für deinen Treuhänder",
+          description: "Exportiere eine saubere Datei, abgestimmt auf den Schweizer Kontenrahmen und die MWST-Codes – bereit zur direkten Übergabe an deinen Treuhänder.",
+        },
+        {
+          title: "Private Kunden-Lookbooks",
+          description: "Wähle eine Auswahl an Stücken aus und sende deinem Kunden einen sicheren Link – und sieh genau, wann er ihn angesehen hat.",
+        },
+        {
+          title: "Service- & Reparaturverlauf",
+          description: "Verfolge jede Reinigung, Reparatur und Gravur über die gesamte Lebensdauer des Kundenschmucks, inklusive externer Partnerarbeit.",
+        },
+        {
+          title: "Dokumententresor",
+          description: "Bewahre Schätzungen, Zertifikate und Erbstück-Dokumente direkt im Profil jedes Kunden auf – für sofortigen Zugriff.",
         },
       ],
     },
@@ -504,24 +632,88 @@ export const translations = {
       comingSoon: "Bientôt disponible",
       items: [
         {
-          title: "Voix vers inventaire",
-          description: "Prononcez les poids. Enregistrez chaque gramme d'or 18k, de platine et de déchets instantanément. Pas de clavier. Pas d'interruption de votre flow.",
+          title: "Saisie de données par la voix",
+          description: "Envoyez une courte note vocale pour enregistrer une tâche, mettre à jour un client ou vérifier votre stock. GoldBench écoute et tape à votre place.",
         },
         {
-          title: "Devis & factures instantanés",
-          description: '"Créer un devis pour Martin : 14g platine, sertissage saphir sur mesure." Fait. Un PDF impeccable est créé avec les prix des métaux actuels pendant que vos mains sont encore à l\'établi.',
+          title: "Photographiez vos reçus",
+          description: "Prenez en photo n'importe quel reçu et GoldBench lit le commerce, le montant et la TVA automatiquement. Il ne pose qu'une question : espèces ou carte ?",
         },
         {
-          title: "Le coffre-fort de l'établi",
-          description: "Votre mémoire numérique, perfectionnée. Stockez en toute sécurité les tailles de bagues des clients, les ratios d'alliages personnalisés exacts et les historiques de réparation dans une base de données privée.",
+          title: "PDF instantanés",
+          description: "Demandez une estimation, une facture ou une lettre et recevez en quelques secondes un PDF soigné à votre marque, prêt à envoyer directement à votre client.",
         },
         {
-          title: "Portfolio en 1 clic",
-          description: 'Basculez une pièce de "Établi privé" à "Galerie publique" en un seul clic. Votre catalogue en ligne se synchronise instantanément sans écrire une seule ligne de texte web.',
+          title: "Demandez simplement vos chiffres",
+          description: 'Demandez "Combien d\'espèces ai-je ?" ou "Qu\'ai-je vendu ce mois-ci ?" et obtenez une réponse exacte, sans ouvrir de tableur.',
         },
         {
-          title: "Clienteling intelligent",
-          description: "Le système se souvient des commissions passées et rédige automatiquement des messages personnalisés aux meilleurs clients, comme suggérer des boucles d'oreilles en opale assorties à une bague précédemment fabriquée.",
+          title: "Corrections en un clic",
+          description: "Chaque fois que GoldBench enregistre quelque chose pour vous, il vous donne un lien direct pour l'ouvrir et ajuster les détails vous-même.",
+        },
+        {
+          title: "Suppression d'arrière-plan en un geste",
+          description: "Détourez automatiquement vos bijoux de photos d'établi encombrées en images nettes et professionnelles à fond transparent.",
+        },
+        {
+          title: "De magnifiques arrière-plans",
+          description: "Placez votre pièce sur de superbes décors — marbre, velours, bois, pétales de rose — pour des photos réseaux sociaux prêtes à partager.",
+        },
+        {
+          title: "Vidéos cinématographiques",
+          description: "Téléversez une seule photo d'une bague et obtenez une vidéo de présentation soignée avec mouvement, lumière et éclat, prête pour Instagram Reels.",
+        },
+        {
+          title: "Instagram en toute simplicité",
+          description: 'GoldBench rédige des légendes fidèles à votre marque et prépare vos publications à partir d\'une photo. Rien n\'est publié tant que vous n\'avez pas tapé "Oui".',
+        },
+        {
+          title: "Tarification automatique",
+          description: "Saisissez le coût de l'or, des pierres et de la main-d'œuvre, définissez votre marge, et GoldBench calcule le prix de vente conseillé pour vous.",
+        },
+        {
+          title: "Suivi des pierres sans effort",
+          description: "Enregistrez vos petites pierres une seule fois et ajoutez-les à n'importe quelle pièce. Les prix restent fixés pour protéger vos marges futures.",
+        },
+        {
+          title: "Liste de matériaux intelligente",
+          description: "Reliez les pierres de votre inventaire à chaque pièce. Retirez une pierre ou supprimez une pièce, et elle retourne automatiquement dans votre stock.",
+        },
+        {
+          title: "Copier une pièce",
+          description: "Dupliquez n'importe quel modèle en un geste — matériaux, poids et descriptions compris — pour créer rapidement des variations de vos best-sellers.",
+        },
+        {
+          title: "Gardez le sur-mesure privé",
+          description: "Marquez les commandes sur mesure comme privées afin qu'elles n'apparaissent jamais par accident dans votre catalogue public.",
+        },
+        {
+          title: "Livre de caisse complet",
+          description: "Suivez votre caisse et votre solde bancaire ensemble — ventes, acomptes, bons, prélèvements privés et virements, le tout au même endroit.",
+        },
+        {
+          title: "Comptage de caisse facile",
+          description: "Comptez vos espèces, saisissez le montant, et GoldBench calcule et enregistre toute différence pour vous.",
+        },
+        {
+          title: "Vérifiez avant de valider",
+          description: "Les dépenses saisies sur votre téléphone vous attendent dans l'application. Vérifiez la photo, puis validez-les en un clic.",
+        },
+        {
+          title: "Prêt pour votre fiduciaire",
+          description: "Exportez un fichier propre adapté au plan comptable suisse et aux codes TVA — prêt à remettre directement à votre fiduciaire.",
+        },
+        {
+          title: "Lookbooks clients privés",
+          description: "Sélectionnez un ensemble de pièces et envoyez à votre client un lien sécurisé — puis voyez exactement quand il l'a consulté.",
+        },
+        {
+          title: "Historique service & réparation",
+          description: "Suivez chaque nettoyage, réparation et gravure tout au long de la vie du bijou d'un client, y compris le travail des partenaires externes.",
+        },
+        {
+          title: "Coffre à documents",
+          description: "Conservez estimations, certificats et documents d'héritage directement dans le profil de chaque client, pour une récupération instantanée.",
         },
       ],
     },
@@ -719,24 +911,88 @@ export const translations = {
       comingSoon: "Prossimamente",
       items: [
         {
-          title: "Voce-a-Inventario",
-          description: "Pronuncia i pesi. Registra ogni grammo di oro 18k, platino e scarti istantaneamente. Niente tastiere. Nessuna interruzione del tuo flow.",
+          title: "Inserimento dati con la voce",
+          description: "Invia una breve nota vocale per registrare un compito, aggiornare un cliente o controllare il magazzino. GoldBench ascolta e scrive al posto tuo.",
         },
         {
-          title: "Preventivi e fatture istantanei",
-          description: '"Crea un preventivo per Rossi: 14g platino, incastonatura zaffiro personalizzata." Fatto. Un PDF impeccabile viene creato con i prezzi dei metalli attuali mentre le tue mani sono ancora al banco.',
+          title: "Fotografa le tue ricevute",
+          description: "Scatta una foto di qualsiasi ricevuta e GoldBench legge il negozio, l'importo e l'IVA automaticamente. Chiede solo una cosa: contanti o carta?",
         },
         {
-          title: "Il caveau del banco",
-          description: "La tua memoria digitale, perfezionata. Conserva in modo sicuro le misure degli anelli dei clienti, i rapporti esatti delle leghe personalizzate e le storie delle riparazioni in un database privato.",
+          title: "PDF istantanei",
+          description: "Richiedi una valutazione, una fattura o una lettera e ricevi in pochi secondi un PDF curato e brandizzato, pronto da inviare direttamente al cliente.",
         },
         {
-          title: "Portfolio in 1 clic",
-          description: 'Passa un pezzo da "Banco privato" a "Galleria pubblica" con un solo clic. Il tuo catalogo online si sincronizza istantaneamente senza scrivere una singola riga di testo web.',
+          title: "Chiedi semplicemente i tuoi numeri",
+          description: 'Chiedi "Quanti contanti ho?" o "Quanto ho venduto questo mese?" e ottieni una risposta esatta, senza aprire un foglio di calcolo.',
         },
         {
-          title: "Clienteling intelligente",
-          description: "Il sistema ricorda le commissioni passate e redige automaticamente messaggi personalizzati ai migliori clienti, come suggerire orecchini di opale abbinati a un anello precedentemente realizzato.",
+          title: "Correzioni con un tocco",
+          description: "Ogni volta che GoldBench registra qualcosa per te, ti fornisce un link diretto per aprirlo e regolare i dettagli da solo.",
+        },
+        {
+          title: "Rimozione sfondo con un tocco",
+          description: "Ritaglia automaticamente i tuoi gioielli da foto di banco disordinate, ottenendo immagini pulite e professionali con sfondo trasparente.",
+        },
+        {
+          title: "Sfondi meravigliosi",
+          description: "Posiziona il tuo pezzo su sfondi splendidi — marmo, velluto, legno, petali di rosa — per foto social pronte da condividere.",
+        },
+        {
+          title: "Video cinematografici",
+          description: "Carica una singola foto di un anello e ottieni un video di presentazione curato con movimento, luce e scintillii, pronto per Instagram Reels.",
+        },
+        {
+          title: "Instagram semplificato",
+          description: 'GoldBench scrive didascalie in linea con il tuo brand e prepara i post da una foto. Nulla viene pubblicato finché non tocchi "Sì".',
+        },
+        {
+          title: "Prezzi automatici",
+          description: "Inserisci il costo di oro, pietre e manodopera, imposta il tuo ricarico e GoldBench calcola il prezzo di vendita consigliato per te.",
+        },
+        {
+          title: "Tracciamento pietre senza sforzo",
+          description: "Registra le tue piccole pietre una sola volta e aggiungile a qualsiasi pezzo. I prezzi restano bloccati per proteggere i tuoi margini futuri.",
+        },
+        {
+          title: "Distinta materiali intelligente",
+          description: "Collega le pietre dal tuo magazzino a ogni pezzo. Rimuovi una pietra o elimina un pezzo e questa torna automaticamente in magazzino.",
+        },
+        {
+          title: "Copia un pezzo",
+          description: "Duplica qualsiasi design con un tocco — materiali, pesi e descrizioni inclusi — per creare rapidamente varianti dei tuoi best seller.",
+        },
+        {
+          title: "Mantieni privato il su misura",
+          description: "Contrassegna le commissioni su misura come private, così non appariranno mai per errore nel tuo catalogo pubblico.",
+        },
+        {
+          title: "Libro cassa completo",
+          description: "Tieni traccia di cassa e saldo bancario insieme — vendite, acconti, buoni, prelievi privati e trasferimenti, tutto in un unico posto.",
+        },
+        {
+          title: "Conteggio cassa facile",
+          description: "Conta i tuoi contanti, digita il numero e GoldBench calcola e registra qualsiasi differenza per te.",
+        },
+        {
+          title: "Controlla prima di approvare",
+          description: "Le spese registrate dal telefono ti aspettano nell'app. Controlla la foto, poi approvale con un clic.",
+        },
+        {
+          title: "Pronto per il tuo commercialista",
+          description: "Esporta un file pulito mappato sul piano dei conti svizzero e sui codici IVA — pronto da consegnare direttamente al tuo commercialista.",
+        },
+        {
+          title: "Lookbook privati per i clienti",
+          description: "Seleziona un insieme di pezzi e invia al tuo cliente un link sicuro — poi vedi esattamente quando lo ha visualizzato.",
+        },
+        {
+          title: "Storico servizio e riparazioni",
+          description: "Tieni traccia di ogni pulizia, riparazione e incisione lungo tutta la vita del gioiello di un cliente, incluso il lavoro dei partner esterni.",
+        },
+        {
+          title: "Cassaforte documenti",
+          description: "Conserva perizie, certificati e documenti di cimeli direttamente nel profilo di ogni cliente, per un recupero immediato.",
         },
       ],
     },

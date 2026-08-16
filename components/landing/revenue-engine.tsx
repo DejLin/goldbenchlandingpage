@@ -1,11 +1,55 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mic, FileCheck, Lock, ToggleRight, Sparkles } from "lucide-react";
+import {
+  Mic,
+  Receipt,
+  FileText,
+  MessageCircleQuestion,
+  SquarePen,
+  Scissors,
+  Image as ImageIcon,
+  Video,
+  Instagram,
+  Tag,
+  Gem,
+  ListChecks,
+  Copy,
+  EyeOff,
+  Wallet,
+  Coins,
+  ClipboardCheck,
+  FileSpreadsheet,
+  Images,
+  Wrench,
+  Archive,
+} from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
-const icons = [Mic, FileCheck, Lock, ToggleRight, Sparkles];
-const comingSoonIndex = 4;
+// One icon per feature, in the same order as the translations `features.items` array.
+const icons = [
+  Mic,
+  Receipt,
+  FileText,
+  MessageCircleQuestion,
+  SquarePen,
+  Scissors,
+  ImageIcon,
+  Video,
+  Instagram,
+  Tag,
+  Gem,
+  ListChecks,
+  Copy,
+  EyeOff,
+  Wallet,
+  Coins,
+  ClipboardCheck,
+  FileSpreadsheet,
+  Images,
+  Wrench,
+  Archive,
+];
 
 /** Card with a gold spotlight that follows the cursor. */
 function SpotlightCard({
@@ -66,56 +110,32 @@ export function RevenueEngine() {
           </h2>
         </motion.div>
 
-        {/* Bento grid: first feature is the hero card */}
+        {/* Uniform feature grid — every capability shown at equal weight */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {t.features.items.map((feature, index) => {
-            const IconComponent = icons[index];
-            const isComingSoon = index === comingSoonIndex;
-            const isFeatured = index === 0;
+            const IconComponent = icons[index % icons.length];
             return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={
-                  isFeatured
-                    ? "md:col-span-2"
-                    : index === comingSoonIndex
-                      ? "md:col-span-2 lg:col-span-1"
-                      : ""
-                }
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
               >
-                <SpotlightCard className="h-full p-8 md:p-10">
-                  {/* Coming soon badge */}
-                  {isComingSoon && (
-                    <span className="absolute top-4 right-4 text-[9px] tracking-[0.25em] uppercase text-gold/80 border border-gold/20 px-3 py-1.5 bg-gold/[0.05]">
-                      {t.features.comingSoon}
-                    </span>
-                  )}
-
+                <SpotlightCard className="h-full p-8">
                   {/* Icon */}
-                  <div className="relative w-12 h-12 mb-8 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
+                  <div className="relative w-12 h-12 mb-6 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
                     <IconComponent
                       className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
                       strokeWidth={1.5}
                     />
                   </div>
 
-                  <h3
-                    className={`font-medium mb-4 tracking-wide text-platinum group-hover:text-white transition-colors duration-500 ${
-                      isFeatured ? "text-xl md:text-2xl" : "text-lg"
-                    }`}
-                  >
+                  <h3 className="font-medium mb-3 tracking-wide text-lg text-platinum group-hover:text-white transition-colors duration-500">
                     {feature.title}
                   </h3>
 
-                  <p
-                    className={`leading-relaxed text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500 ${
-                      isFeatured ? "text-sm md:text-base max-w-2xl" : "text-sm"
-                    }`}
-                  >
+                  <p className="leading-relaxed text-sm text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500">
                     {feature.description}
                   </p>
                 </SpotlightCard>
