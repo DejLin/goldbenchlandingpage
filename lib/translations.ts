@@ -50,20 +50,20 @@ export const translations = {
       subtitle: "Your physical tools are precise. Your admin should be effortless.",
       points: [
         {
-          title: "The Bench Loss",
-          description: "Every unlogged grain of gold is profit lost. But stepping away from the loupe to manually record alloy weights breaks your concentration.",
+          title: "Lost Profits",
+          description: "Fluctuating gold prices mean slow quotes and outdated spreadsheets can quickly eat up your hard-earned margins.",
         },
         {
-          title: "The Midnight Paperwork",
-          description: "Spending your evenings calculating material costs and generating PDFs instead of resting your hands or sketching your next bespoke commission.",
+          title: "Endless Admin",
+          description: "Writing quotes, capturing receipts, and sorting out accounting steals the time you should spend actually making jewelry.",
         },
         {
-          title: "The Marketing Burden",
-          description: "Updating your portfolio and managing clients keeps you away from the torch. Sharing your finished pieces shouldn't feel like an exhausting second job.",
+          title: "The Photo Trap",
+          description: "Getting professional, clean photos of your pieces takes hours you don't have, so your best work stays hidden on your phone.",
         },
         {
-          title: "Constant Interruptions",
-          description: "When the torch is hot and the solder is flowing, answering messages or logging client details ruins your rhythm. You shouldn't have to break your flow state to manage your business.",
+          title: "Scattered Client Details",
+          description: "Keeping track of customer repairs, ring sizes, and preferences across paper notebooks and chat apps makes you look disorganized.",
         },
       ],
     },
@@ -265,20 +265,20 @@ export const translations = {
       subtitle: "Deine Werkzeuge sind präzise. Deine Verwaltung sollte mühelos sein.",
       points: [
         {
-          title: "Der Werkbank-Verlust",
-          description: "Jedes nicht erfasste Gramm Gold ist verlorener Gewinn. Aber das Verlassen der Lupe, um Legierungsgewichte manuell zu erfassen, unterbricht deine Konzentration.",
+          title: "Verlorene Gewinne",
+          description: "Schwankende Goldpreise bedeuten langsame Angebote, und veraltete Tabellen können deine hart erarbeiteten Margen schnell auffressen.",
         },
         {
-          title: "Die Mitternachts-Papierkram",
-          description: "Abende damit verbringen, Materialkosten zu berechnen und PDFs zu erstellen, anstatt die Hände auszuruhen oder die nächste Auftragsarbeit zu skizzieren.",
+          title: "Endlose Verwaltung",
+          description: "Angebote schreiben, Belege erfassen und die Buchhaltung erledigen stiehlt dir die Zeit, die du eigentlich mit dem Anfertigen von Schmuck verbringen solltest.",
         },
         {
-          title: "Die Marketing-Last",
-          description: "Das Aktualisieren deines Portfolios und die Kundenverwaltung halten dich vom Brenner fern. Das Teilen deiner fertigen Stücke sollte sich nicht wie ein erschöpfender Zweitjob anfühlen.",
+          title: "Die Foto-Falle",
+          description: "Professionelle, saubere Fotos deiner Stücke zu machen kostet Stunden, die du nicht hast, sodass deine beste Arbeit auf deinem Handy verborgen bleibt.",
         },
         {
-          title: "Ständige Unterbrechungen",
-          description: "Wenn der Brenner heiss ist und das Lot fliesst, ruiniert das Beantworten von Nachrichten oder das Erfassen von Kundendetails deinen Rhythmus. Du solltest deinen Flow nicht unterbrechen müssen, um dein Geschäft zu führen.",
+          title: "Verstreute Kundendaten",
+          description: "Reparaturen, Ringgrössen und Vorlieben deiner Kunden über Papiernotizbücher und Chat-Apps hinweg im Blick zu behalten, lässt dich unorganisiert wirken.",
         },
       ],
     },
@@ -480,20 +480,20 @@ export const translations = {
       subtitle: "Vos outils physiques sont précis. Votre administration devrait être sans effort.",
       points: [
         {
-          title: "La perte à l'établi",
-          description: "Chaque grain d'or non enregistré est un profit perdu. Mais quitter la loupe pour enregistrer manuellement les poids d'alliage brise votre concentration.",
+          title: "Profits perdus",
+          description: "Les prix de l'or fluctuants entraînent des devis lents, et des tableurs obsolètes peuvent vite grignoter vos marges durement gagnées.",
         },
         {
-          title: "La paperasse de minuit",
-          description: "Passer vos soirées à calculer les coûts des matériaux et à générer des PDF au lieu de reposer vos mains ou d'esquisser votre prochaine commande sur mesure.",
+          title: "Administration sans fin",
+          description: "Rédiger des devis, saisir les reçus et gérer la comptabilité vous vole le temps que vous devriez consacrer à créer des bijoux.",
         },
         {
-          title: "Le fardeau du marketing",
-          description: "Mettre à jour votre portfolio et gérer vos clients vous éloigne du chalumeau. Partager vos pièces terminées ne devrait pas ressembler à un deuxième emploi épuisant.",
+          title: "Le piège de la photo",
+          description: "Obtenir des photos professionnelles et nettes de vos pièces prend des heures que vous n'avez pas, alors votre meilleur travail reste caché sur votre téléphone.",
         },
         {
-          title: "Interruptions constantes",
-          description: "Quand le chalumeau est chaud et que la soudure coule, répondre aux messages ou enregistrer les détails des clients ruine votre rythme. Vous ne devriez pas avoir à briser votre état de flow pour gérer votre entreprise.",
+          title: "Données clients éparpillées",
+          description: "Suivre les réparations, les tailles de bague et les préférences de vos clients entre carnets papier et applications de messagerie vous fait paraître désorganisé.",
         },
       ],
     },
@@ -695,20 +695,20 @@ export const translations = {
       subtitle: "I tuoi strumenti fisici sono precisi. La tua amministrazione dovrebbe essere senza sforzo.",
       points: [
         {
-          title: "La perdita al banco",
-          description: "Ogni grammo d'oro non registrato è profitto perso. Ma allontanarsi dalla lente per registrare manualmente i pesi delle leghe interrompe la tua concentrazione.",
+          title: "Profitti persi",
+          description: "I prezzi dell'oro in continua oscillazione rendono i preventivi lenti, e i fogli di calcolo obsoleti possono divorare rapidamente i margini guadagnati con fatica.",
         },
         {
-          title: "Le scartoffie di mezzanotte",
-          description: "Passare le serate a calcolare i costi dei materiali e generare PDF invece di riposare le mani o abbozzare la prossima commissione su misura.",
+          title: "Amministrazione infinita",
+          description: "Scrivere preventivi, registrare ricevute e sistemare la contabilità ti ruba il tempo che dovresti dedicare a creare gioielli.",
         },
         {
-          title: "Il peso del marketing",
-          description: "Aggiornare il portfolio e gestire i clienti ti tiene lontano dalla fiamma. Condividere i tuoi pezzi finiti non dovrebbe sembrare un secondo lavoro estenuante.",
+          title: "La trappola delle foto",
+          description: "Ottenere foto professionali e pulite dei tuoi pezzi richiede ore che non hai, così il tuo lavoro migliore resta nascosto sul telefono.",
         },
         {
-          title: "Interruzioni costanti",
-          description: "Quando la fiamma è calda e la saldatura scorre, rispondere ai messaggi o registrare i dettagli dei clienti rovina il tuo ritmo. Non dovresti dover interrompere il tuo stato di flow per gestire la tua attività.",
+          title: "Dati dei clienti sparsi",
+          description: "Tenere traccia di riparazioni, misure degli anelli e preferenze dei clienti tra quaderni cartacei e app di messaggistica ti fa sembrare disorganizzato.",
         },
       ],
     },
