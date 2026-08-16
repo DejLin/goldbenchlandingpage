@@ -532,9 +532,9 @@ export const translations = {
     // Security
     security: {
       label: "Datensouveränität",
-      title: "Schweizer Datenintegrität",
-      description: "Individuelle Legierungsformeln. Elite-Kundenlisten. Preisstrukturen. Alles gesichert in deiner souveränen Schweizer Datenbank. Du besitzt die Daten. Bankgrad-Verschlüsselung. DSGVO-konform.",
-      tagline: "Deine Werte gehören dir allein.",
+      title: "100% Privat. 100% Schweizerisch.",
+      description: "Deine Kunden, deine Preise und deine Designs sind das Herz deines Geschäfts. Wir bewahren sie sicher in der Schweiz auf.",
+      tagline: "Deine Daten gehören dir, Punkt.",
       badges: ["256-Bit Verschlüsselung", "Schweizer Hosting", "DSGVO-konform", "Tägliche Backups"],
     },
     // Final CTA
@@ -836,9 +836,9 @@ export const translations = {
     // Security
     security: {
       label: "Souveraineté des données",
-      title: "Intégrité des données de qualité suisse",
-      description: "Formules d'alliages personnalisées. Listes de clients d'élite. Structures de prix. Tout est verrouillé dans votre base de données suisse souveraine. Vous possédez les données. Cryptage de niveau bancaire. Conforme au RGPD.",
-      tagline: "Vos actifs n'appartiennent qu'à vous.",
+      title: "100% Privé. 100% Suisse.",
+      description: "Vos clients, vos prix et vos créations sont le cœur de votre entreprise. Nous les gardons en sécurité en Suisse.",
+      tagline: "Vos informations vous appartiennent, point final.",
       badges: ["Cryptage 256 bits", "Hébergé en Suisse", "Conforme RGPD", "Sauvegardes quotidiennes"],
     },
     // Final CTA
@@ -1140,9 +1140,9 @@ export const translations = {
     // Security
     security: {
       label: "Sovranità dei dati",
-      title: "Integrità dei dati di grado svizzero",
-      description: "Formule di leghe personalizzate. Liste clienti d'élite. Strutture di prezzo. Tutto bloccato nel tuo database svizzero sovrano. Tu possiedi i dati. Crittografia di livello bancario. Conforme al GDPR.",
-      tagline: "I tuoi beni sono solo tuoi.",
+      title: "100% Privato. 100% Svizzero.",
+      description: "I tuoi clienti, i tuoi prezzi e i tuoi design sono il cuore della tua attività. Li custodiamo al sicuro in Svizzera.",
+      tagline: "Le tue informazioni sono tue, punto.",
       badges: ["Crittografia 256 bit", "Hosting svizzero", "Conforme GDPR", "Backup giornalieri"],
     },
     // Final CTA
