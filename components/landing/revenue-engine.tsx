@@ -1,11 +1,56 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mic, FileCheck, Lock, ToggleRight, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Mic,
+  Receipt,
+  FileText,
+  MessageCircleQuestion,
+  SquarePen,
+  Scissors,
+  Image as ImageIcon,
+  Video,
+  Instagram,
+  Tag,
+  Gem,
+  ListChecks,
+  Copy,
+  EyeOff,
+  Wallet,
+  Coins,
+  ClipboardCheck,
+  FileSpreadsheet,
+  Images,
+  Wrench,
+  Archive,
+} from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
-const icons = [Mic, FileCheck, Lock, ToggleRight, Sparkles];
-const comingSoonIndex = 4;
+// One icon per feature, in the same order as the translations `features.items` array.
+const icons = [
+  Mic,
+  Receipt,
+  FileText,
+  MessageCircleQuestion,
+  SquarePen,
+  Scissors,
+  ImageIcon,
+  Video,
+  Instagram,
+  Tag,
+  Gem,
+  ListChecks,
+  Copy,
+  EyeOff,
+  Wallet,
+  Coins,
+  ClipboardCheck,
+  FileSpreadsheet,
+  Images,
+  Wrench,
+  Archive,
+];
 
 /** Card with a gold spotlight that follows the cursor. */
 function SpotlightCard({
@@ -44,6 +89,19 @@ function SpotlightCard({
 
 export function RevenueEngine() {
   const { t } = useLanguage();
+  const [active, setActive] = useState(0);
+
+  const categories = t.features.categories;
+
+  // Icon index at which each category starts, so every feature keeps a distinct icon.
+  const iconOffsets: number[] = [];
+  categories.reduce((acc, group, i) => {
+    iconOffsets[i] = acc;
+    return acc + group.items.length;
+  }, 0);
+
+  const activeGroup = categories[active];
+  const activeOffset = iconOffsets[active] ?? 0;
 
   return (
     <section className="py-24 md:py-32 bg-obsidian relative overflow-hidden">
@@ -56,7 +114,7 @@ export function RevenueEngine() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-14"
         >
           <p className="text-gold text-[11px] tracking-[0.4em] uppercase mb-6">
             {t.features.label}
@@ -66,63 +124,96 @@ export function RevenueEngine() {
           </h2>
         </motion.div>
 
-        {/* Bento grid: first feature is the hero card */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {t.features.items.map((feature, index) => {
-            const IconComponent = icons[index];
-            const isComingSoon = index === comingSoonIndex;
-            const isFeatured = index === 0;
+        {/* Category tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-wrap justify-center gap-2 md:gap-3 mb-14"
+          role="tablist"
+          aria-label={t.features.label}
+        >
+          {categories.map((group, i) => {
+            const isActive = i === active;
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={
-                  isFeatured
-                    ? "md:col-span-2"
-                    : index === comingSoonIndex
-                      ? "md:col-span-2 lg:col-span-1"
-                      : ""
-                }
+              <button
+                key={i}
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActive(i)}
+                className={`relative px-5 py-2.5 text-sm tracking-wide transition-colors duration-300 rounded-full border ${
+                  isActive
+                    ? "text-obsidian border-gold"
+                    : "text-platinum/60 border-white/[0.08] hover:text-platinum hover:border-gold/30"
+                }`}
               >
-                <SpotlightCard className="h-full p-8 md:p-10">
-                  {/* Coming soon badge */}
-                  {isComingSoon && (
-                    <span className="absolute top-4 right-4 text-[9px] tracking-[0.25em] uppercase text-gold/80 border border-gold/20 px-3 py-1.5 bg-gold/[0.05]">
-                      {t.features.comingSoon}
-                    </span>
-                  )}
-
-                  {/* Icon */}
-                  <div className="relative w-12 h-12 mb-8 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
-                    <IconComponent
-                      className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-
-                  <h3
-                    className={`font-medium mb-4 tracking-wide text-platinum group-hover:text-white transition-colors duration-500 ${
-                      isFeatured ? "text-xl md:text-2xl" : "text-lg"
+                {isActive && (
+                  <motion.span
+                    layoutId="feature-tab-pill"
+                    className="absolute inset-0 rounded-full bg-gold"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  {group.category}
+                  <span
+                    className={`text-[10px] tabular-nums ${
+                      isActive ? "text-obsidian/60" : "text-platinum/30"
                     }`}
                   >
-                    {feature.title}
-                  </h3>
-
-                  <p
-                    className={`leading-relaxed text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500 ${
-                      isFeatured ? "text-sm md:text-base max-w-2xl" : "text-sm"
-                    }`}
-                  >
-                    {feature.description}
-                  </p>
-                </SpotlightCard>
-              </motion.div>
+                    {group.items.length}
+                  </span>
+                </span>
+              </button>
             );
           })}
-        </div>
+        </motion.div>
+
+        {/* Active category cards */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+          >
+            {activeGroup.items.map((feature, itemIndex) => {
+              const IconComponent =
+                icons[(activeOffset + itemIndex) % icons.length];
+              return (
+                <motion.div
+                  key={itemIndex}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.05 + (itemIndex % 3) * 0.06,
+                  }}
+                >
+                  <SpotlightCard className="h-full p-8">
+                    <div className="relative w-12 h-12 mb-6 flex items-center justify-center border border-white/[0.08] group-hover:border-gold/30 transition-colors duration-500">
+                      <IconComponent
+                        className="w-5 h-5 text-platinum/60 group-hover:text-gold transition-colors duration-500"
+                        strokeWidth={1.5}
+                      />
+                    </div>
+
+                    <h4 className="font-medium mb-3 tracking-wide text-lg text-platinum group-hover:text-white transition-colors duration-500">
+                      {feature.title}
+                    </h4>
+
+                    <p className="leading-relaxed text-sm text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500">
+                      {feature.description}
+                    </p>
+                  </SpotlightCard>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

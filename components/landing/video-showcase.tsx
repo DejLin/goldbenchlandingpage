@@ -38,9 +38,11 @@ export function VideoShowcase() {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-platinum tracking-tight mb-4 text-balance">
             {t.videoShowcase.title}
           </h2>
-          <p className="text-platinum/60 text-base md:text-lg max-w-xl mx-auto">
-            {t.videoShowcase.subtitle}
-          </p>
+          {t.videoShowcase.subtitle && (
+            <p className="text-platinum/60 text-base md:text-lg max-w-xl mx-auto">
+              {t.videoShowcase.subtitle}
+            </p>
+          )}
         </motion.div>
 
         <motion.div
