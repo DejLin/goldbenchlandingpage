@@ -27,8 +27,8 @@ export const translations = {
     // Video Showcase
     videoShowcase: {
       label: "The Product",
-      title: "Watch a voice note become an invoice.",
-      subtitle: "Ninety seconds inside GoldBench — no keyboard touched.",
+      title: "Snap a photo. Speak your notes. Watch your inventory update.",
+      subtitle: "",
     },
     // Bench Loss Calculator
     calculator: {
@@ -242,8 +242,8 @@ export const translations = {
     // Video Showcase
     videoShowcase: {
       label: "Das Produkt",
-      title: "Sieh zu, wie eine Sprachnachricht zur Rechnung wird.",
-      subtitle: "Neunzig Sekunden in GoldBench – ohne eine Tastatur zu berühren.",
+      title: "Mach ein Foto. Sprich deine Notizen. Sieh dein Inventar sich aktualisieren.",
+      subtitle: "",
     },
     // Bench Loss Calculator
     calculator: {
@@ -457,8 +457,8 @@ export const translations = {
     // Video Showcase
     videoShowcase: {
       label: "Le Produit",
-      title: "Regardez un message vocal devenir une facture.",
-      subtitle: "Quatre-vingt-dix secondes dans GoldBench — sans toucher un clavier.",
+      title: "Prenez une photo. Dictez vos notes. Regardez votre inventaire se mettre à jour.",
+      subtitle: "",
     },
     // Bench Loss Calculator
     calculator: {
@@ -672,8 +672,8 @@ export const translations = {
     // Video Showcase
     videoShowcase: {
       label: "Il Prodotto",
-      title: "Guarda un messaggio vocale diventare una fattura.",
-      subtitle: "Novanta secondi dentro GoldBench — senza toccare una tastiera.",
+      title: "Scatta una foto. Detta le tue note. Guarda il tuo inventario aggiornarsi.",
+      subtitle: "",
     },
     // Bench Loss Calculator
     calculator: {
