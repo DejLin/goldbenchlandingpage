@@ -228,9 +228,9 @@ export const translations = {
     // Security
     security: {
       label: "Data Sovereignty",
-      title: "Swiss-Grade Data Integrity",
-      description: "Custom alloy formulas. Elite client lists. Pricing structures. Everything locked in your sovereign Swiss database. You own the data. Bank-grade encryption. GDPR compliant.",
-      tagline: "Your assets are yours alone.",
+      title: "100% Private. 100% Swiss.",
+      description: "Your clients, your pricing, and your designs are the heart of your business. We keep them locked safely in Switzerland.",
+      tagline: "You own your information, period.",
       badges: ["256-bit Encryption", "Swiss Hosted", "GDPR Compliant", "Daily Backups"],
     },
     // Final CTA
