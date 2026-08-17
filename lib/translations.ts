@@ -29,6 +29,16 @@ export const translations = {
       label: "The Product",
       title: "Snap a photo. Speak your notes. Watch your inventory update.",
       subtitle: "",
+      features: [
+        {
+          title: "Voice-to-Data Entry",
+          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+        },
+        {
+          title: "Automated Bookkeeping",
+          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -332,6 +342,16 @@ export const translations = {
       label: "Das Produkt",
       title: "Mach ein Foto. Sprich deine Notizen. Sieh dein Inventar sich aktualisieren.",
       subtitle: "",
+      features: [
+        {
+          title: "Voice-to-Data Entry",
+          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+        },
+        {
+          title: "Automated Bookkeeping",
+          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -636,6 +656,16 @@ export const translations = {
       label: "Le Produit",
       title: "Prenez une photo. Dictez vos notes. Regardez votre inventaire se mettre à jour.",
       subtitle: "",
+      features: [
+        {
+          title: "Voice-to-Data Entry",
+          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+        },
+        {
+          title: "Automated Bookkeeping",
+          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -940,6 +970,16 @@ export const translations = {
       label: "Il Prodotto",
       title: "Scatta una foto. Detta le tue note. Guarda il tuo inventario aggiornarsi.",
       subtitle: "",
+      features: [
+        {
+          title: "Voice-to-Data Entry",
+          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+        },
+        {
+          title: "Automated Bookkeeping",
+          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
