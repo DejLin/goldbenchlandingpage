@@ -12,7 +12,10 @@ const VIDEO_SOURCES = [
   "/videos/aurel-editing-photo.mp4",
 ];
 
-const HOLD_AFTER_VIDEO = 1400; // ms pause on the last frame before advancing
+// Start crossfading this long before the clip actually ends, so the swap
+// blends over live playback instead of freezing on the final frame.
+const CROSSFADE_LEAD = 0.6; // seconds
+const CROSSFADE_DURATION = 0.9; // seconds
 
 export function VideoShowcase() {
   const { t } = useLanguage();
@@ -21,14 +24,11 @@ export function VideoShowcase() {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
   const [soundOn, setSoundOn] = useState(false);
-  const holdRef = useRef<number | null>(null);
+  const advancingRef = useRef(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const goTo = (index: number) => {
-    if (holdRef.current) {
-      clearTimeout(holdRef.current);
-      holdRef.current = null;
-    }
+    advancingRef.current = false;
     setProgress(0);
     setActive(index);
   };
@@ -45,27 +45,32 @@ export function VideoShowcase() {
     }
   }, [soundOn, active]);
 
-  // Clear any pending hold timer on unmount.
+  // Reset the advance guard whenever the active clip changes.
   useEffect(() => {
-    return () => {
-      if (holdRef.current) clearTimeout(holdRef.current);
-    };
-  }, []);
+    advancingRef.current = false;
+  }, [active]);
 
-  // Progress bar follows the video's real playback position.
+  // Progress bar follows real playback; trigger the swap slightly before the
+  // end so the crossfade overlaps live motion rather than a frozen frame.
   const handleTimeUpdate = () => {
     const video = videoRef.current;
     if (!video || !video.duration || Number.isNaN(video.duration)) return;
+
     setProgress(Math.min(video.currentTime / video.duration, 1));
+
+    const remaining = video.duration - video.currentTime;
+    if (remaining <= CROSSFADE_LEAD && !advancingRef.current) {
+      advancingRef.current = true;
+      setProgress(1);
+      setActive((prev) => (prev + 1) % features.length);
+    }
   };
 
-  // When a clip finishes, hold on the final frame, then advance to the next.
+  // Safety net: if a clip ends before the lead-time trigger fires, advance.
   const handleEnded = () => {
-    setProgress(1);
-    if (holdRef.current) clearTimeout(holdRef.current);
-    holdRef.current = window.setTimeout(() => {
-      goTo((active + 1) % features.length);
-    }, HOLD_AFTER_VIDEO);
+    if (advancingRef.current) return;
+    advancingRef.current = true;
+    setActive((prev) => (prev + 1) % features.length);
   };
 
   const activeFeature = features[active % features.length];
@@ -114,7 +119,9 @@ export function VideoShowcase() {
           {/* Gold bezel */}
           <div className="rounded-2xl p-px bg-gradient-to-b from-gold/40 via-white/[0.08] to-gold/20">
             <div className="relative overflow-hidden rounded-2xl shadow-[0_25px_80px_-20px_rgba(0,0,0,0.8)] aspect-video bg-obsidian">
-              <AnimatePresence mode="wait">
+              {/* Crossfade layers: each active clip fades in over the previous
+                  one, which keeps playing underneath until fully faded. */}
+              <AnimatePresence initial={false}>
                 <motion.video
                   key={active}
                   ref={videoRef}
@@ -125,10 +132,10 @@ export function VideoShowcase() {
                   preload="auto"
                   onTimeUpdate={handleTimeUpdate}
                   onEnded={handleEnded}
-                  initial={{ opacity: 0, scale: 1.02 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.99 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: CROSSFADE_DURATION, ease: "easeInOut" }}
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </AnimatePresence>
