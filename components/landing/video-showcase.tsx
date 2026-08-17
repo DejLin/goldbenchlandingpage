@@ -12,7 +12,7 @@ const VIDEO_SOURCES = [
   "/videos/aurel-editing-photo.mp4",
 ];
 
-const SLIDE_DURATION = 10000; // ms per feature before auto-advancing
+const HOLD_AFTER_VIDEO = 1400; // ms pause on the last frame before advancing
 
 export function VideoShowcase() {
   const { t } = useLanguage();
@@ -21,9 +21,17 @@ export function VideoShowcase() {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
   const [soundOn, setSoundOn] = useState(false);
-  const rafRef = useRef<number | null>(null);
-  const startRef = useRef<number>(0);
+  const holdRef = useRef<number | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const goTo = (index: number) => {
+    if (holdRef.current) {
+      clearTimeout(holdRef.current);
+      holdRef.current = null;
+    }
+    setProgress(0);
+    setActive(index);
+  };
 
   // Reliably reflect the sound toggle onto the (re-mounting) video element.
   useEffect(() => {
@@ -37,29 +45,28 @@ export function VideoShowcase() {
     }
   }, [soundOn, active]);
 
-  // Drive the progress bar + auto-advance with a single rAF loop.
+  // Clear any pending hold timer on unmount.
   useEffect(() => {
-    startRef.current = 0;
-
-    const tick = (now: number) => {
-      if (startRef.current === 0) startRef.current = now;
-      const elapsed = now - startRef.current;
-      const pct = Math.min(elapsed / SLIDE_DURATION, 1);
-      setProgress(pct);
-
-      if (pct >= 1) {
-        setActive((prev) => (prev + 1) % features.length);
-        setProgress(0);
-        startRef.current = 0;
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (holdRef.current) clearTimeout(holdRef.current);
     };
-  }, [active, features.length]);
+  }, []);
+
+  // Progress bar follows the video's real playback position.
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video || !video.duration || Number.isNaN(video.duration)) return;
+    setProgress(Math.min(video.currentTime / video.duration, 1));
+  };
+
+  // When a clip finishes, hold on the final frame, then advance to the next.
+  const handleEnded = () => {
+    setProgress(1);
+    if (holdRef.current) clearTimeout(holdRef.current);
+    holdRef.current = window.setTimeout(() => {
+      goTo((active + 1) % features.length);
+    }, HOLD_AFTER_VIDEO);
+  };
 
   const activeFeature = features[active % features.length];
 
@@ -114,9 +121,10 @@ export function VideoShowcase() {
                   src={VIDEO_SOURCES[active % VIDEO_SOURCES.length]}
                   autoPlay
                   muted={!soundOn}
-                  loop
                   playsInline
-                  preload="metadata"
+                  preload="auto"
+                  onTimeUpdate={handleTimeUpdate}
+                  onEnded={handleEnded}
                   initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.99 }}
@@ -155,11 +163,7 @@ export function VideoShowcase() {
               <button
                 key={index}
                 type="button"
-                onClick={() => {
-                  setActive(index);
-                  setProgress(0);
-                  startRef.current = 0;
-                }}
+                onClick={() => goTo(index)}
                 aria-label={feature.title}
                 aria-current={isActive}
                 className="group relative h-1.5 rounded-full overflow-hidden transition-all duration-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"

@@ -356,8 +356,8 @@ export const translations = {
           description: "Beleg abfotografieren. Kaffee austrinken. Die Jahresend-Buchhaltung sparen.",
         },
         {
-          title: "Studio-Quality Photos",
-          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+          title: "Fotos in Studioqualität",
+          description: "Foto machen. Hintergrund verbessern. Nie wieder für ein Fotoshooting bezahlen.",
         },
       ],
     },
@@ -674,8 +674,8 @@ export const translations = {
           description: "Photographiez un reçu. Finissez votre café. Oubliez la comptabilité de fin d'année.",
         },
         {
-          title: "Studio-Quality Photos",
-          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+          title: "Photos de qualité studio",
+          description: "Prenez une photo. Améliorez l'arrière-plan. Ne payez plus jamais de séance en studio.",
         },
       ],
     },
@@ -992,8 +992,8 @@ export const translations = {
           description: "Fotografa una ricevuta. Finisci il caffè. Dimentica la contabilità di fine anno.",
         },
         {
-          title: "Studio-Quality Photos",
-          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+          title: "Foto di qualità da studio",
+          description: "Scatta una foto. Migliora lo sfondo. Non pagare mai più un servizio fotografico in studio.",
         },
       ],
     },
