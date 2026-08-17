@@ -32,11 +32,11 @@ export const translations = {
       features: [
         {
           title: "Voice-to-Data Entry",
-          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+          description: "Snap a photo. Speak your notes. Never lose track of a piece again.",
         },
         {
           title: "Automated Bookkeeping",
-          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+          description: "Snap a receipt. Finish your coffee. Skip the end-of-year bookkeeping.",
         },
       ],
     },
@@ -344,12 +344,12 @@ export const translations = {
       subtitle: "",
       features: [
         {
-          title: "Voice-to-Data Entry",
-          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+          title: "Spracheingabe von Daten",
+          description: "Foto machen. Notizen einsprechen. Nie wieder ein Stück aus den Augen verlieren.",
         },
         {
-          title: "Automated Bookkeeping",
-          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+          title: "Automatisierte Buchhaltung",
+          description: "Beleg abfotografieren. Kaffee austrinken. Die Jahresend-Buchhaltung sparen.",
         },
       ],
     },
@@ -658,12 +658,12 @@ export const translations = {
       subtitle: "",
       features: [
         {
-          title: "Voice-to-Data Entry",
-          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+          title: "Saisie de données par la voix",
+          description: "Prenez une photo. Dictez vos notes. Ne perdez plus jamais la trace d'une pièce.",
         },
         {
-          title: "Automated Bookkeeping",
-          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+          title: "Comptabilité automatisée",
+          description: "Photographiez un reçu. Finissez votre café. Oubliez la comptabilité de fin d'année.",
         },
       ],
     },
@@ -972,12 +972,12 @@ export const translations = {
       subtitle: "",
       features: [
         {
-          title: "Voice-to-Data Entry",
-          description: "Snap a photo. Speak your notes. Watch your inventory update.",
+          title: "Inserimento dati con la voce",
+          description: "Scatta una foto. Detta le tue note. Non perdere mai più traccia di un pezzo.",
         },
         {
-          title: "Automated Bookkeeping",
-          description: "Snap the bill. Finish your lunch. Watch your bookkeeping automate.",
+          title: "Contabilità automatizzata",
+          description: "Fotografa una ricevuta. Finisci il caffè. Dimentica la contabilità di fine anno.",
         },
       ],
     },
