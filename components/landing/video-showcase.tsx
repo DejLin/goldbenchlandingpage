@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
@@ -27,6 +27,12 @@ export function VideoShowcase() {
   const advancingRef = useRef(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  // Both crossfade layers share this ref. Ignore the `null` that fires when the
+  // outgoing clip unmounts, so it never wipes out the newly-active element.
+  const attachVideo = useCallback((node: HTMLVideoElement | null) => {
+    if (node) videoRef.current = node;
+  }, []);
+
   const goTo = (index: number) => {
     advancingRef.current = false;
     setProgress(0);
@@ -52,9 +58,12 @@ export function VideoShowcase() {
 
   // Progress bar follows real playback; trigger the swap slightly before the
   // end so the crossfade overlaps live motion rather than a frozen frame.
-  const handleTimeUpdate = () => {
-    const video = videoRef.current;
-    if (!video || !video.duration || Number.isNaN(video.duration)) return;
+  const handleTimeUpdate = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget;
+    // Only the currently-active clip drives the bar; ignore the outgoing clip
+    // that is still playing underneath during a crossfade.
+    if (video !== videoRef.current) return;
+    if (!video.duration || Number.isNaN(video.duration)) return;
 
     setProgress(Math.min(video.currentTime / video.duration, 1));
 
@@ -67,7 +76,8 @@ export function VideoShowcase() {
   };
 
   // Safety net: if a clip ends before the lead-time trigger fires, advance.
-  const handleEnded = () => {
+  const handleEnded = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    if (e.currentTarget !== videoRef.current) return;
     if (advancingRef.current) return;
     advancingRef.current = true;
     setActive((prev) => (prev + 1) % features.length);
@@ -124,7 +134,7 @@ export function VideoShowcase() {
               <AnimatePresence initial={false}>
                 <motion.video
                   key={active}
-                  ref={videoRef}
+                  ref={attachVideo}
                   src={VIDEO_SOURCES[active % VIDEO_SOURCES.length]}
                   autoPlay
                   muted={!soundOn}
