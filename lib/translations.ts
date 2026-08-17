@@ -29,6 +29,20 @@ export const translations = {
       label: "The Product",
       title: "Snap a photo. Speak your notes. Watch your inventory update.",
       subtitle: "",
+      features: [
+        {
+          title: "Voice-to-Data Entry",
+          description: "Snap a photo. Speak your notes. Never lose track of a piece again.",
+        },
+        {
+          title: "Automated Bookkeeping",
+          description: "Snap a receipt. Finish your coffee. Skip the end-of-year bookkeeping.",
+        },
+        {
+          title: "Studio-Quality Photos",
+          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -240,7 +254,7 @@ export const translations = {
       subtitle: "Let GoldBench handle the admin so your hands can stay at the bench.",
       cta: "Secure Your Early Access",
       ctaSubtext: "Join the exclusive waitlist for independent goldsmiths.",
-      location: "Nesslau, Switzerland",
+      location: "Switzerland",
     },
     // Footer
     footer: {
@@ -332,6 +346,20 @@ export const translations = {
       label: "Das Produkt",
       title: "Mach ein Foto. Sprich deine Notizen. Sieh dein Inventar sich aktualisieren.",
       subtitle: "",
+      features: [
+        {
+          title: "Spracheingabe von Daten",
+          description: "Foto machen. Notizen einsprechen. Nie wieder ein Stück aus den Augen verlieren.",
+        },
+        {
+          title: "Automatisierte Buchhaltung",
+          description: "Beleg abfotografieren. Kaffee austrinken. Die Jahresend-Buchhaltung sparen.",
+        },
+        {
+          title: "Fotos in Studioqualität",
+          description: "Foto machen. Hintergrund verbessern. Nie wieder für ein Fotoshooting bezahlen.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -544,7 +572,7 @@ export const translations = {
       subtitle: "Lass GoldBench die Verwaltung übernehmen, damit deine Hände an der Werkbank bleiben können.",
       cta: "Sichere deinen Frühzugang",
       ctaSubtext: "Tritt der exklusiven Warteliste für unabhängige Goldschmiede bei.",
-      location: "Nesslau, Schweiz",
+      location: "Schweiz",
     },
     // Footer
     footer: {
@@ -636,6 +664,20 @@ export const translations = {
       label: "Le Produit",
       title: "Prenez une photo. Dictez vos notes. Regardez votre inventaire se mettre à jour.",
       subtitle: "",
+      features: [
+        {
+          title: "Saisie de données par la voix",
+          description: "Prenez une photo. Dictez vos notes. Ne perdez plus jamais la trace d'une pièce.",
+        },
+        {
+          title: "Comptabilité automatisée",
+          description: "Photographiez un reçu. Finissez votre café. Oubliez la comptabilité de fin d'année.",
+        },
+        {
+          title: "Photos de qualité studio",
+          description: "Prenez une photo. Améliorez l'arrière-plan. Ne payez plus jamais de séance en studio.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -848,7 +890,7 @@ export const translations = {
       subtitle: "Laissez GoldBench gérer l'administration pour que vos mains puissent rester à l'établi.",
       cta: "Sécurisez votre accès anticipé",
       ctaSubtext: "Rejoignez la liste d'attente exclusive pour les orfèvres indépendants.",
-      location: "Nesslau, Suisse",
+      location: "Suisse",
     },
     // Footer
     footer: {
@@ -940,6 +982,20 @@ export const translations = {
       label: "Il Prodotto",
       title: "Scatta una foto. Detta le tue note. Guarda il tuo inventario aggiornarsi.",
       subtitle: "",
+      features: [
+        {
+          title: "Inserimento dati con la voce",
+          description: "Scatta una foto. Detta le tue note. Non perdere mai più traccia di un pezzo.",
+        },
+        {
+          title: "Contabilità automatizzata",
+          description: "Fotografa una ricevuta. Finisci il caffè. Dimentica la contabilità di fine anno.",
+        },
+        {
+          title: "Foto di qualità da studio",
+          description: "Scatta una foto. Migliora lo sfondo. Non pagare mai più un servizio fotografico in studio.",
+        },
+      ],
     },
     // Bench Loss Calculator
     calculator: {
@@ -1152,7 +1208,7 @@ export const translations = {
       subtitle: "Lascia che GoldBench gestisca l'amministrazione così le tue mani possono restare al banco.",
       cta: "Assicurati l'accesso anticipato",
       ctaSubtext: "Unisciti alla lista d'attesa esclusiva per orafi indipendenti.",
-      location: "Nesslau, Svizzera",
+      location: "Svizzera",
     },
     // Footer
     footer: {
