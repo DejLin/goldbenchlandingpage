@@ -38,6 +38,10 @@ export const translations = {
           title: "Automated Bookkeeping",
           description: "Snap a receipt. Finish your coffee. Skip the end-of-year bookkeeping.",
         },
+        {
+          title: "Studio-Quality Photos",
+          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+        },
       ],
     },
     // Bench Loss Calculator
@@ -350,6 +354,10 @@ export const translations = {
         {
           title: "Automatisierte Buchhaltung",
           description: "Beleg abfotografieren. Kaffee austrinken. Die Jahresend-Buchhaltung sparen.",
+        },
+        {
+          title: "Studio-Quality Photos",
+          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
         },
       ],
     },
@@ -665,6 +673,10 @@ export const translations = {
           title: "Comptabilité automatisée",
           description: "Photographiez un reçu. Finissez votre café. Oubliez la comptabilité de fin d'année.",
         },
+        {
+          title: "Studio-Quality Photos",
+          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+        },
       ],
     },
     // Bench Loss Calculator
@@ -978,6 +990,10 @@ export const translations = {
         {
           title: "Contabilità automatizzata",
           description: "Fotografa una ricevuta. Finisci il caffè. Dimentica la contabilità di fine anno.",
+        },
+        {
+          title: "Studio-Quality Photos",
+          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
         },
       ],
     },
