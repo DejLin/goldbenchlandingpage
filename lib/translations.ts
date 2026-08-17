@@ -254,7 +254,7 @@ export const translations = {
       subtitle: "Let GoldBench handle the admin so your hands can stay at the bench.",
       cta: "Secure Your Early Access",
       ctaSubtext: "Join the exclusive waitlist for independent goldsmiths.",
-      location: "Nesslau, Switzerland",
+      location: "Switzerland",
     },
     // Footer
     footer: {
@@ -572,7 +572,7 @@ export const translations = {
       subtitle: "Lass GoldBench die Verwaltung übernehmen, damit deine Hände an der Werkbank bleiben können.",
       cta: "Sichere deinen Frühzugang",
       ctaSubtext: "Tritt der exklusiven Warteliste für unabhängige Goldschmiede bei.",
-      location: "Nesslau, Schweiz",
+      location: "Schweiz",
     },
     // Footer
     footer: {
@@ -890,7 +890,7 @@ export const translations = {
       subtitle: "Laissez GoldBench gérer l'administration pour que vos mains puissent rester à l'établi.",
       cta: "Sécurisez votre accès anticipé",
       ctaSubtext: "Rejoignez la liste d'attente exclusive pour les orfèvres indépendants.",
-      location: "Nesslau, Suisse",
+      location: "Suisse",
     },
     // Footer
     footer: {
@@ -1208,7 +1208,7 @@ export const translations = {
       subtitle: "Lascia che GoldBench gestisca l'amministrazione così le tue mani possono restare al banco.",
       cta: "Assicurati l'accesso anticipato",
       ctaSubtext: "Unisciti alla lista d'attesa esclusiva per orafi indipendenti.",
-      location: "Nesslau, Svizzera",
+      location: "Svizzera",
     },
     // Footer
     footer: {
