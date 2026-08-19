@@ -203,12 +203,15 @@ export function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-obsidian">
+    <section
+      className="relative h-screen w-full overflow-hidden bg-obsidian"
+      aria-label="Einführung: Sprachassistent für Goldschmiede"
+    >
       {/* Banner Image */}
       <div className="absolute inset-0">
         <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/master-burning-metals-high-temperature-GCZMbzefJ2NE8wB3mYVlF0cNzy7sRH.jpg"
-          alt="Master goldsmith at work with torch flame"
+          alt="Goldschmiedemeister arbeitet mit einer Lötflamme am Werktisch"
           fill
           priority
           className="object-cover object-center"

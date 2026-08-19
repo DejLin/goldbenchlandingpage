@@ -86,7 +86,10 @@ export function VideoShowcase() {
   const activeFeature = features[active % features.length];
 
   return (
-    <section className="bg-obsidian pt-4 pb-24 md:pt-8 md:pb-32 relative overflow-hidden">
+    <section
+      className="bg-obsidian pt-4 pb-24 md:pt-8 md:pb-32 relative overflow-hidden"
+      aria-label="Produktvorführung: Der Sprachassistent in Aktion"
+    >
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gold/[0.04] rounded-full blur-[130px] pointer-events-none" />
 
@@ -136,6 +139,7 @@ export function VideoShowcase() {
                   key={active}
                   ref={attachVideo}
                   src={VIDEO_SOURCES[active % VIDEO_SOURCES.length]}
+                  aria-label={`Produktvideo: ${activeFeature.title}`}
                   autoPlay
                   muted={!soundOn}
                   playsInline
@@ -154,7 +158,7 @@ export function VideoShowcase() {
               <button
                 type="button"
                 onClick={() => setSoundOn((s) => !s)}
-                aria-label={soundOn ? "Mute video" : "Unmute video"}
+                aria-label={soundOn ? "Video stummschalten" : "Ton einschalten"}
                 aria-pressed={soundOn}
                 className="absolute bottom-4 right-4 z-10 flex items-center justify-center w-11 h-11 rounded-full bg-obsidian/60 backdrop-blur-md border border-white/15 text-platinum hover:text-gold hover:border-gold/40 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
               >

@@ -8,7 +8,10 @@ export function Security() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 md:py-32 bg-obsidian relative overflow-hidden">
+    <section
+      className="py-24 md:py-32 bg-obsidian relative overflow-hidden"
+      aria-label="Datensicherheit und Datenschutz in der Schweiz"
+    >
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div

@@ -12,7 +12,9 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  // Launching in Switzerland first, so German is the default until a visitor
+  // explicitly chooses another language (persisted in localStorage).
+  const [language, setLanguageState] = useState<Language>("de");
 
   useEffect(() => {
     // Load saved language from localStorage
