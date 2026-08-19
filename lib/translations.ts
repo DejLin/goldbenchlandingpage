@@ -336,7 +336,7 @@ export const translations = {
     hero: {
       title1: "Deine Hände formen das Gold.",
       title2: "Deine Stimme führt das Geschäft.",
-      subtitle: "GoldBench ist der erste sprachgesteuerte Arbeitsplatz, der exklusiv für Goldschmiede entwickelt wurde. Diktiere Angebote, verfolge Materialien und verwalte Kunden in Sekunden – ohne jemals dein Werkzeug aus der Hand zu legen.",
+      subtitle: "GoldBench ist der erste sprachgesteuerte Arbeitsplatz, der exklusiv von Goldschmieden für Goldschmiede entwickelt wurde. Diktiere Angebote, verfolge Materialien und verwalte Kunden in Sekunden – ohne jemals dein Werkzeug aus der Hand zu legen.",
       cta: "Frühzugang anfragen",
       ctaSubtext: "Begrenzte Plätze für unabhängige Goldschmiede.",
       scroll: "Scrollen",
@@ -363,7 +363,7 @@ export const translations = {
         },
         {
           title: "Fotos in Studioqualität",
-          description: "Foto machen. Hintergrund verbessern. Nie wieder für ein Fotoshooting bezahlen.",
+          description: "Foto machen. Hintergrund verbessern. Flexible Bilderstellung und -bearbeitung, die deinen Stil lernt.",
         },
       ],
     },
@@ -383,24 +383,30 @@ export const translations = {
     // Friction section
     friction: {
       label: "Schmerzpunkte",
-      title: "Die Grenzen des traditionellen Goldschmieds.",
+      title: "Weg vom Schreibtisch. Zurück an die Werkbank.",
       subtitle: "Deine Werkzeuge sind präzise. Deine Verwaltung sollte mühelos sein.",
+      dragLabel: "Vorher",
+      fixLabel: "Die Lösung",
       points: [
         {
-          title: "Verlorene Gewinne",
-          description: "Schwankende Goldpreise bedeuten langsame Angebote, und veraltete Tabellen können deine hart erarbeiteten Margen schnell auffressen.",
+          title: "Aktuelle Preise",
+          drag: "Goldpreise schwanken täglich und verwandeln die Aktualisierung von Inventar und Angeboten in eine mühsame, margenfressende Aufgabe.",
+          fix: "Sag deinem Assistenten, er soll deinen Goldkurs aktualisieren, und sieh zu, wie sich die Preise sofort über deinen gesamten Bestand, deine Kataloge und künftige Angebote synchronisieren.",
         },
         {
-          title: "Endlose Verwaltung",
-          description: "Angebote schreiben, Belege erfassen und die Buchhaltung erledigen stiehlt dir die Zeit, die du eigentlich mit dem Anfertigen von Schmuck verbringen solltest.",
+          title: "Weniger Bildschirmzeit",
+          drag: "Belege sortieren, Rechnungen schreiben und das Büro verwalten stiehlt dir die Zeit, die du eigentlich mit dem Anfertigen von Schmuck verbringen solltest.",
+          fix: "Bitte deinen Assistenten, eine Rechnung zu erstellen, einen Beleg anzuhängen und sie dem Kunden zu senden – ohne je deinen Laptop zu öffnen.",
         },
         {
-          title: "Die Foto-Falle",
-          description: "Professionelle, saubere Fotos deiner Stücke zu machen kostet Stunden, die du nicht hast, sodass deine beste Arbeit auf deinem Handy verborgen bleibt.",
+          title: "Marketing leicht gemacht",
+          drag: "Professionelle Fotos zu machen und Social-Media-Beiträge zu schreiben kostet Stunden, die du nicht hast, sodass deine beste Arbeit verborgen bleibt.",
+          fix: "Mach schnell ein Foto. Dein Assistent entfernt sofort den Hintergrund, erstellt ein hochwertiges Bild und verfasst einen Instagram-Beitrag mit Hashtags. Du behältst die volle Kontrolle!",
         },
         {
-          title: "Verstreute Kundendaten",
-          description: "Reparaturen, Ringgrössen und Vorlieben deiner Kunden über Papiernotizbücher und Chat-Apps hinweg im Blick zu behalten, lässt dich unorganisiert wirken.",
+          title: "Verstreute Notizbücher",
+          drag: "Ringgrössen, Reparaturhistorien und die Erinnerung an jährliche Reinigungen gehen zwischen Papiernotizen und Chat-Apps verloren.",
+          fix: "Dein Assistent erinnert dich daran, Kunden zu kontaktieren, hängt Schätzungen an und erinnert dich proaktiv daran, dich bei früheren Kunden zu melden – so bietest du hochwertigen After-Sales-Service mit minimalem Aufwand.",
         },
       ],
     },
@@ -506,7 +512,7 @@ export const translations = {
           category: "Kunden & Dokumente",
           items: [
             {
-              title: "Private Kunden-Lookbooks",
+              title: "Privater Kundenkatalog",
               description: "Wähle eine Auswahl an Stücken aus und sende deinem Kunden einen sicheren Link – und sieh genau, wann er ihn angesehen hat.",
             },
             {
@@ -654,7 +660,7 @@ export const translations = {
     hero: {
       title1: "Vos mains façonnent l'or.",
       title2: "Votre voix gère l'entreprise.",
-      subtitle: "GoldBench est le premier espace de travail vocal conçu exclusivement pour les orfèvres. Dictez des devis, suivez les matériaux et gérez vos clients en quelques secondes, sans jamais poser vos outils.",
+      subtitle: "GoldBench est le premier espace de travail vocal conçu exclusivement par des orfèvres pour des orfèvres. Dictez des devis, suivez les matériaux et gérez vos clients en quelques secondes, sans jamais poser vos outils.",
       cta: "Demander un accès anticipé",
       ctaSubtext: "Places limitées pour les orfèvres indépendants.",
       scroll: "Défiler",
@@ -681,7 +687,7 @@ export const translations = {
         },
         {
           title: "Photos de qualité studio",
-          description: "Prenez une photo. Améliorez l'arrière-plan. Ne payez plus jamais de séance en studio.",
+          description: "Prenez une photo. Améliorez l'arrière-plan. Une création et une retouche d'images flexibles qui apprennent votre style.",
         },
       ],
     },
@@ -701,24 +707,30 @@ export const translations = {
     // Friction section
     friction: {
       label: "Points de friction",
-      title: "Les limites de l'orfèvre traditionnel.",
+      title: "Quittez le bureau. Retournez à l'établi.",
       subtitle: "Vos outils physiques sont précis. Votre administration devrait être sans effort.",
+      dragLabel: "Avant",
+      fixLabel: "La solution",
       points: [
         {
-          title: "Profits perdus",
-          description: "Les prix de l'or fluctuants entraînent des devis lents, et des tableurs obsolètes peuvent vite grignoter vos marges durement gagnées.",
+          title: "Des prix à jour",
+          drag: "Les prix de l'or fluctuent chaque jour, transformant la mise à jour des stocks et des devis en une corvée effrayante qui grignote vos marges.",
+          fix: "Demandez à votre assistant de mettre à jour votre cours de l'or, et voyez les prix se synchroniser instantanément dans tout votre stock, vos catalogues et vos futures offres.",
         },
         {
-          title: "Administration sans fin",
-          description: "Rédiger des devis, saisir les reçus et gérer la comptabilité vous vole le temps que vous devriez consacrer à créer des bijoux.",
+          title: "Moins de temps d'écran",
+          drag: "Trier les reçus, rédiger les factures et gérer l'administratif vous vole le temps que vous devriez consacrer à créer des bijoux.",
+          fix: "Demandez à votre assistant de rédiger une facture, d'y joindre un reçu et de l'envoyer au client — sans jamais ouvrir votre ordinateur portable.",
         },
         {
-          title: "Le piège de la photo",
-          description: "Obtenir des photos professionnelles et nettes de vos pièces prend des heures que vous n'avez pas, alors votre meilleur travail reste caché sur votre téléphone.",
+          title: "Le marketing simplifié",
+          drag: "Prendre des photos professionnelles et rédiger des publications sur les réseaux sociaux prend des heures que vous n'avez pas, alors votre meilleur travail reste caché.",
+          fix: "Prenez une photo rapide. Votre assistant supprime instantanément l'arrière-plan, génère une image de haute qualité et rédige une publication Instagram avec des hashtags. Vous gardez le contrôle total !",
         },
         {
-          title: "Données clients éparpillées",
-          description: "Suivre les réparations, les tailles de bague et les préférences de vos clients entre carnets papier et applications de messagerie vous fait paraître désorganisé.",
+          title: "Les carnets éparpillés",
+          drag: "Suivre les tailles de bague, l'historique des réparations et penser à relancer pour les nettoyages annuels se perd entre notes papier et applications de messagerie.",
+          fix: "Votre assistant vous rappelle de contacter vos clients, joint les estimations et vous invite de manière proactive à recontacter vos anciens clients, vous permettant d'offrir un service après-vente de qualité avec un minimum d'effort.",
         },
       ],
     },
@@ -824,7 +836,7 @@ export const translations = {
           category: "Clients & Documents",
           items: [
             {
-              title: "Lookbooks clients privés",
+              title: "Catalogue client privé",
               description: "Sélectionnez un ensemble de pièces et envoyez à votre client un lien sécurisé — puis voyez exactement quand il l'a consulté.",
             },
             {
@@ -972,7 +984,7 @@ export const translations = {
     hero: {
       title1: "Le tue mani forgiano l'oro.",
       title2: "La tua voce gestisce l'attività.",
-      subtitle: "GoldBench è il primo spazio di lavoro vocale costruito esclusivamente per orafi. Detta preventivi, traccia i materiali e gestisci i clienti in pochi secondi, senza mai posare i tuoi strumenti.",
+      subtitle: "GoldBench è il primo spazio di lavoro vocale costruito esclusivamente da orafi per orafi. Detta preventivi, traccia i materiali e gestisci i clienti in pochi secondi, senza mai posare i tuoi strumenti.",
       cta: "Richiedi accesso anticipato",
       ctaSubtext: "Posti limitati per orafi indipendenti.",
       scroll: "Scorri",
@@ -999,7 +1011,7 @@ export const translations = {
         },
         {
           title: "Foto di qualità da studio",
-          description: "Scatta una foto. Migliora lo sfondo. Non pagare mai più un servizio fotografico in studio.",
+          description: "Scatta una foto. Migliora lo sfondo. Creazione e modifica delle immagini flessibili che imparano il tuo stile.",
         },
       ],
     },
@@ -1019,24 +1031,30 @@ export const translations = {
     // Friction section
     friction: {
       label: "Punti dolenti",
-      title: "I limiti dell'orafo tradizionale.",
+      title: "Lascia la scrivania. Torna al banco.",
       subtitle: "I tuoi strumenti fisici sono precisi. La tua amministrazione dovrebbe essere senza sforzo.",
+      dragLabel: "Prima",
+      fixLabel: "La soluzione",
       points: [
         {
-          title: "Profitti persi",
-          description: "I prezzi dell'oro in continua oscillazione rendono i preventivi lenti, e i fogli di calcolo obsoleti possono divorare rapidamente i margini guadagnati con fatica.",
+          title: "Prezzi sempre aggiornati",
+          drag: "I prezzi dell'oro oscillano ogni giorno, trasformando l'aggiornamento di inventario e preventivi in un compito estenuante che divora i margini.",
+          fix: "Chiedi al tuo assistente di aggiornare la quotazione dell'oro e guarda i prezzi sincronizzarsi all'istante su tutto il tuo stock, i cataloghi e le offerte future.",
         },
         {
-          title: "Amministrazione infinita",
-          description: "Scrivere preventivi, registrare ricevute e sistemare la contabilità ti ruba il tempo che dovresti dedicare a creare gioielli.",
+          title: "Meno tempo sullo schermo",
+          drag: "Ordinare ricevute, scrivere fatture e gestire l'ufficio ti ruba il tempo che dovresti dedicare a creare gioielli.",
+          fix: "Chiedi al tuo assistente di preparare una fattura, allegare una ricevuta e inviarla al cliente — senza mai aprire il portatile.",
         },
         {
-          title: "La trappola delle foto",
-          description: "Ottenere foto professionali e pulite dei tuoi pezzi richiede ore che non hai, così il tuo lavoro migliore resta nascosto sul telefono.",
+          title: "Marketing senza sforzo",
+          drag: "Scattare foto professionali e scrivere post sui social richiede ore che non hai, così il tuo lavoro migliore resta nascosto.",
+          fix: "Scatta una foto veloce. Il tuo assistente rimuove all'istante lo sfondo, genera un'immagine di alta qualità e prepara un post Instagram con hashtag. Il controllo resta tutto tuo!",
         },
         {
-          title: "Dati dei clienti sparsi",
-          description: "Tenere traccia di riparazioni, misure degli anelli e preferenze dei clienti tra quaderni cartacei e app di messaggistica ti fa sembrare disorganizzato.",
+          title: "I quaderni sparsi",
+          drag: "Tenere traccia di misure degli anelli, storici delle riparazioni e ricordarsi di richiamare per le pulizie annuali si perde tra note cartacee e app di messaggistica.",
+          fix: "Il tuo assistente ti ricorda di contattare i clienti, allega le valutazioni e ti sollecita in modo proattivo a ricontattare i clienti passati, permettendoti di offrire un servizio post-vendita di alta qualità con il minimo sforzo.",
         },
       ],
     },
@@ -1142,7 +1160,7 @@ export const translations = {
           category: "Clienti & Documenti",
           items: [
             {
-              title: "Lookbook privati per i clienti",
+              title: "Catalogo privato per i clienti",
               description: "Seleziona un insieme di pezzi e invia al tuo cliente un link sicuro — poi vedi esattamente quando lo ha visualizzato.",
             },
             {
