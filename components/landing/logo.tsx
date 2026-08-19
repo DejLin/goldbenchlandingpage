@@ -8,15 +8,7 @@ interface LogoProps {
   className?: string;
 }
 
-export function Logo({ size = "md", className = "" }: LogoProps) {
-  const sizes = {
-    sm: { width: 160, height: 160 },
-    md: { width: 200, height: 200 },
-    lg: { width: 280, height: 280 },
-  };
-
-  const { width, height } = sizes[size];
-
+export function Logo({ className = "" }: LogoProps) {
   return (
     <motion.div
       className={`relative flex items-center justify-center group ${className}`}
@@ -33,10 +25,10 @@ export function Logo({ size = "md", className = "" }: LogoProps) {
         className="relative"
       >
         <Image
-          src="/images/goldbench-logo.png"
+          src="/images/goldbench-logo160.png"
           alt="GoldBench - Voice-Powered Workspace for Goldsmiths"
-          width={width}
-          height={height}
+          width={160}
+          height={160}
           priority
           className="object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.3)] transition-all duration-500"
         />
