@@ -10,7 +10,10 @@ export function Friction() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 md:py-32 bg-charcoal">
+    <section
+      className="py-24 md:py-32 bg-charcoal"
+      aria-label="Herausforderungen im Arbeitsalltag von Goldschmieden"
+    >
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Main Section Title */}
         <motion.div

@@ -11,14 +11,48 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const SUPPORTED_LANGUAGES: Language[] = ["de", "en", "fr", "it"];
+
+// Match the browser's preferred languages against what we support.
+// Returns the first supported match (by the visitor's own priority order),
+// or "de" as the Swiss-first default when nothing matches.
+function detectBrowserLanguage(): Language {
+  if (typeof navigator === "undefined") return "de";
+
+  const preferences =
+    navigator.languages && navigator.languages.length > 0
+      ? navigator.languages
+      : [navigator.language];
+
+  for (const pref of preferences) {
+    // Normalize e.g. "de-CH" / "fr-FR" down to the base "de" / "fr".
+    const base = pref.toLowerCase().split("-")[0] as Language;
+    if (SUPPORTED_LANGUAGES.includes(base)) {
+      return base;
+    }
+  }
+
+  return "de";
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+  // Launching in Switzerland first, so German is the default until a visitor
+  // explicitly chooses another language (persisted in localStorage).
+  const [language, setLanguageState] = useState<Language>("de");
 
   useEffect(() => {
-    // Load saved language from localStorage
+    // A previously saved manual choice always wins.
     const saved = localStorage.getItem("goldbench-language") as Language;
     if (saved && translations[saved]) {
       setLanguageState(saved);
+      return;
+    }
+
+    // First visit: detect the visitor's preferred browser language.
+    // Fall back to German, since we launch in Switzerland first.
+    const detected = detectBrowserLanguage();
+    if (detected !== "de") {
+      setLanguageState(detected);
     }
   }, []);
 

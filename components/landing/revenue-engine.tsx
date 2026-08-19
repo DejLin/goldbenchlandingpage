@@ -104,7 +104,10 @@ export function RevenueEngine() {
   const activeOffset = iconOffsets[active] ?? 0;
 
   return (
-    <section className="py-24 md:py-32 bg-obsidian relative overflow-hidden">
+    <section
+      className="py-24 md:py-32 bg-obsidian relative overflow-hidden"
+      aria-label="Funktionen: Was der Sprachassistent für Ihr Atelier erledigt"
+    >
       {/* Subtle gradient accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gold/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
@@ -201,9 +204,9 @@ export function RevenueEngine() {
                       />
                     </div>
 
-                    <h4 className="font-medium mb-3 tracking-wide text-lg text-platinum group-hover:text-white transition-colors duration-500">
+                    <h3 className="font-medium mb-3 tracking-wide text-lg text-platinum group-hover:text-white transition-colors duration-500">
                       {feature.title}
-                    </h4>
+                    </h3>
 
                     <p className="leading-relaxed text-sm text-platinum/60 group-hover:text-platinum/80 transition-colors duration-500">
                       {feature.description}
