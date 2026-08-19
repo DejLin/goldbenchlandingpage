@@ -66,7 +66,7 @@ export const translations = {
       fixLabel: "The Fix",
       points: [
         {
-          title: "The Pricing Nightmare",
+          title: "Up-to-Date Pricing",
           drag: "Gold prices fluctuate daily, turning inventory and quote updates into a terrifying, margin-eating chore.",
           fix: "Tell your assistant to update your gold rate, and watch prices instantly sync across your entire stock, catalogues, and future offers.",
         },
