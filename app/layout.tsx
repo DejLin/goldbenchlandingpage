@@ -43,10 +43,6 @@ export const metadata: Metadata = {
     'GoldBench',
   ],
   generator: 'GoldBench',
-  icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
-  },
   alternates: {
     canonical: SITE_URL,
   },
