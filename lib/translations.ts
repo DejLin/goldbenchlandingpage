@@ -60,24 +60,30 @@ export const translations = {
     // Friction section
     friction: {
       label: "Pain Points",
-      title: "The Limits of the Traditional Goldsmith.",
+      title: "Leave the Desk. Get Back to the Bench.",
       subtitle: "Your physical tools are precise. Your admin should be effortless.",
+      dragLabel: "The Drag",
+      fixLabel: "The Fix",
       points: [
         {
-          title: "Lost Profits",
-          description: "Fluctuating gold prices mean slow quotes and outdated spreadsheets can quickly eat up your hard-earned margins.",
+          title: "The Pricing Nightmare",
+          drag: "Gold prices fluctuate daily, turning inventory and quote updates into a terrifying, margin-eating chore.",
+          fix: "Tell your assistant to update your gold rate, and watch prices instantly sync across your entire stock, catalogues, and future offers.",
         },
         {
-          title: "Endless Admin",
-          description: "Writing quotes, capturing receipts, and sorting out accounting steals the time you should spend actually making jewelry.",
+          title: "The Screen-Time Trap",
+          drag: "Sorting receipts, writing invoices, and managing the back office steals the time you should spend actually making jewelry.",
+          fix: "Ask your assistant to draft a bill, attach a receipt, and send it to the client—without ever opening your laptop.",
         },
         {
-          title: "The Photo Trap",
-          description: "Getting professional, clean photos of your pieces takes hours you don't have, so your best work stays hidden on your phone.",
+          title: "The Marketing Bottleneck",
+          drag: "Shooting professional photos and writing social media posts takes hours you don't have, so your best work stays hidden.",
+          fix: "Snap a quick bench photo. Your assistant instantly removes the background, generates a studio-quality image, and drafts an Instagram post with hashtags.",
         },
         {
-          title: "Scattered Client Details",
-          description: "Keeping track of customer repairs, ring sizes, and preferences across paper notebooks and chat apps makes you look disorganized.",
+          title: "The Scattered Notebooks",
+          drag: "Tracking ring sizes, repair histories, and remembering to follow up for annual cleanings gets lost across paper notes and chat apps.",
+          fix: "Your assistant tracks every client detail, attaches valuations, and proactively reminds you to reach out to VIPs, keeping your best customers coming back.",
         },
       ],
     },
