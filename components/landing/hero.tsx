@@ -215,7 +215,7 @@ export function Hero() {
           fill
           priority
           className="object-cover object-center"
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 1200px"
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/70 via-obsidian/40 to-obsidian" />

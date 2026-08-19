@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Volume2, VolumeX } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
 // Video sources map by index to `t.videoShowcase.features`.
@@ -11,6 +10,10 @@ const VIDEO_SOURCES = [
   "/videos/elin-scans-bill.mp4",
   "/videos/aurel-editing-photo.mp4",
 ];
+
+// Only the first clip (shown on load) eagerly buffers; the rest stay idle
+// until the cycle reaches them, keeping initial page load fast.
+const VIDEO_PRELOAD: Array<"auto" | "none"> = ["auto", "none", "none"];
 
 // Start crossfading this long before the clip actually ends, so the swap
 // blends over live playback instead of freezing on the final frame.
@@ -23,7 +26,6 @@ export function VideoShowcase() {
 
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [soundOn, setSoundOn] = useState(false);
   const advancingRef = useRef(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
@@ -38,18 +40,6 @@ export function VideoShowcase() {
     setProgress(0);
     setActive(index);
   };
-
-  // Reliably reflect the sound toggle onto the (re-mounting) video element.
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = !soundOn;
-    if (soundOn) {
-      video.volume = 1;
-      // A user gesture enabled sound, so make sure playback is running.
-      video.play().catch(() => {});
-    }
-  }, [soundOn, active]);
 
   // Reset the advance guard whenever the active clip changes.
   useEffect(() => {
@@ -141,9 +131,9 @@ export function VideoShowcase() {
                   src={VIDEO_SOURCES[active % VIDEO_SOURCES.length]}
                   aria-label={`Produktvideo: ${activeFeature.title}`}
                   autoPlay
-                  muted={!soundOn}
+                  muted
                   playsInline
-                  preload="auto"
+                  preload={VIDEO_PRELOAD[active % VIDEO_PRELOAD.length]}
                   onTimeUpdate={handleTimeUpdate}
                   onEnded={handleEnded}
                   initial={{ opacity: 0 }}
@@ -153,21 +143,6 @@ export function VideoShowcase() {
                   className="absolute inset-0 h-full w-full object-cover"
                 />
               </AnimatePresence>
-
-              {/* Sound toggle */}
-              <button
-                type="button"
-                onClick={() => setSoundOn((s) => !s)}
-                aria-label={soundOn ? "Video stummschalten" : "Ton einschalten"}
-                aria-pressed={soundOn}
-                className="absolute bottom-4 right-4 z-10 flex items-center justify-center w-11 h-11 rounded-full bg-obsidian/60 backdrop-blur-md border border-white/15 text-platinum hover:text-gold hover:border-gold/40 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
-              >
-                {soundOn ? (
-                  <Volume2 className="w-5 h-5" strokeWidth={1.5} />
-                ) : (
-                  <VolumeX className="w-5 h-5" strokeWidth={1.5} />
-                )}
-              </button>
             </div>
           </div>
 

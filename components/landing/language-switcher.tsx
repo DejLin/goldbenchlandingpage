@@ -96,6 +96,8 @@ export function LanguageSwitcher() {
             key={`mobile-${lang.code}`}
             onClick={() => setLanguage(lang.code)}
             whileTap={{ scale: 0.9 }}
+            aria-label={`Switch language to ${lang.label}`}
+            aria-pressed={language === lang.code}
             className={`relative flex items-center justify-center w-10 h-8 rounded-full transition-all duration-200 ${
               language === lang.code
                 ? "bg-gold/20"
