@@ -40,7 +40,7 @@ export const translations = {
         },
         {
           title: "Studio-Quality Photos",
-          description: "Snap a photo. Improve the background. Never pay for a studio shoot again.",
+          description: "Snap a photo. Improve the background. Flexible image creation and editing that learns your style.",
         },
       ],
     },
@@ -188,7 +188,7 @@ export const translations = {
           category: "Clients & Records",
           items: [
             {
-              title: "Private Client Lookbooks",
+              title: "Private Client Catalogue",
               description: "Pick a selection of pieces and send your client a secure link—then see exactly when they've viewed it.",
             },
             {
