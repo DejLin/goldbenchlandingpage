@@ -62,7 +62,7 @@ export const translations = {
       label: "Pain Points",
       title: "Leave the Desk. Get Back to the Bench.",
       subtitle: "Your physical tools are precise. Your admin should be effortless.",
-      dragLabel: "The Drag",
+      dragLabel: "Before",
       fixLabel: "The Fix",
       points: [
         {
