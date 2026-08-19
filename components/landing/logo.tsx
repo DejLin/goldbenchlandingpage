@@ -25,10 +25,11 @@ export function Logo({ className = "" }: LogoProps) {
         className="relative"
       >
         <Image
-          src="/images/goldbench-logo160.png"
+          src="/images/goldbench-logo-512.png"
           alt="GoldBench - Voice-Powered Workspace for Goldsmiths"
           width={160}
           height={160}
+          quality={90}
           priority
           className="object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.15)] group-hover:drop-shadow-[0_0_25px_rgba(212,175,55,0.3)] transition-all duration-500"
         />
@@ -45,10 +46,11 @@ export function LogoMinimal({ className = "" }: { className?: string }) {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
       <Image
-        src="/images/goldbench-logo.png"
+        src="/images/goldbench-logo-512.png"
         alt="GoldBench"
         width={80}
         height={80}
+        quality={90}
         className="object-contain"
       />
     </motion.div>
