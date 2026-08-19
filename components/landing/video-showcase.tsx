@@ -12,6 +12,10 @@ const VIDEO_SOURCES = [
   "/videos/aurel-editing-photo.mp4",
 ];
 
+// Only the first clip (shown on load) eagerly buffers; the rest stay idle
+// until the cycle reaches them, keeping initial page load fast.
+const VIDEO_PRELOAD: Array<"auto" | "none"> = ["auto", "none", "none"];
+
 // Start crossfading this long before the clip actually ends, so the swap
 // blends over live playback instead of freezing on the final frame.
 const CROSSFADE_LEAD = 0.6; // seconds
@@ -143,7 +147,7 @@ export function VideoShowcase() {
                   autoPlay
                   muted={!soundOn}
                   playsInline
-                  preload="auto"
+                  preload={VIDEO_PRELOAD[active % VIDEO_PRELOAD.length]}
                   onTimeUpdate={handleTimeUpdate}
                   onEnded={handleEnded}
                   initial={{ opacity: 0 }}
