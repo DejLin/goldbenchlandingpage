@@ -24,6 +24,12 @@ const SITE_TITLE = 'GoldBench | Sprachassistent für unabhängige Goldschmiede'
 const SITE_DESCRIPTION =
   'Der erste Sprachassistent exklusiv für Goldschmiede. Diktieren Sie Angebote, erfassen Sie Material und verwalten Sie Kunden in Sekunden – ohne Ihr Werkzeug aus der Hand zu legen.'
 const SITE_URL = 'https://www.goldbench.ch'
+const OG_IMAGE = {
+  url: '/og-image.png',
+  width: 1200,
+  height: 634,
+  alt: 'GoldBench – Sprachassistent für Goldschmiede: Goldschmied am Werktisch mit Sprachaufnahme, Kundenverwaltung und Atelier-Dashboard',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -51,11 +57,13 @@ export const metadata: Metadata = {
     siteName: 'GoldBench',
     locale: 'de_CH',
     type: 'website',
+    images: [OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
 }
 
