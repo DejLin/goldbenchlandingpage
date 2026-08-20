@@ -7,6 +7,8 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
+const WEB3FORMS_ACCESS_KEY = "2084ab2a-7f42-4f23-ada5-8a28b5d39b7a";
+
 export default function EarlyAccessPage() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -14,6 +16,7 @@ export default function EarlyAccessPage() {
     email: "",
     atelier: "",
     captchaAnswer: "",
+    botcheck: "",
   });
   const [captcha, setCaptcha] = useState<{ num1: number; num2: number; answer: number } | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -48,27 +51,34 @@ export default function EarlyAccessPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/send", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
-          type: "early-access",
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "New early access request from GoldBench",
+          from_name: "GoldBench Early Access",
           name: formData.name,
           email: formData.email,
-          company: formData.atelier,
+          atelier: formData.atelier || "Not provided",
+          botcheck: formData.botcheck,
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send email");
-      }
+      const data = await response.json();
 
-      setIsSubmitting(false);
-      setIsSubmitted(true);
+      if (response.status === 200 && data.success) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+      } else {
+        throw new Error(data.message || "Failed to submit");
+      }
     } catch {
       setError("Failed to submit. Please try again.");
+      generateCaptcha();
       setIsSubmitting(false);
     }
   };
@@ -140,6 +150,18 @@ export default function EarlyAccessPage() {
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Honeypot field - hidden from users, catches bots */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    checked={!!formData.botcheck}
+                    onChange={(e) => setFormData({ ...formData, botcheck: e.target.checked ? "true" : "" })}
+                  />
+
                   {/* Name Field */}
                   <div>
                     <label

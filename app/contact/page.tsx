@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Logo } from "@/components/landing/logo";
-import { Mail, Clock } from "lucide-react";
+import { Mail, Clock, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+
+const WEB3FORMS_ACCESS_KEY = "2084ab2a-7f42-4f23-ada5-8a28b5d39b7a";
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -15,39 +17,70 @@ export default function ContactPage() {
     email: "",
     company: "",
     message: "",
+    captchaAnswer: "",
+    botcheck: "",
   });
+  const [captcha, setCaptcha] = useState<{ num1: number; num2: number; answer: number } | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
 
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    setCaptcha({ num1, num2, answer: num1 + num2 });
+    setFormState((prev) => ({ ...prev, captchaAnswer: "" }));
+  };
+
+  useEffect(() => {
+    setIsMounted(true);
+    generateCaptcha();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setError("");
 
+    // Client-side math security check
+    if (!captcha || parseInt(formState.captchaAnswer) !== captcha.answer) {
+      setError("Incorrect answer to the security question. Please try again.");
+      generateCaptcha();
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
-      const response = await fetch("/api/send", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
-          type: "contact",
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "New contact message from GoldBench",
+          from_name: "GoldBench Contact Form",
           name: formState.name,
           email: formState.email,
-          company: formState.company,
+          atelier: formState.company || "Not provided",
           message: formState.message,
+          botcheck: formState.botcheck,
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
-      }
+      const data = await response.json();
 
-      setIsSubmitted(true);
+      if (response.status === 200 && data.success) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error(data.message || "Failed to send message");
+      }
     } catch (err) {
-      console.error("Send error:", err);
+      console.error("Web3Forms error:", err);
       setError("Failed to send message. Please try again.");
+      generateCaptcha();
     } finally {
       setIsSubmitting(false);
     }
@@ -172,7 +205,19 @@ export default function ContactPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <h2 className="text-xl text-platinum font-light mb-6">{t.contact.sendMessage}</h2>
-                  
+
+                  {/* Honeypot field - hidden from users, catches bots */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    checked={!!formState.botcheck}
+                    onChange={(e) => setFormState({ ...formState, botcheck: e.target.checked ? "true" : "" })}
+                  />
+
                   {error && (
                     <div className="bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 text-sm">
                       {error}
@@ -233,6 +278,37 @@ export default function ContactPage() {
                       placeholder={t.contact.messagePlaceholder}
                     />
                   </div>
+
+                  {/* Security Check */}
+                  {isMounted && captcha && (
+                    <div>
+                      <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
+                        Security Check *
+                      </label>
+                      <div className="flex items-center gap-3">
+                        <div className="flex-1 bg-obsidian border border-glass-border px-4 py-3 text-sm text-gold font-medium">
+                          {`What is ${captcha.num1} + ${captcha.num2}?`}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={generateCaptcha}
+                          className="p-3 bg-obsidian border border-glass-border hover:border-gold/50 text-platinum/50 hover:text-gold transition-colors"
+                          title="New question"
+                        >
+                          <RefreshCw className="w-4 h-4" />
+                        </button>
+                      </div>
+                      <input
+                        type="text"
+                        required
+                        inputMode="numeric"
+                        value={formState.captchaAnswer}
+                        onChange={(e) => setFormState({ ...formState, captchaAnswer: e.target.value })}
+                        className="w-full mt-2 bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
+                        placeholder="Enter your answer"
+                      />
+                    </div>
+                  )}
 
                   <button
                     type="submit"
