@@ -38,13 +38,24 @@ export default function ContactPage() {
     generateCaptcha();
   }, []);
 
+  // Translated native browser validation messages
+  const applyValidationMessage = (el: HTMLInputElement | HTMLTextAreaElement) => {
+    if (el.validity.valueMissing) {
+      el.setCustomValidity(t.validation.required);
+    } else if (el.validity.typeMismatch) {
+      el.setCustomValidity(t.validation.email);
+    } else {
+      el.setCustomValidity("");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
     // Client-side math security check
     if (!captcha || parseInt(formState.captchaAnswer) !== captcha.answer) {
-      setError("Incorrect answer to the security question. Please try again.");
+      setError(t.contact.captchaError);
       generateCaptcha();
       return;
     }
@@ -79,7 +90,7 @@ export default function ContactPage() {
       }
     } catch (err) {
       console.error("Web3Forms error:", err);
-      setError("Failed to send message. Please try again.");
+      setError(t.contact.sendError);
       generateCaptcha();
     } finally {
       setIsSubmitting(false);
@@ -232,7 +243,11 @@ export default function ContactPage() {
                       type="text"
                       required
                       value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                      onChange={(e) => {
+                        e.currentTarget.setCustomValidity("");
+                        setFormState({ ...formState, name: e.target.value });
+                      }}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
                       placeholder={t.contact.namePlaceholder}
                     />
@@ -246,7 +261,11 @@ export default function ContactPage() {
                       type="email"
                       required
                       value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                      onChange={(e) => {
+                        e.currentTarget.setCustomValidity("");
+                        setFormState({ ...formState, email: e.target.value });
+                      }}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
                       placeholder={t.contact.emailPlaceholder}
                     />
@@ -273,7 +292,11 @@ export default function ContactPage() {
                       required
                       rows={5}
                       value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                      onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                      onChange={(e) => {
+                        e.currentTarget.setCustomValidity("");
+                        setFormState({ ...formState, message: e.target.value });
+                      }}
                       className="w-full bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors resize-none"
                       placeholder={t.contact.messagePlaceholder}
                     />
@@ -283,11 +306,13 @@ export default function ContactPage() {
                   {isMounted && captcha && (
                     <div>
                       <label className="block text-platinum/70 text-xs uppercase tracking-wider mb-2">
-                        Security Check *
+                        {t.contact.securityLabel} *
                       </label>
                       <div className="flex items-center gap-3">
                         <div className="flex-1 bg-obsidian border border-glass-border px-4 py-3 text-sm text-gold font-medium">
-                          {`What is ${captcha.num1} + ${captcha.num2}?`}
+                          {t.contact.securityQuestion
+                            .replace("{num1}", captcha.num1.toString())
+                            .replace("{num2}", captcha.num2.toString())}
                         </div>
                         <button
                           type="button"
@@ -303,9 +328,13 @@ export default function ContactPage() {
                         required
                         inputMode="numeric"
                         value={formState.captchaAnswer}
-                        onChange={(e) => setFormState({ ...formState, captchaAnswer: e.target.value })}
+                        onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                        onChange={(e) => {
+                          e.currentTarget.setCustomValidity("");
+                          setFormState({ ...formState, captchaAnswer: e.target.value });
+                        }}
                         className="w-full mt-2 bg-obsidian border border-glass-border px-4 py-3 text-platinum text-sm focus:outline-none focus:border-gold/50 transition-colors"
-                        placeholder="Enter your answer"
+                        placeholder={t.contact.securityPlaceholder}
                       />
                     </div>
                   )}

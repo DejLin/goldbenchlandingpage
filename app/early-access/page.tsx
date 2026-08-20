@@ -37,6 +37,17 @@ export default function EarlyAccessPage() {
     generateCaptcha();
   }, []);
 
+  // Translated native browser validation messages
+  const applyValidationMessage = (el: HTMLInputElement) => {
+    if (el.validity.valueMissing) {
+      el.setCustomValidity(t.validation.required);
+    } else if (el.validity.typeMismatch) {
+      el.setCustomValidity(t.validation.email);
+    } else {
+      el.setCustomValidity("");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -77,7 +88,7 @@ export default function EarlyAccessPage() {
         throw new Error(data.message || "Failed to submit");
       }
     } catch {
-      setError("Failed to submit. Please try again.");
+      setError(t.earlyAccess.submitError);
       generateCaptcha();
       setIsSubmitting(false);
     }
@@ -175,9 +186,11 @@ export default function EarlyAccessPage() {
                       id="name"
                       required
                       value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                      onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                      onChange={(e) => {
+                        e.currentTarget.setCustomValidity("");
+                        setFormData({ ...formData, name: e.target.value });
+                      }}
                       className="w-full bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
                       placeholder={t.earlyAccess.namePlaceholder}
                     />
@@ -196,9 +209,11 @@ export default function EarlyAccessPage() {
                       id="email"
                       required
                       value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
+                      onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                      onChange={(e) => {
+                        e.currentTarget.setCustomValidity("");
+                        setFormData({ ...formData, email: e.target.value });
+                      }}
                       className="w-full bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
                       placeholder={t.earlyAccess.emailPlaceholder}
                     />
@@ -254,9 +269,11 @@ export default function EarlyAccessPage() {
                         id="captcha"
                         required
                         value={formData.captchaAnswer}
-                        onChange={(e) =>
-                          setFormData({ ...formData, captchaAnswer: e.target.value })
-                        }
+                        onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                        onChange={(e) => {
+                          e.currentTarget.setCustomValidity("");
+                          setFormData({ ...formData, captchaAnswer: e.target.value });
+                        }}
                         className="w-full mt-2 bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
                         placeholder={t.earlyAccess.captchaPlaceholder}
                       />
