@@ -7,11 +7,6 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
-// EmailJS configuration (Infomaniak SMTP relay)
-const EMAILJS_SERVICE_ID = "infomaniak_smtp";
-const EMAILJS_TEMPLATE_ID = "template_x1bcqqa";
-const EMAILJS_PUBLIC_KEY = "AT_FdPCSJQQuYbNzd";
-
 export default function EarlyAccessPage() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -53,23 +48,16 @@ export default function EarlyAccessPage() {
     setIsSubmitting(true);
 
     try {
-      // Send email via EmailJS REST API
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          service_id: EMAILJS_SERVICE_ID,
-          template_id: EMAILJS_TEMPLATE_ID,
-          user_id: EMAILJS_PUBLIC_KEY,
-          template_params: {
-            from_name: formData.name,
-            from_email: formData.email,
-            atelier: formData.atelier || "Not provided",
-            message: `New early access request from ${formData.name} (${formData.email})${formData.atelier ? ` - Atelier: ${formData.atelier}` : ""}`,
-            to_email: "contact@goldbench.ch",
-          },
+          type: "early-access",
+          name: formData.name,
+          email: formData.email,
+          company: formData.atelier,
         }),
       });
 
