@@ -22,7 +22,16 @@ function isValidEmail(email: string): boolean {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
+ try {
+  let apiKey: string | undefined;
+  try {
+    apiKey = process.env.RESEND_API_KEY;
+  } catch (e) {
+    return NextResponse.json(
+      { error: "env-access-failed", detail: e instanceof Error ? e.message : String(e) },
+      { status: 500 }
+    );
+  }
   if (!apiKey) {
     console.log("[v0] send route: RESEND_API_KEY is not set");
     return NextResponse.json({ error: "Email service not configured." }, { status: 500 });
@@ -108,6 +117,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.log("[v0] send route exception:", err instanceof Error ? err.message : String(err));
-    return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
+    return NextResponse.json({ error: "Failed to send email." }, { status: 502 });
+  }
+ } catch (fatal) {
+    return NextResponse.json(
+      { error: "fatal", detail: fatal instanceof Error ? fatal.message : String(fatal) },
+      { status: 500 }
+    );
   }
 }
