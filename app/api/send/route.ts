@@ -3,9 +3,13 @@ import { NextResponse } from "next/server";
 // Edge runtime so this works on the Cloudflare Pages production runtime.
 export const runtime = "edge";
 
-const TO_ADDRESS = "contact@goldbench.ch";
-// Resend's shared sender works with zero DNS setup. Once goldbench.ch is
-// verified in Resend, set RESEND_FROM to e.g. "GoldBench <noreply@goldbench.ch>".
+// Where form submissions are delivered. Defaults to the goldbench.ch inbox.
+// Until the goldbench.ch domain is verified in Resend, set CONTACT_TO to your
+// Resend account email so test sends are accepted.
+const TO_ADDRESS = process.env.CONTACT_TO || "contact@goldbench.ch";
+// Resend's shared sender works with zero DNS setup but can only deliver to the
+// Resend account owner. Once goldbench.ch is verified in Resend, set RESEND_FROM
+// to e.g. "GoldBench <noreply@goldbench.ch>" to send to any recipient.
 const FROM_ADDRESS = process.env.RESEND_FROM || "GoldBench <onboarding@resend.dev>";
 
 function escapeHtml(value: string): string {
