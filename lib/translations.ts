@@ -245,6 +245,29 @@ export const translations = {
         { title: "Client Gallery", description: "Share curated pieces with one click" },
       ],
     },
+    // Comparison
+    comparison: {
+      label: "The Switch",
+      title: "Why Goldsmiths Switch to GoldBench",
+      subtitle: "Less desk work. More time at the bench.",
+      stats: ["600+ Atelier Tasks Logged", "75% Done by Voice", "88 Hours Given Back"],
+      colTask: "Task",
+      colTraditional: "Traditional Atelier",
+      colTraditionalNote: "PC & Paper",
+      colGoldbench: "GoldBench",
+      rows: [
+        { task: "How You Work", traditional: "Walk to PC, type & click", goldbench: "Speak at the bench in Telegram", badge: "75% via Voice" },
+        { task: "Product & Model Photos", traditional: "Lightbox, cables & retouching", goldbench: "Studio & model shot in 15s", badge: "~CHF 200/mo value" },
+        { task: "Valuations, Quotes & Invoices", traditional: "20 mins typing per document", goldbench: "Dictated by voice in seconds", badge: "Saves 10h (CHF 1,500/mo)" },
+        { task: "Inventory, CRM & Reminders", traditional: "4 separate tools + sticky notes", goldbench: "All-in-one via voice & web", badge: "~CHF 600/mo value" },
+        { task: "Receipts & Bookkeeping", traditional: "Paper folders & manual counting", goldbench: "Snap receipt in chat → auto-logged", badge: "~CHF 200/mo value" },
+        { task: "Data Hosting", traditional: "Local PC or scattered apps", goldbench: "100% Swiss Cloud (DSG)", badge: "Swiss Hosted" },
+      ],
+      footerTraditional: "10+ hours lost at the desk every month",
+      footerGoldbench: "Replaces ~CHF 2,500/mo in time & tools",
+      footerPrice: "Starting at CHF 99/mo",
+      cta: "Start with GoldBench",
+    },
     // Security
     security: {
       label: "Data Sovereignty",

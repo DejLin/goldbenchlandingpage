@@ -4,6 +4,7 @@ import { Friction } from "@/components/landing/friction"
 import { BenchCalculator } from "@/components/landing/bench-calculator"
 import { RevenueEngine } from "@/components/landing/revenue-engine"
 import { MidCTA } from "@/components/landing/mid-cta"
+import { Comparison } from "@/components/landing/comparison"
 import { Security } from "@/components/landing/security"
 import { FinalCTA } from "@/components/landing/final-cta"
 import { ScrollToTop } from "@/components/landing/scroll-to-top"
@@ -19,6 +20,7 @@ export default function Home() {
       <BenchCalculator />
       <RevenueEngine />
       <MidCTA />
+      <Comparison />
       <Security />
       <FinalCTA />
       <ScrollToTop />
