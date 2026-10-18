@@ -51,7 +51,7 @@ export function Comparison() {
                   {c.colTask}
                 </th>
                 <th scope="col" className="w-1/3 pb-4 px-5 text-left text-[11px] font-normal uppercase tracking-[0.25em] text-platinum/40">
-                  {c.colTraditional} <span className="normal-case tracking-normal">({c.colTraditionalNote})</span>
+                  {c.colTraditional}
                 </th>
                 <th
                   scope="col"
@@ -95,7 +95,8 @@ export function Comparison() {
                 </td>
                 <td className="pt-6 pb-6 px-5 border-x border-b border-gold bg-gold/10">
                   <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
-                  <p className="text-gold text-sm mt-1 mb-4">{c.footerPrice}</p>
+                  <p className="text-gold text-sm mt-1">{c.footerPrice}</p>
+                  <p className="text-platinum/60 text-sm mt-1 mb-4">{c.footerLaunch}</p>
                   <CtaButton label={c.cta} />
                 </td>
               </tr>
@@ -138,6 +139,7 @@ export function Comparison() {
             <div>
               <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
               <p className="text-gold text-sm mt-1">{c.footerPrice}</p>
+              <p className="text-platinum/60 text-sm mt-1">{c.footerLaunch}</p>
             </div>
             <CtaButton label={c.cta} />
           </div>

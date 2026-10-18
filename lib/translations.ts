@@ -256,7 +256,7 @@ export const translations = {
       colTraditionalNote: "PC & Paper",
       colGoldbench: "GoldBench",
       rows: [
-        { task: "How You Work", traditional: "Walk to PC, type & click", goldbench: "Just speak in Telegram", badge: "75% via Voice" },
+        { task: "How You Work", traditional: "Walk to PC, type & click", goldbench: "Just speak in App", badge: "75% via Voice" },
         { task: "Product & Model Photos", traditional: "Lightbox, cables & retouching", goldbench: "Studio & model shot in 15s", badge: "No studio needed" },
         { task: "Valuations, Quotes & Invoices", traditional: "Slow typing in Word & Excel", goldbench: "Dictated by voice in seconds", badge: "Saves ~10h / mo" },
         { task: "Inventory, Customers & Reminders", traditional: "4 separate tools + sticky notes", goldbench: "All-in-one via voice & web", badge: "1 place instead of 4" },
@@ -265,8 +265,9 @@ export const translations = {
       ],
       footerTraditional: "10+ hours lost to admin every month",
       footerGoldbench: "Saves 10+ hours of admin every month",
-      footerPrice: "Starting at CHF 99/mo",
-      cta: "Start with GoldBench",
+      footerPrice: "Starting at CHF 99/mo (early founders round only)",
+      footerLaunch: "Launch on 11th November 2026",
+      cta: "Request Early Access",
     },
     // Security
     security: {
