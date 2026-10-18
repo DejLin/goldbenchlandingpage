@@ -55,7 +55,7 @@ export function Footer() {
               <span className="text-[10px] tracking-[0.2em] text-gold">GB</span>
             </div>
             <span className="text-[11px] tracking-[0.2em] text-platinum-dim/60 uppercase">
-              GoldBench
+              Goldbench
             </span>
           </div>
 

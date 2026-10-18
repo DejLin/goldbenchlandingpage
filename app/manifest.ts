@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "GoldBench – Sprachassistent für Goldschmiede",
-    short_name: "GoldBench",
+    name: "Goldbench – Sprachassistent für Goldschmiede",
+    short_name: "Goldbench",
     description:
       "Der erste Sprachassistent exklusiv für Goldschmiede. Diktieren Sie Angebote, erfassen Sie Material und verwalten Sie Kunden in Sekunden.",
     lang: "de-CH",

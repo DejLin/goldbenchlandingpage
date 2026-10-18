@@ -20,7 +20,7 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
 });
 
-const SITE_TITLE = 'GoldBench | Sprachassistent für unabhängige Goldschmiede'
+const SITE_TITLE = 'Goldbench | Sprachassistent für unabhängige Goldschmiede'
 const SITE_DESCRIPTION =
   'Der erste Sprachassistent exklusiv für Goldschmiede. Diktieren Sie Angebote, erfassen Sie Material und verwalten Sie Kunden in Sekunden – ohne Ihr Werkzeug aus der Hand zu legen.'
 const SITE_URL = 'https://www.goldbench.ch'
@@ -28,7 +28,7 @@ const OG_IMAGE = {
   url: '/og-image.png',
   width: 1200,
   height: 634,
-  alt: 'GoldBench – Sprachassistent für Goldschmiede: Goldschmied am Werktisch mit Sprachaufnahme, Kundenverwaltung und Atelier-Dashboard',
+  alt: 'Goldbench – Sprachassistent für Goldschmiede: Goldschmied am Werktisch mit Sprachaufnahme, Kundenverwaltung und Atelier-Dashboard',
 }
 
 export const metadata: Metadata = {
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     'Goldschmiede Software',
     'Atelier Software Schmuck',
     'Schmuck Werkstatt Software Schweiz',
-    'GoldBench',
+    'Goldbench',
   ],
-  generator: 'GoldBench',
+  generator: 'Goldbench',
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
-    siteName: 'GoldBench',
+    siteName: 'Goldbench',
     locale: 'de_CH',
     type: 'website',
     images: [OG_IMAGE],
@@ -82,7 +82,7 @@ const jsonLd = {
     {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
-      name: 'GoldBench',
+      name: 'Goldbench',
       url: SITE_URL,
       logo: `${SITE_URL}/favicon.png`,
       description:
@@ -96,7 +96,7 @@ const jsonLd = {
     {
       '@type': 'SoftwareApplication',
       '@id': `${SITE_URL}/#software`,
-      name: 'GoldBench',
+      name: 'Goldbench',
       applicationCategory: 'Business Management Software',
       operatingSystem: 'Web, Voice',
       url: SITE_URL,

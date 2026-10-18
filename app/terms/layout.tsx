@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Nutzungsbedingungen | GoldBench",
+  title: "Nutzungsbedingungen | Goldbench",
   description:
-    "Die Nutzungsbedingungen für GoldBench, den Sprachassistenten für unabhängige Goldschmiede und Schmuckateliers.",
+    "Die Nutzungsbedingungen für Goldbench, den Sprachassistenten für unabhängige Goldschmiede und Schmuckateliers.",
   alternates: {
     canonical: "/terms",
   },

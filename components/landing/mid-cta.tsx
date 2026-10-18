@@ -10,7 +10,7 @@ export function MidCTA() {
   return (
     <section
       className="py-20 md:py-24 bg-obsidian relative overflow-hidden"
-      aria-label="Frühen Zugang zu GoldBench anfordern"
+      aria-label="Frühen Zugang zu Goldbench anfordern"
     >
       {/* Subtle gradient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gold/5 rounded-full blur-[120px] pointer-events-none" />
