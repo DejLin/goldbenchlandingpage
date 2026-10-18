@@ -71,8 +71,8 @@ export default function ContactPage() {
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: "New contact message from GoldBench",
-          from_name: "GoldBench Contact Form",
+          subject: "New contact message from Goldbench",
+          from_name: "Goldbench Contact Form",
           name: formState.name,
           email: formState.email,
           atelier: formState.company || "Not provided",

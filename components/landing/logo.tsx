@@ -26,7 +26,7 @@ export function Logo({ className = "" }: LogoProps) {
       >
         <Image
           src="/images/goldbench-logo-512.png"
-          alt="GoldBench - Voice-Powered Workspace for Goldsmiths"
+          alt="Goldbench - Voice-Powered Workspace for Goldsmiths"
           width={160}
           height={160}
           quality={90}
@@ -47,7 +47,7 @@ export function LogoMinimal({ className = "" }: { className?: string }) {
     >
       <Image
         src="/images/goldbench-logo-512.png"
-        alt="GoldBench"
+        alt="Goldbench"
         width={80}
         height={80}
         quality={90}

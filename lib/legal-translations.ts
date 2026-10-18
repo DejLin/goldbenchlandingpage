@@ -28,7 +28,7 @@ export const legalTranslations = {
           title: "3. How We Use Your Information",
           intro: "During the beta testing phase, we use the information we collect to:",
           items: [
-            "Provide beta testing access to the GoldBench platform",
+            "Provide beta testing access to the Goldbench platform",
             "Communicate with you about the beta program and updates",
             "Gather feedback to improve the service",
             "Process voice commands and generate ledger entries",
@@ -48,7 +48,7 @@ export const legalTranslations = {
         },
         dataProcessing: {
           title: "5. Data Processing & Sub-Processors",
-          text: "To provide automated structuring and administrative assistance, the GoldBench beta utilizes third-party AI processing infrastructure. All data processed through these pipelines is explicitly configured for Zero Data Retention (ZDR) and is processed ephemerally. We do not sell data or use beta input for commercial marketing."
+          text: "To provide automated structuring and administrative assistance, the Goldbench beta utilizes third-party AI processing infrastructure. All data processed through these pipelines is explicitly configured for Zero Data Retention (ZDR) and is processed ephemerally. We do not sell data or use beta input for commercial marketing."
         },
         dataSharing: {
           title: "6. Data Sharing",
@@ -91,11 +91,11 @@ export const legalTranslations = {
       sections: {
         agreement: {
           title: "1. Agreement to Terms",
-          text: "Welcome to GoldBench. These Terms and Conditions govern your use of the GoldBench platform, a voice-powered administration and clienteling tool designed exclusively for independent goldsmiths, jewelers, and ateliers. By using GoldBench, you agree to these terms with the Goldbench Beta Project. Our platform is built to respect your craft and protect your proprietary data, including custom alloy formulas and private client lists."
+          text: "Welcome to Goldbench. These Terms and Conditions govern your use of the Goldbench platform, a voice-powered administration and clienteling tool designed exclusively for independent goldsmiths, jewelers, and ateliers. By using Goldbench, you agree to these terms with the Goldbench Beta Project. Our platform is built to respect your craft and protect your proprietary data, including custom alloy formulas and private client lists."
         },
         description: {
           title: "2. Description of Service",
-          intro: "GoldBench provides a voice-activated business management platform that includes:",
+          intro: "Goldbench provides a voice-activated business management platform that includes:",
           items: [
             "Voice-to-ledger inventory tracking",
             "Automated invoice generation",
@@ -107,11 +107,11 @@ export const legalTranslations = {
         },
         account: {
           title: "3. Account Registration",
-          text: "To use GoldBench, you must create an account with accurate and complete information. You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. You must notify us immediately of any unauthorized use of your account."
+          text: "To use Goldbench, you must create an account with accurate and complete information. You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. You must notify us immediately of any unauthorized use of your account."
         },
         betaAccess: {
           title: "4. Beta Access",
-          intro: "During the beta testing phase, GoldBench is provided free of charge. By participating, you acknowledge:",
+          intro: "During the beta testing phase, Goldbench is provided free of charge. By participating, you acknowledge:",
           items: [
             "The service may be modified, reset, or discontinued at any time",
             "No uptime or availability guarantees are provided",
@@ -122,18 +122,18 @@ export const legalTranslations = {
         },
         clientData: {
           title: "5. Client Data Authority",
-          text: "By utilizing the GoldBench beta to process operational shop data, the participating beta user (the Data Controller) confirms they possess the necessary legal authority, consent, and rights under the Swiss nFADP to process their end-customers' data through automated third-party AI pipelines. The beta user accepts full responsibility for the data entered into the testing environment."
+          text: "By utilizing the Goldbench beta to process operational shop data, the participating beta user (the Data Controller) confirms they possess the necessary legal authority, consent, and rights under the Swiss nFADP to process their end-customers' data through automated third-party AI pipelines. The beta user accepts full responsibility for the data entered into the testing environment."
         },
         ip: {
           title: "6. Intellectual Property",
           yourContent: "Your Content:",
-          yourContentText: "You retain full ownership of all data, images, formulas, and proprietary information you upload to GoldBench. We claim no intellectual property rights over your materials.",
+          yourContentText: "You retain full ownership of all data, images, formulas, and proprietary information you upload to Goldbench. We claim no intellectual property rights over your materials.",
           ourPlatform: "Our Platform:",
-          ourPlatformText: "GoldBench, including its design, features, and underlying technology, is protected by intellectual property laws. You may not copy, modify, or reverse engineer any part of our service."
+          ourPlatformText: "Goldbench, including its design, features, and underlying technology, is protected by intellectual property laws. You may not copy, modify, or reverse engineer any part of our service."
         },
         acceptableUse: {
           title: "7. Acceptable Use",
-          intro: "You agree not to use GoldBench to:",
+          intro: "You agree not to use Goldbench to:",
           items: [
             "Violate any applicable laws or regulations",
             "Infringe on intellectual property rights of others",
@@ -148,7 +148,7 @@ export const legalTranslations = {
         },
         liability: {
           title: "9. Limitation of Liability",
-          text: "The GoldBench beta service is provided \"as is\" without warranties of any kind. The Development Team shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, arising from your use of the service."
+          text: "The Goldbench beta service is provided \"as is\" without warranties of any kind. The Development Team shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or business opportunities, arising from your use of the service."
         },
         termination: {
           title: "10. Termination",
@@ -194,7 +194,7 @@ export const legalTranslations = {
           title: "3. Wie wir Ihre Informationen verwenden",
           intro: "Während der Beta-Testphase verwenden wir die gesammelten Informationen, um:",
           items: [
-            "Beta-Testzugang zur GoldBench-Plattform bereitzustellen",
+            "Beta-Testzugang zur Goldbench-Plattform bereitzustellen",
             "Mit Ihnen über das Beta-Programm und Updates zu kommunizieren",
             "Feedback zur Verbesserung des Dienstes zu sammeln",
             "Sprachbefehle zu verarbeiten und Ledger-Einträge zu generieren",
@@ -214,7 +214,7 @@ export const legalTranslations = {
         },
         dataProcessing: {
           title: "5. Datenverarbeitung & Unterauftragnehmer",
-          text: "Um automatisierte Strukturierung und administrative Unterstützung bereitzustellen, nutzt die GoldBench-Beta Drittanbieter-KI-Verarbeitungsinfrastruktur. Alle durch diese Pipelines verarbeiteten Daten sind ausdrücklich für Zero Data Retention (ZDR) konfiguriert und werden ephemer verarbeitet. Wir verkaufen keine Daten und verwenden Beta-Eingaben nicht für kommerzielles Marketing."
+          text: "Um automatisierte Strukturierung und administrative Unterstützung bereitzustellen, nutzt die Goldbench-Beta Drittanbieter-KI-Verarbeitungsinfrastruktur. Alle durch diese Pipelines verarbeiteten Daten sind ausdrücklich für Zero Data Retention (ZDR) konfiguriert und werden ephemer verarbeitet. Wir verkaufen keine Daten und verwenden Beta-Eingaben nicht für kommerzielles Marketing."
         },
         dataSharing: {
           title: "6. Datenweitergabe",
@@ -257,11 +257,11 @@ export const legalTranslations = {
       sections: {
         agreement: {
           title: "1. Zustimmung zu den Bedingungen",
-          text: "Willkommen bei GoldBench. Diese Allgemeinen Geschäftsbedingungen regeln Ihre Nutzung der GoldBench-Plattform, einem sprachgesteuerten Verwaltungs- und Kundenbetreuungstool, das ausschliesslich für unabhängige Goldschmiede, Juweliere und Ateliers entwickelt wurde. Durch die Nutzung von GoldBench stimmen Sie diesen Bedingungen mit dem Goldbench Beta-Projekt zu. Unsere Plattform ist darauf ausgelegt, Ihr Handwerk zu respektieren und Ihre proprietären Daten zu schützen, einschliesslich benutzerdefinierter Legierungsformeln und privater Kundenlisten."
+          text: "Willkommen bei Goldbench. Diese Allgemeinen Geschäftsbedingungen regeln Ihre Nutzung der Goldbench-Plattform, einem sprachgesteuerten Verwaltungs- und Kundenbetreuungstool, das ausschliesslich für unabhängige Goldschmiede, Juweliere und Ateliers entwickelt wurde. Durch die Nutzung von Goldbench stimmen Sie diesen Bedingungen mit dem Goldbench Beta-Projekt zu. Unsere Plattform ist darauf ausgelegt, Ihr Handwerk zu respektieren und Ihre proprietären Daten zu schützen, einschliesslich benutzerdefinierter Legierungsformeln und privater Kundenlisten."
         },
         description: {
           title: "2. Beschreibung des Dienstes",
-          intro: "GoldBench bietet eine sprachaktivierte Geschäftsverwaltungsplattform, die Folgendes umfasst:",
+          intro: "Goldbench bietet eine sprachaktivierte Geschäftsverwaltungsplattform, die Folgendes umfasst:",
           items: [
             "Sprache-zu-Ledger-Inventarverfolgung",
             "Automatisierte Rechnungserstellung",
@@ -273,11 +273,11 @@ export const legalTranslations = {
         },
         account: {
           title: "3. Kontoregistrierung",
-          text: "Um GoldBench zu nutzen, müssen Sie ein Konto mit genauen und vollständigen Informationen erstellen. Sie sind verantwortlich für die Wahrung der Vertraulichkeit Ihrer Kontodaten und für alle Aktivitäten unter Ihrem Konto. Sie müssen uns unverzüglich über jede unbefugte Nutzung Ihres Kontos informieren."
+          text: "Um Goldbench zu nutzen, müssen Sie ein Konto mit genauen und vollständigen Informationen erstellen. Sie sind verantwortlich für die Wahrung der Vertraulichkeit Ihrer Kontodaten und für alle Aktivitäten unter Ihrem Konto. Sie müssen uns unverzüglich über jede unbefugte Nutzung Ihres Kontos informieren."
         },
         betaAccess: {
           title: "4. Beta-Zugang",
-          intro: "Während der Beta-Testphase wird GoldBench kostenlos bereitgestellt. Mit der Teilnahme bestätigen Sie:",
+          intro: "Während der Beta-Testphase wird Goldbench kostenlos bereitgestellt. Mit der Teilnahme bestätigen Sie:",
           items: [
             "Der Dienst kann jederzeit geändert, zurückgesetzt oder eingestellt werden",
             "Es werden keine Verfügbarkeitsgarantien gegeben",
@@ -288,18 +288,18 @@ export const legalTranslations = {
         },
         clientData: {
           title: "5. Kundendatenbefugnis",
-          text: "Durch die Nutzung der GoldBench-Beta zur Verarbeitung operativer Geschäftsdaten bestätigt der teilnehmende Beta-Nutzer (der Datenverantwortliche), dass er die erforderliche rechtliche Befugnis, Einwilligung und Rechte gemäss dem Schweizer nDSG besitzt, um die Daten seiner Endkunden durch automatisierte Drittanbieter-KI-Pipelines zu verarbeiten. Der Beta-Nutzer übernimmt die volle Verantwortung für die in die Testumgebung eingegebenen Daten."
+          text: "Durch die Nutzung der Goldbench-Beta zur Verarbeitung operativer Geschäftsdaten bestätigt der teilnehmende Beta-Nutzer (der Datenverantwortliche), dass er die erforderliche rechtliche Befugnis, Einwilligung und Rechte gemäss dem Schweizer nDSG besitzt, um die Daten seiner Endkunden durch automatisierte Drittanbieter-KI-Pipelines zu verarbeiten. Der Beta-Nutzer übernimmt die volle Verantwortung für die in die Testumgebung eingegebenen Daten."
         },
         ip: {
           title: "6. Geistiges Eigentum",
           yourContent: "Ihre Inhalte:",
-          yourContentText: "Sie behalten das volle Eigentum an allen Daten, Bildern, Formeln und proprietären Informationen, die Sie zu GoldBench hochladen. Wir beanspruchen keine geistigen Eigentumsrechte an Ihren Materialien.",
+          yourContentText: "Sie behalten das volle Eigentum an allen Daten, Bildern, Formeln und proprietären Informationen, die Sie zu Goldbench hochladen. Wir beanspruchen keine geistigen Eigentumsrechte an Ihren Materialien.",
           ourPlatform: "Unsere Plattform:",
-          ourPlatformText: "GoldBench, einschliesslich seines Designs, seiner Funktionen und der zugrunde liegenden Technologie, ist durch Gesetze zum geistigen Eigentum geschützt. Sie dürfen keinen Teil unseres Dienstes kopieren, modifizieren oder reverse-engineeren."
+          ourPlatformText: "Goldbench, einschliesslich seines Designs, seiner Funktionen und der zugrunde liegenden Technologie, ist durch Gesetze zum geistigen Eigentum geschützt. Sie dürfen keinen Teil unseres Dienstes kopieren, modifizieren oder reverse-engineeren."
         },
         acceptableUse: {
           title: "7. Akzeptable Nutzung",
-          intro: "Sie erklären sich damit einverstanden, GoldBench nicht zu verwenden, um:",
+          intro: "Sie erklären sich damit einverstanden, Goldbench nicht zu verwenden, um:",
           items: [
             "Gegen geltende Gesetze oder Vorschriften zu verstossen",
             "Geistige Eigentumsrechte anderer zu verletzen",
@@ -314,7 +314,7 @@ export const legalTranslations = {
         },
         liability: {
           title: "9. Haftungsbeschränkung",
-          text: "Der GoldBench-Beta-Dienst wird \"wie besehen\" ohne jegliche Gewährleistungen bereitgestellt. Das Entwicklungsteam haftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, einschliesslich entgangener Gewinne, Daten oder Geschäftsmöglichkeiten, die aus Ihrer Nutzung des Dienstes entstehen."
+          text: "Der Goldbench-Beta-Dienst wird \"wie besehen\" ohne jegliche Gewährleistungen bereitgestellt. Das Entwicklungsteam haftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, einschliesslich entgangener Gewinne, Daten oder Geschäftsmöglichkeiten, die aus Ihrer Nutzung des Dienstes entstehen."
         },
         termination: {
           title: "10. Kündigung",
@@ -360,7 +360,7 @@ export const legalTranslations = {
           title: "3. Comment nous utilisons vos informations",
           intro: "Pendant la phase de test bêta, nous utilisons les informations collectées pour :",
           items: [
-            "Fournir un accès au test bêta de la plateforme GoldBench",
+            "Fournir un accès au test bêta de la plateforme Goldbench",
             "Communiquer avec vous sur le programme bêta et les mises à jour",
             "Recueillir des commentaires pour améliorer le service",
             "Traiter les commandes vocales et générer des entrées de registre",
@@ -380,7 +380,7 @@ export const legalTranslations = {
         },
         dataProcessing: {
           title: "5. Traitement des données et sous-traitants",
-          text: "Pour fournir une structuration automatisée et une assistance administrative, la bêta GoldBench utilise une infrastructure de traitement IA tierce. Toutes les données traitées via ces pipelines sont explicitement configurées pour Zero Data Retention (ZDR) et sont traitées de manière éphémère. Nous ne vendons pas de données et n'utilisons pas les entrées bêta pour le marketing commercial."
+          text: "Pour fournir une structuration automatisée et une assistance administrative, la bêta Goldbench utilise une infrastructure de traitement IA tierce. Toutes les données traitées via ces pipelines sont explicitement configurées pour Zero Data Retention (ZDR) et sont traitées de manière éphémère. Nous ne vendons pas de données et n'utilisons pas les entrées bêta pour le marketing commercial."
         },
         dataSharing: {
           title: "6. Partage des données",
@@ -423,11 +423,11 @@ export const legalTranslations = {
       sections: {
         agreement: {
           title: "1. Acceptation des conditions",
-          text: "Bienvenue sur GoldBench. Ces conditions générales régissent votre utilisation de la plateforme GoldBench, un outil d'administration et de clienteling vocal conçu exclusivement pour les orfèvres, bijoutiers et ateliers indépendants. En utilisant GoldBench, vous acceptez ces conditions avec le projet Goldbench Beta. Notre plateforme est conçue pour respecter votre métier et protéger vos données propriétaires, y compris les formules d'alliages personnalisées et les listes de clients privées."
+          text: "Bienvenue sur Goldbench. Ces conditions générales régissent votre utilisation de la plateforme Goldbench, un outil d'administration et de clienteling vocal conçu exclusivement pour les orfèvres, bijoutiers et ateliers indépendants. En utilisant Goldbench, vous acceptez ces conditions avec le projet Goldbench Beta. Notre plateforme est conçue pour respecter votre métier et protéger vos données propriétaires, y compris les formules d'alliages personnalisées et les listes de clients privées."
         },
         description: {
           title: "2. Description du service",
-          intro: "GoldBench fournit une plateforme de gestion d'entreprise activée par la voix qui comprend :",
+          intro: "Goldbench fournit une plateforme de gestion d'entreprise activée par la voix qui comprend :",
           items: [
             "Suivi d'inventaire voix-vers-registre",
             "Génération automatisée de factures",
@@ -439,11 +439,11 @@ export const legalTranslations = {
         },
         account: {
           title: "3. Inscription au compte",
-          text: "Pour utiliser GoldBench, vous devez créer un compte avec des informations exactes et complètes. Vous êtes responsable du maintien de la confidentialité de vos identifiants de compte et de toutes les activités sous votre compte. Vous devez nous informer immédiatement de toute utilisation non autorisée de votre compte."
+          text: "Pour utiliser Goldbench, vous devez créer un compte avec des informations exactes et complètes. Vous êtes responsable du maintien de la confidentialité de vos identifiants de compte et de toutes les activités sous votre compte. Vous devez nous informer immédiatement de toute utilisation non autorisée de votre compte."
         },
         betaAccess: {
           title: "4. Accès bêta",
-          intro: "Pendant la phase de test bêta, GoldBench est fourni gratuitement. En participant, vous reconnaissez que :",
+          intro: "Pendant la phase de test bêta, Goldbench est fourni gratuitement. En participant, vous reconnaissez que :",
           items: [
             "Le service peut être modifié, réinitialisé ou interrompu à tout moment",
             "Aucune garantie de disponibilité n'est fournie",
@@ -454,18 +454,18 @@ export const legalTranslations = {
         },
         clientData: {
           title: "5. Autorité sur les données clients",
-          text: "En utilisant la bêta GoldBench pour traiter les données opérationnelles de la boutique, l'utilisateur bêta participant (le responsable du traitement) confirme qu'il possède l'autorité légale, le consentement et les droits nécessaires en vertu de la nLPD suisse pour traiter les données de ses clients finaux via des pipelines IA tiers automatisés. L'utilisateur bêta accepte l'entière responsabilité des données saisies dans l'environnement de test."
+          text: "En utilisant la bêta Goldbench pour traiter les données opérationnelles de la boutique, l'utilisateur bêta participant (le responsable du traitement) confirme qu'il possède l'autorité légale, le consentement et les droits nécessaires en vertu de la nLPD suisse pour traiter les données de ses clients finaux via des pipelines IA tiers automatisés. L'utilisateur bêta accepte l'entière responsabilité des données saisies dans l'environnement de test."
         },
         ip: {
           title: "6. Propriété intellectuelle",
           yourContent: "Votre contenu :",
-          yourContentText: "Vous conservez la pleine propriété de toutes les données, images, formules et informations propriétaires que vous téléchargez sur GoldBench. Nous ne revendiquons aucun droit de propriété intellectuelle sur vos matériaux.",
+          yourContentText: "Vous conservez la pleine propriété de toutes les données, images, formules et informations propriétaires que vous téléchargez sur Goldbench. Nous ne revendiquons aucun droit de propriété intellectuelle sur vos matériaux.",
           ourPlatform: "Notre plateforme :",
-          ourPlatformText: "GoldBench, y compris sa conception, ses fonctionnalités et sa technologie sous-jacente, est protégé par les lois sur la propriété intellectuelle. Vous ne pouvez pas copier, modifier ou désosser aucune partie de notre service."
+          ourPlatformText: "Goldbench, y compris sa conception, ses fonctionnalités et sa technologie sous-jacente, est protégé par les lois sur la propriété intellectuelle. Vous ne pouvez pas copier, modifier ou désosser aucune partie de notre service."
         },
         acceptableUse: {
           title: "7. Utilisation acceptable",
-          intro: "Vous acceptez de ne pas utiliser GoldBench pour :",
+          intro: "Vous acceptez de ne pas utiliser Goldbench pour :",
           items: [
             "Violer les lois ou règlements applicables",
             "Porter atteinte aux droits de propriété intellectuelle d'autrui",
@@ -480,7 +480,7 @@ export const legalTranslations = {
         },
         liability: {
           title: "9. Limitation de responsabilité",
-          text: "Le service bêta GoldBench est fourni « tel quel » sans garantie d'aucune sorte. L'équipe de développement ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, y compris la perte de profits, de données ou d'opportunités commerciales, découlant de votre utilisation du service."
+          text: "Le service bêta Goldbench est fourni « tel quel » sans garantie d'aucune sorte. L'équipe de développement ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs, y compris la perte de profits, de données ou d'opportunités commerciales, découlant de votre utilisation du service."
         },
         termination: {
           title: "10. Résiliation",
@@ -526,7 +526,7 @@ export const legalTranslations = {
           title: "3. Come utilizziamo le tue informazioni",
           intro: "Durante la fase di test beta, utilizziamo le informazioni raccolte per:",
           items: [
-            "Fornire accesso al test beta della piattaforma GoldBench",
+            "Fornire accesso al test beta della piattaforma Goldbench",
             "Comunicare con te riguardo al programma beta e agli aggiornamenti",
             "Raccogliere feedback per migliorare il servizio",
             "Elaborare comandi vocali e generare voci del registro",
@@ -546,7 +546,7 @@ export const legalTranslations = {
         },
         dataProcessing: {
           title: "5. Elaborazione dati e sub-processori",
-          text: "Per fornire strutturazione automatizzata e assistenza amministrativa, la beta di GoldBench utilizza infrastrutture di elaborazione IA di terze parti. Tutti i dati elaborati attraverso queste pipeline sono esplicitamente configurati per Zero Data Retention (ZDR) e vengono elaborati in modo effimero. Non vendiamo dati né utilizziamo gli input beta per marketing commerciale."
+          text: "Per fornire strutturazione automatizzata e assistenza amministrativa, la beta di Goldbench utilizza infrastrutture di elaborazione IA di terze parti. Tutti i dati elaborati attraverso queste pipeline sono esplicitamente configurati per Zero Data Retention (ZDR) e vengono elaborati in modo effimero. Non vendiamo dati né utilizziamo gli input beta per marketing commerciale."
         },
         dataSharing: {
           title: "6. Condivisione dei dati",
@@ -589,11 +589,11 @@ export const legalTranslations = {
       sections: {
         agreement: {
           title: "1. Accettazione dei termini",
-          text: "Benvenuto su GoldBench. Questi Termini e condizioni regolano l'utilizzo della piattaforma GoldBench, uno strumento di amministrazione e clienteling vocale progettato esclusivamente per orafi, gioiellieri e atelier indipendenti. Utilizzando GoldBench, accetti questi termini con il progetto Goldbench Beta. La nostra piattaforma è costruita per rispettare il tuo mestiere e proteggere i tuoi dati proprietari, incluse formule di leghe personalizzate e liste clienti private."
+          text: "Benvenuto su Goldbench. Questi Termini e condizioni regolano l'utilizzo della piattaforma Goldbench, uno strumento di amministrazione e clienteling vocale progettato esclusivamente per orafi, gioiellieri e atelier indipendenti. Utilizzando Goldbench, accetti questi termini con il progetto Goldbench Beta. La nostra piattaforma è costruita per rispettare il tuo mestiere e proteggere i tuoi dati proprietari, incluse formule di leghe personalizzate e liste clienti private."
         },
         description: {
           title: "2. Descrizione del servizio",
-          intro: "GoldBench fornisce una piattaforma di gestione aziendale attivata vocalmente che include:",
+          intro: "Goldbench fornisce una piattaforma di gestione aziendale attivata vocalmente che include:",
           items: [
             "Tracciamento inventario voce-a-registro",
             "Generazione automatica di fatture",
@@ -605,11 +605,11 @@ export const legalTranslations = {
         },
         account: {
           title: "3. Registrazione account",
-          text: "Per utilizzare GoldBench, devi creare un account con informazioni accurate e complete. Sei responsabile del mantenimento della riservatezza delle credenziali del tuo account e di tutte le attività sotto il tuo account. Devi notificarci immediatamente qualsiasi uso non autorizzato del tuo account."
+          text: "Per utilizzare Goldbench, devi creare un account con informazioni accurate e complete. Sei responsabile del mantenimento della riservatezza delle credenziali del tuo account e di tutte le attività sotto il tuo account. Devi notificarci immediatamente qualsiasi uso non autorizzato del tuo account."
         },
         betaAccess: {
           title: "4. Accesso beta",
-          intro: "Durante la fase di test beta, GoldBench è fornito gratuitamente. Partecipando, riconosci che:",
+          intro: "Durante la fase di test beta, Goldbench è fornito gratuitamente. Partecipando, riconosci che:",
           items: [
             "Il servizio può essere modificato, reimpostato o interrotto in qualsiasi momento",
             "Non vengono fornite garanzie di disponibilità",
@@ -620,18 +620,18 @@ export const legalTranslations = {
         },
         clientData: {
           title: "5. Autorità sui dati dei clienti",
-          text: "Utilizzando la beta di GoldBench per elaborare dati operativi del negozio, l'utente beta partecipante (il Titolare del trattamento) conferma di possedere l'autorità legale, il consenso e i diritti necessari ai sensi della nLPD svizzera per elaborare i dati dei propri clienti finali attraverso pipeline IA automatizzate di terze parti. L'utente beta accetta la piena responsabilità per i dati inseriti nell'ambiente di test."
+          text: "Utilizzando la beta di Goldbench per elaborare dati operativi del negozio, l'utente beta partecipante (il Titolare del trattamento) conferma di possedere l'autorità legale, il consenso e i diritti necessari ai sensi della nLPD svizzera per elaborare i dati dei propri clienti finali attraverso pipeline IA automatizzate di terze parti. L'utente beta accetta la piena responsabilità per i dati inseriti nell'ambiente di test."
         },
         ip: {
           title: "6. Proprietà intellettuale",
           yourContent: "I tuoi contenuti:",
-          yourContentText: "Mantieni la piena proprietà di tutti i dati, immagini, formule e informazioni proprietarie che carichi su GoldBench. Non rivendichiamo diritti di proprietà intellettuale sui tuoi materiali.",
+          yourContentText: "Mantieni la piena proprietà di tutti i dati, immagini, formule e informazioni proprietarie che carichi su Goldbench. Non rivendichiamo diritti di proprietà intellettuale sui tuoi materiali.",
           ourPlatform: "La nostra piattaforma:",
-          ourPlatformText: "GoldBench, incluso il suo design, le funzionalità e la tecnologia sottostante, è protetto dalle leggi sulla proprietà intellettuale. Non puoi copiare, modificare o decompilare alcuna parte del nostro servizio."
+          ourPlatformText: "Goldbench, incluso il suo design, le funzionalità e la tecnologia sottostante, è protetto dalle leggi sulla proprietà intellettuale. Non puoi copiare, modificare o decompilare alcuna parte del nostro servizio."
         },
         acceptableUse: {
           title: "7. Uso accettabile",
-          intro: "Accetti di non utilizzare GoldBench per:",
+          intro: "Accetti di non utilizzare Goldbench per:",
           items: [
             "Violare leggi o regolamenti applicabili",
             "Violare i diritti di proprietà intellettuale di altri",
@@ -646,7 +646,7 @@ export const legalTranslations = {
         },
         liability: {
           title: "9. Limitazione di responsabilità",
-          text: "Il servizio beta GoldBench è fornito \"così com'è\" senza garanzie di alcun tipo. Il Team di Sviluppo non sarà responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, inclusa la perdita di profitti, dati o opportunità commerciali, derivanti dall'utilizzo del servizio."
+          text: "Il servizio beta Goldbench è fornito \"così com'è\" senza garanzie di alcun tipo. Il Team di Sviluppo non sarà responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, inclusa la perdita di profitti, dati o opportunità commerciali, derivanti dall'utilizzo del servizio."
         },
         termination: {
           title: "10. Risoluzione",

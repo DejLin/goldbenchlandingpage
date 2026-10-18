@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Kontakt | GoldBench",
+  title: "Kontakt | Goldbench",
   description:
-    "Fragen zu GoldBench, dem Sprachassistenten für Goldschmiede? Schreiben Sie uns – wir antworten in der Regel innerhalb von 24 Stunden.",
+    "Fragen zu Goldbench, dem Sprachassistenten für Goldschmiede? Schreiben Sie uns – wir antworten in der Regel innerhalb von 24 Stunden.",
   alternates: {
     canonical: "/contact",
   },

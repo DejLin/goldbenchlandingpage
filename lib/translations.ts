@@ -13,7 +13,7 @@ export const translations = {
     hero: {
       title1: "Your hands craft the gold.",
       title2: "Your voice runs the business.",
-      subtitle: "GoldBench is the first voice-powered workspace built exclusively by Goldsmiths for Goldsmiths. Dictate quotes, track materials, and manage clients in seconds—without ever putting down your tools.",
+      subtitle: "Goldbench is the first voice-powered workspace built exclusively by Goldsmiths for Goldsmiths. Dictate quotes, track materials, and manage clients in seconds—without ever putting down your tools.",
       cta: "Request Early Access",
       ctaSubtext: "Limited spots available for independent goldsmiths.",
       scroll: "Scroll",
@@ -53,7 +53,7 @@ export const translations = {
       rateLabel: "Your bench rate per hour",
       hoursPerYear: "hours lost per year",
       moneyPerYear: "of bench time burned on paperwork",
-      reclaimTitle: "GoldBench gives you back",
+      reclaimTitle: "Goldbench gives you back",
       reclaimUnit: "hours a year",
       footnote: "Based on 46 working weeks. Early users automate roughly 8 of every 10 admin hours.",
     },
@@ -97,11 +97,11 @@ export const translations = {
           items: [
             {
               title: "Voice-to-Data Entry",
-              description: "Send a quick voice note to log a task, update a client, or check your stock. GoldBench listens and does the typing for you.",
+              description: "Send a quick voice note to log a task, update a client, or check your stock. Goldbench listens and does the typing for you.",
             },
             {
               title: "Snap Your Receipts",
-              description: "Take a photo of any receipt and GoldBench reads the shop, amount, and VAT automatically. It only asks one thing: cash or card?",
+              description: "Take a photo of any receipt and Goldbench reads the shop, amount, and VAT automatically. It only asks one thing: cash or card?",
             },
             {
               title: "Instant PDFs",
@@ -113,7 +113,7 @@ export const translations = {
             },
             {
               title: "One-Tap Corrections",
-              description: "Every time GoldBench logs something for you, it gives you a direct link to open it and fine-tune the details yourself.",
+              description: "Every time Goldbench logs something for you, it gives you a direct link to open it and fine-tune the details yourself.",
             },
           ],
         },
@@ -134,7 +134,7 @@ export const translations = {
             },
             {
               title: "Instagram Made Easy",
-              description: 'GoldBench writes on-brand captions and prepares your posts from a photo. Nothing ever goes live until you tap "Yes."',
+              description: 'Goldbench writes on-brand captions and prepares your posts from a photo. Nothing ever goes live until you tap "Yes."',
             },
           ],
         },
@@ -143,7 +143,7 @@ export const translations = {
           items: [
             {
               title: "Automatic Pricing",
-              description: "Enter the cost of gold, stones, and labor, set your markup, and GoldBench calculates the suggested retail price for you.",
+              description: "Enter the cost of gold, stones, and labor, set your markup, and Goldbench calculates the suggested retail price for you.",
             },
             {
               title: "Effortless Stone Tracking",
@@ -172,7 +172,7 @@ export const translations = {
             },
             {
               title: "Easy Till Counts",
-              description: "Count your physical cash, type in the number, and GoldBench works out and records any difference for you.",
+              description: "Count your physical cash, type in the number, and Goldbench works out and records any difference for you.",
             },
             {
               title: "Review Before You Approve",
@@ -213,9 +213,9 @@ export const translations = {
       processing: "Processing...",
       clickToSee: "Click below to see the workflow",
       invoiceReady: "Invoice ready in 12 seconds",
-      assistant: "GoldBench Voice Assistant",
+      assistant: "Goldbench Voice Assistant",
       dashboard: {
-        title: "Your GoldBench Workspace",
+        title: "Your Goldbench Workspace",
         live: "Live",
         inventoryLabel: "Inventory — 18K Gold",
         inventoryUnit: "g in stock",
@@ -245,6 +245,34 @@ export const translations = {
         { title: "Client Gallery", description: "Share curated pieces with one click" },
       ],
     },
+    // Comparison
+    comparison: {
+      label: "The Switch",
+      title: "Why Switch to Goldbench?",
+      subtitle: "Less admin, more time for you.",
+      stats: ["Proven Daily in a Swiss Atelier", "75% Done by Voice", "88 Hours Given Back"],
+      colTask: "Task",
+      colTraditional: "Traditional Atelier",
+      colTraditionalNote: "PC & Paper",
+      colGoldbench: "Goldbench",
+      rows: [
+        { task: "How You Work", traditional: "Walk to PC, type & click", goldbench: "Just speak in App", badge: "75% via Voice" },
+        { task: "Product & Model Photos", traditional: "Lightbox, cables & retouching", goldbench: "Studio & model shot in 15s", badge: "No studio needed" },
+        { task: "Valuations & Invoices", traditional: "Slow typing in Word & Excel", goldbench: "Dictated by voice in seconds", badge: "Saves ~10h / mo" },
+        { task: "Inventory, Customers & Reminders", traditional: "4 separate tools + sticky notes", goldbench: "All-in-one via voice & web", badge: "1 place instead of 4" },
+        { task: "Receipts & Bookkeeping", traditional: "Paper folders & manual counting", goldbench: "Snap receipt in chat → auto-logged", badge: "Easy year-end tax return" },
+        { task: "Data & Privacy", traditional: "Local PC or scattered apps", goldbench: "100% Swiss Cloud hosting", badge: "DSG Compliant" },
+      ],
+      footerTraditional: "10+ hours lost to admin every month",
+      footerGoldbench: "Saves 10+ hours of admin every month",
+      footerPriceOld: "CHF 250",
+      footerPriceNew: "CHF 99",
+      footerPricePeriod: "/mo",
+      footerPriceBadge: "Save 60%",
+      footerPriceNote: "Founding member price · Early founders round only",
+      footerLaunch: "Launch on 11th November 2026",
+      cta: "Request Early Access",
+    },
     // Security
     security: {
       label: "Data Sovereignty",
@@ -257,7 +285,7 @@ export const translations = {
     finalCta: {
       title1: "Reclaim your time.",
       title2: "Protect your craft.",
-      subtitle: "Let GoldBench handle the admin so your hands can stay at the bench.",
+      subtitle: "Let Goldbench handle the admin so your hands can stay at the bench.",
       cta: "Secure Your Early Access",
       ctaSubtext: "Join the exclusive waitlist for independent goldsmiths.",
       location: "Switzerland",
@@ -276,7 +304,7 @@ export const translations = {
     earlyAccess: {
       backToHome: "Back to Home",
       title: "Join the",
-      titleHighlight: "GoldBench",
+      titleHighlight: "Goldbench",
       titleEnd: "Waitlist",
       subtitle: "We are onboarding a limited number of independent goldsmiths for our early access beta. Secure your spot to reclaim your bench time.",
       nameLabel: "Name",
@@ -320,7 +348,7 @@ export const translations = {
       responseTime: "Response Time",
       responseTimeValue: "We typically respond within 24 hours",
       betaProject: "Beta Project",
-      betaDescription: "GoldBench is currently a free, non-commercial beta testing environment.",
+      betaDescription: "Goldbench is currently a free, non-commercial beta testing environment.",
       sendMessage: "Send a Message",
       nameLabel: "Name",
       namePlaceholder: "Your name",
@@ -346,7 +374,7 @@ export const translations = {
     hero: {
       title1: "Deine Hände formen das Gold.",
       title2: "Deine Stimme führt das Geschäft.",
-      subtitle: "GoldBench ist der erste sprachgesteuerte Arbeitsplatz, der exklusiv von Goldschmieden für Goldschmiede entwickelt wurde. Diktiere Angebote, verfolge Materialien und verwalte Kunden in Sekunden – ohne jemals dein Werkzeug aus der Hand zu legen.",
+      subtitle: "Goldbench ist der erste sprachgesteuerte Arbeitsplatz, der exklusiv von Goldschmieden für Goldschmiede entwickelt wurde. Diktiere Angebote, verfolge Materialien und verwalte Kunden in Sekunden – ohne jemals dein Werkzeug aus der Hand zu legen.",
       cta: "Frühzugang anfragen",
       ctaSubtext: "Begrenzte Plätze für unabhängige Goldschmiede.",
       scroll: "Scrollen",
@@ -386,7 +414,7 @@ export const translations = {
       rateLabel: "Dein Stundensatz an der Werkbank",
       hoursPerYear: "verlorene Stunden pro Jahr",
       moneyPerYear: "an Werkbank-Zeit, verbrannt für Papierkram",
-      reclaimTitle: "GoldBench gibt dir zurück",
+      reclaimTitle: "Goldbench gibt dir zurück",
       reclaimUnit: "Stunden pro Jahr",
       footnote: "Basierend auf 46 Arbeitswochen. Frühe Nutzer automatisieren rund 8 von 10 Admin-Stunden.",
     },
@@ -431,11 +459,11 @@ export const translations = {
           items: [
             {
               title: "Spracheingabe von Daten",
-              description: "Sende eine kurze Sprachnachricht, um eine Aufgabe zu erfassen, einen Kunden zu aktualisieren oder deinen Bestand zu prüfen. GoldBench hört zu und tippt für dich.",
+              description: "Sende eine kurze Sprachnachricht, um eine Aufgabe zu erfassen, einen Kunden zu aktualisieren oder deinen Bestand zu prüfen. Goldbench hört zu und tippt für dich.",
             },
             {
               title: "Belege einfach abfotografieren",
-              description: "Fotografiere einen beliebigen Beleg und GoldBench erkennt Geschäft, Betrag und MWST automatisch. Es fragt nur eines: bar oder Karte?",
+              description: "Fotografiere einen beliebigen Beleg und Goldbench erkennt Geschäft, Betrag und MWST automatisch. Es fragt nur eines: bar oder Karte?",
             },
             {
               title: "Sofortige PDFs",
@@ -447,7 +475,7 @@ export const translations = {
             },
             {
               title: "Korrekturen mit einem Klick",
-              description: "Jedes Mal, wenn GoldBench etwas für dich erfasst, erhältst du einen direkten Link, um es zu öffnen und die Details selbst anzupassen.",
+              description: "Jedes Mal, wenn Goldbench etwas für dich erfasst, erhältst du einen direkten Link, um es zu öffnen und die Details selbst anzupassen.",
             },
           ],
         },
@@ -468,7 +496,7 @@ export const translations = {
             },
             {
               title: "Instagram leicht gemacht",
-              description: 'GoldBench schreibt markengerechte Bildtexte und bereitet deine Beiträge aus einem Foto vor. Nichts geht online, bevor du auf "Ja" tippst.',
+              description: 'Goldbench schreibt markengerechte Bildtexte und bereitet deine Beiträge aus einem Foto vor. Nichts geht online, bevor du auf "Ja" tippst.',
             },
           ],
         },
@@ -477,7 +505,7 @@ export const translations = {
           items: [
             {
               title: "Automatische Preisberechnung",
-              description: "Gib die Kosten für Gold, Steine und Arbeit ein, lege deinen Aufschlag fest, und GoldBench berechnet den empfohlenen Verkaufspreis für dich.",
+              description: "Gib die Kosten für Gold, Steine und Arbeit ein, lege deinen Aufschlag fest, und Goldbench berechnet den empfohlenen Verkaufspreis für dich.",
             },
             {
               title: "Mühelose Steinverwaltung",
@@ -506,7 +534,7 @@ export const translations = {
             },
             {
               title: "Einfache Kassenzählung",
-              description: "Zähle dein Bargeld, gib die Zahl ein, und GoldBench berechnet und protokolliert etwaige Differenzen für dich.",
+              description: "Zähle dein Bargeld, gib die Zahl ein, und Goldbench berechnet und protokolliert etwaige Differenzen für dich.",
             },
             {
               title: "Prüfen, bevor du freigibst",
@@ -547,9 +575,9 @@ export const translations = {
       processing: "Verarbeitung...",
       clickToSee: "Klicke unten, um den Ablauf zu sehen",
       invoiceReady: "Rechnung bereit in 12 Sekunden",
-      assistant: "GoldBench Sprachassistent",
+      assistant: "Goldbench Sprachassistent",
       dashboard: {
-        title: "Dein GoldBench Arbeitsplatz",
+        title: "Dein Goldbench Arbeitsplatz",
         live: "Live",
         inventoryLabel: "Inventar – 18K Gold",
         inventoryUnit: "g an Lager",
@@ -591,7 +619,7 @@ export const translations = {
     finalCta: {
       title1: "Gewinne deine Zeit zurück.",
       title2: "Schütze dein Handwerk.",
-      subtitle: "Lass GoldBench die Verwaltung übernehmen, damit deine Hände an der Werkbank bleiben können.",
+      subtitle: "Lass Goldbench die Verwaltung übernehmen, damit deine Hände an der Werkbank bleiben können.",
       cta: "Sichere deinen Frühzugang",
       ctaSubtext: "Tritt der exklusiven Warteliste für unabhängige Goldschmiede bei.",
       location: "Schweiz",
@@ -610,7 +638,7 @@ export const translations = {
     earlyAccess: {
       backToHome: "Zurück zur Startseite",
       title: "Tritt der",
-      titleHighlight: "GoldBench",
+      titleHighlight: "Goldbench",
       titleEnd: "Warteliste bei",
       subtitle: "Wir nehmen eine begrenzte Anzahl unabhängiger Goldschmiede für unsere Early-Access-Beta auf. Sichere dir deinen Platz, um deine Werkbank-Zeit zurückzugewinnen.",
       nameLabel: "Name",
@@ -654,7 +682,7 @@ export const translations = {
       responseTime: "Antwortzeit",
       responseTimeValue: "Wir antworten in der Regel innerhalb von 24 Stunden",
       betaProject: "Beta-Projekt",
-      betaDescription: "GoldBench ist derzeit eine kostenlose, nicht-kommerzielle Beta-Testumgebung.",
+      betaDescription: "Goldbench ist derzeit eine kostenlose, nicht-kommerzielle Beta-Testumgebung.",
       sendMessage: "Nachricht senden",
       nameLabel: "Name",
       namePlaceholder: "Ihr Name",
@@ -680,7 +708,7 @@ export const translations = {
     hero: {
       title1: "Vos mains façonnent l'or.",
       title2: "Votre voix gère l'entreprise.",
-      subtitle: "GoldBench est le premier espace de travail vocal conçu exclusivement par des orfèvres pour des orfèvres. Dictez des devis, suivez les matériaux et gérez vos clients en quelques secondes, sans jamais poser vos outils.",
+      subtitle: "Goldbench est le premier espace de travail vocal conçu exclusivement par des orfèvres pour des orfèvres. Dictez des devis, suivez les matériaux et gérez vos clients en quelques secondes, sans jamais poser vos outils.",
       cta: "Demander un accès anticipé",
       ctaSubtext: "Places limitées pour les orfèvres indépendants.",
       scroll: "Défiler",
@@ -720,7 +748,7 @@ export const translations = {
       rateLabel: "Votre taux horaire à l'établi",
       hoursPerYear: "heures perdues par an",
       moneyPerYear: "de temps d'établi brûlé en paperasse",
-      reclaimTitle: "GoldBench vous rend",
+      reclaimTitle: "Goldbench vous rend",
       reclaimUnit: "heures par an",
       footnote: "Basé sur 46 semaines de travail. Les premiers utilisateurs automatisent environ 8 heures d'administration sur 10.",
     },
@@ -765,11 +793,11 @@ export const translations = {
           items: [
             {
               title: "Saisie de données par la voix",
-              description: "Envoyez une courte note vocale pour enregistrer une tâche, mettre à jour un client ou vérifier votre stock. GoldBench écoute et tape à votre place.",
+              description: "Envoyez une courte note vocale pour enregistrer une tâche, mettre à jour un client ou vérifier votre stock. Goldbench écoute et tape à votre place.",
             },
             {
               title: "Photographiez vos reçus",
-              description: "Prenez en photo n'importe quel reçu et GoldBench lit le commerce, le montant et la TVA automatiquement. Il ne pose qu'une question : espèces ou carte ?",
+              description: "Prenez en photo n'importe quel reçu et Goldbench lit le commerce, le montant et la TVA automatiquement. Il ne pose qu'une question : espèces ou carte ?",
             },
             {
               title: "PDF instantanés",
@@ -781,7 +809,7 @@ export const translations = {
             },
             {
               title: "Corrections en un clic",
-              description: "Chaque fois que GoldBench enregistre quelque chose pour vous, il vous donne un lien direct pour l'ouvrir et ajuster les détails vous-même.",
+              description: "Chaque fois que Goldbench enregistre quelque chose pour vous, il vous donne un lien direct pour l'ouvrir et ajuster les détails vous-même.",
             },
           ],
         },
@@ -802,7 +830,7 @@ export const translations = {
             },
             {
               title: "Instagram en toute simplicité",
-              description: 'GoldBench rédige des légendes fidèles à votre marque et prépare vos publications à partir d\'une photo. Rien n\'est publié tant que vous n\'avez pas tapé "Oui".',
+              description: 'Goldbench rédige des légendes fidèles à votre marque et prépare vos publications à partir d\'une photo. Rien n\'est publié tant que vous n\'avez pas tapé "Oui".',
             },
           ],
         },
@@ -811,7 +839,7 @@ export const translations = {
           items: [
             {
               title: "Tarification automatique",
-              description: "Saisissez le coût de l'or, des pierres et de la main-d'œuvre, définissez votre marge, et GoldBench calcule le prix de vente conseillé pour vous.",
+              description: "Saisissez le coût de l'or, des pierres et de la main-d'œuvre, définissez votre marge, et Goldbench calcule le prix de vente conseillé pour vous.",
             },
             {
               title: "Suivi des pierres sans effort",
@@ -840,7 +868,7 @@ export const translations = {
             },
             {
               title: "Comptage de caisse facile",
-              description: "Comptez vos espèces, saisissez le montant, et GoldBench calcule et enregistre toute différence pour vous.",
+              description: "Comptez vos espèces, saisissez le montant, et Goldbench calcule et enregistre toute différence pour vous.",
             },
             {
               title: "Vérifiez avant de valider",
@@ -881,9 +909,9 @@ export const translations = {
       processing: "Traitement...",
       clickToSee: "Cliquez ci-dessous pour voir le flux de travail",
       invoiceReady: "Facture prête en 12 secondes",
-      assistant: "Assistant vocal GoldBench",
+      assistant: "Assistant vocal Goldbench",
       dashboard: {
-        title: "Votre espace GoldBench",
+        title: "Votre espace Goldbench",
         live: "En direct",
         inventoryLabel: "Inventaire — Or 18K",
         inventoryUnit: "g en stock",
@@ -925,7 +953,7 @@ export const translations = {
     finalCta: {
       title1: "Récupérez votre temps.",
       title2: "Protégez votre métier.",
-      subtitle: "Laissez GoldBench gérer l'administration pour que vos mains puissent rester à l'établi.",
+      subtitle: "Laissez Goldbench gérer l'administration pour que vos mains puissent rester à l'établi.",
       cta: "Sécurisez votre accès anticipé",
       ctaSubtext: "Rejoignez la liste d'attente exclusive pour les orfèvres indépendants.",
       location: "Suisse",
@@ -944,7 +972,7 @@ export const translations = {
     earlyAccess: {
       backToHome: "Retour à l'accueil",
       title: "Rejoignez la liste d'attente",
-      titleHighlight: "GoldBench",
+      titleHighlight: "Goldbench",
       titleEnd: "",
       subtitle: "Nous intégrons un nombre limité d'orfèvres indépendants pour notre bêta en accès anticipé. Réservez votre place pour récupérer votre temps à l'établi.",
       nameLabel: "Nom",
@@ -988,7 +1016,7 @@ export const translations = {
       responseTime: "Temps de réponse",
       responseTimeValue: "Nous répondons généralement dans les 24 heures",
       betaProject: "Projet Beta",
-      betaDescription: "GoldBench est actuellement un environnement de test bêta gratuit et non commercial.",
+      betaDescription: "Goldbench est actuellement un environnement de test bêta gratuit et non commercial.",
       sendMessage: "Envoyer un message",
       nameLabel: "Nom",
       namePlaceholder: "Votre nom",
@@ -1014,7 +1042,7 @@ export const translations = {
     hero: {
       title1: "Le tue mani forgiano l'oro.",
       title2: "La tua voce gestisce l'attività.",
-      subtitle: "GoldBench è il primo spazio di lavoro vocale costruito esclusivamente da orafi per orafi. Detta preventivi, traccia i materiali e gestisci i clienti in pochi secondi, senza mai posare i tuoi strumenti.",
+      subtitle: "Goldbench è il primo spazio di lavoro vocale costruito esclusivamente da orafi per orafi. Detta preventivi, traccia i materiali e gestisci i clienti in pochi secondi, senza mai posare i tuoi strumenti.",
       cta: "Richiedi accesso anticipato",
       ctaSubtext: "Posti limitati per orafi indipendenti.",
       scroll: "Scorri",
@@ -1054,7 +1082,7 @@ export const translations = {
       rateLabel: "La tua tariffa oraria al banco",
       hoursPerYear: "ore perse all'anno",
       moneyPerYear: "di tempo al banco bruciato in scartoffie",
-      reclaimTitle: "GoldBench ti restituisce",
+      reclaimTitle: "Goldbench ti restituisce",
       reclaimUnit: "ore all'anno",
       footnote: "Basato su 46 settimane lavorative. I primi utenti automatizzano circa 8 ore di amministrazione su 10.",
     },
@@ -1099,11 +1127,11 @@ export const translations = {
           items: [
             {
               title: "Inserimento dati con la voce",
-              description: "Invia una breve nota vocale per registrare un compito, aggiornare un cliente o controllare il magazzino. GoldBench ascolta e scrive al posto tuo.",
+              description: "Invia una breve nota vocale per registrare un compito, aggiornare un cliente o controllare il magazzino. Goldbench ascolta e scrive al posto tuo.",
             },
             {
               title: "Fotografa le tue ricevute",
-              description: "Scatta una foto di qualsiasi ricevuta e GoldBench legge il negozio, l'importo e l'IVA automaticamente. Chiede solo una cosa: contanti o carta?",
+              description: "Scatta una foto di qualsiasi ricevuta e Goldbench legge il negozio, l'importo e l'IVA automaticamente. Chiede solo una cosa: contanti o carta?",
             },
             {
               title: "PDF istantanei",
@@ -1115,7 +1143,7 @@ export const translations = {
             },
             {
               title: "Correzioni con un tocco",
-              description: "Ogni volta che GoldBench registra qualcosa per te, ti fornisce un link diretto per aprirlo e regolare i dettagli da solo.",
+              description: "Ogni volta che Goldbench registra qualcosa per te, ti fornisce un link diretto per aprirlo e regolare i dettagli da solo.",
             },
           ],
         },
@@ -1136,7 +1164,7 @@ export const translations = {
             },
             {
               title: "Instagram semplificato",
-              description: 'GoldBench scrive didascalie in linea con il tuo brand e prepara i post da una foto. Nulla viene pubblicato finché non tocchi "Sì".',
+              description: 'Goldbench scrive didascalie in linea con il tuo brand e prepara i post da una foto. Nulla viene pubblicato finché non tocchi "Sì".',
             },
           ],
         },
@@ -1145,7 +1173,7 @@ export const translations = {
           items: [
             {
               title: "Prezzi automatici",
-              description: "Inserisci il costo di oro, pietre e manodopera, imposta il tuo ricarico e GoldBench calcola il prezzo di vendita consigliato per te.",
+              description: "Inserisci il costo di oro, pietre e manodopera, imposta il tuo ricarico e Goldbench calcola il prezzo di vendita consigliato per te.",
             },
             {
               title: "Tracciamento pietre senza sforzo",
@@ -1174,7 +1202,7 @@ export const translations = {
             },
             {
               title: "Conteggio cassa facile",
-              description: "Conta i tuoi contanti, digita il numero e GoldBench calcola e registra qualsiasi differenza per te.",
+              description: "Conta i tuoi contanti, digita il numero e Goldbench calcola e registra qualsiasi differenza per te.",
             },
             {
               title: "Controlla prima di approvare",
@@ -1215,9 +1243,9 @@ export const translations = {
       processing: "Elaborazione...",
       clickToSee: "Clicca sotto per vedere il flusso di lavoro",
       invoiceReady: "Fattura pronta in 12 secondi",
-      assistant: "Assistente vocale GoldBench",
+      assistant: "Assistente vocale Goldbench",
       dashboard: {
-        title: "Il tuo spazio GoldBench",
+        title: "Il tuo spazio Goldbench",
         live: "In diretta",
         inventoryLabel: "Inventario — Oro 18K",
         inventoryUnit: "g in magazzino",
@@ -1259,7 +1287,7 @@ export const translations = {
     finalCta: {
       title1: "Riconquista il tuo tempo.",
       title2: "Proteggi il tuo mestiere.",
-      subtitle: "Lascia che GoldBench gestisca l'amministrazione così le tue mani possono restare al banco.",
+      subtitle: "Lascia che Goldbench gestisca l'amministrazione così le tue mani possono restare al banco.",
       cta: "Assicurati l'accesso anticipato",
       ctaSubtext: "Unisciti alla lista d'attesa esclusiva per orafi indipendenti.",
       location: "Svizzera",
@@ -1278,7 +1306,7 @@ export const translations = {
     earlyAccess: {
       backToHome: "Torna alla home",
       title: "Unisciti alla lista d'attesa",
-      titleHighlight: "GoldBench",
+      titleHighlight: "Goldbench",
       titleEnd: "",
       subtitle: "Stiamo accogliendo un numero limitato di orafi indipendenti per la nostra beta ad accesso anticipato. Assicurati il tuo posto per riconquistare il tuo tempo al banco.",
       nameLabel: "Nome",
@@ -1322,7 +1350,7 @@ export const translations = {
       responseTime: "Tempo di risposta",
       responseTimeValue: "Di solito rispondiamo entro 24 ore",
       betaProject: "Progetto Beta",
-      betaDescription: "GoldBench è attualmente un ambiente di test beta gratuito e non commerciale.",
+      betaDescription: "Goldbench è attualmente un ambiente di test beta gratuito e non commerciale.",
       sendMessage: "Invia un messaggio",
       nameLabel: "Nome",
       namePlaceholder: "Il tuo nome",

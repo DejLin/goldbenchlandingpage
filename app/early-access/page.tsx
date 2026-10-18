@@ -70,8 +70,8 @@ export default function EarlyAccessPage() {
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: "New early access request from GoldBench",
-          from_name: "GoldBench Early Access",
+          subject: "New early access request from Goldbench",
+          from_name: "Goldbench Early Access",
           name: formData.name,
           email: formData.email,
           atelier: formData.atelier || "Not provided",

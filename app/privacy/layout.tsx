@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Datenschutz | GoldBench",
+  title: "Datenschutz | Goldbench",
   description:
-    "Erfahren Sie, wie GoldBench Ihre Daten und die Ihrer Kunden schützt und sicher in der Schweiz aufbewahrt.",
+    "Erfahren Sie, wie Goldbench Ihre Daten und die Ihrer Kunden schützt und sicher in der Schweiz aufbewahrt.",
   alternates: {
     canonical: "/privacy",
   },

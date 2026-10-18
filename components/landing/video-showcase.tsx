@@ -6,9 +6,9 @@ import { useLanguage } from "@/lib/language-context";
 
 // Video sources map by index to `t.videoShowcase.features`.
 const VIDEO_SOURCES = [
-  "/videos/goldbench-intro.mp4",
-  "/videos/elin-scans-bill.mp4",
-  "/videos/aurel-editing-photo.mp4",
+  "/videos/aurel-logging-ring.mp4",
+  "/videos/elin-scanning-receipt-cafe.mp4",
+  "/videos/aurel-remove-background.mp4",
 ];
 
 // Only the first clip (shown on load) eagerly buffers; the rest stay idle
