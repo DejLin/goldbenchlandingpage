@@ -6,6 +6,30 @@ import { Check, X, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
 
+type ComparisonCopy = (typeof translations)["en"]["comparison"];
+
+function PriceBlock({ c }: { c: ComparisonCopy }) {
+  return (
+    <div className="mt-3">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <span className="font-serif text-3xl text-gold leading-none">
+          {c.footerPriceNew}
+          <span className="font-sans text-sm text-platinum/70">{c.footerPricePeriod}</span>
+        </span>
+        <span className="text-platinum/50 text-sm line-through">
+          <span className="sr-only">Regular price </span>
+          {c.footerPriceOld}
+          {c.footerPricePeriod}
+        </span>
+        <span className="bg-gold text-obsidian text-[11px] font-medium uppercase tracking-wider px-2 py-0.5">
+          {c.footerPriceBadge}
+        </span>
+      </div>
+      <p className="text-gold/90 text-sm mt-2">{c.footerPriceNote}</p>
+    </div>
+  );
+}
+
 export function Comparison() {
   const { t } = useLanguage();
   // Falls back to English until the other locales are translated
@@ -95,8 +119,8 @@ export function Comparison() {
                 </td>
                 <td className="pt-6 pb-6 px-5 border-x border-b border-gold bg-gold/10">
                   <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
-                  <p className="text-gold text-sm mt-1">{c.footerPrice}</p>
-                  <p className="text-platinum/60 text-sm mt-1 mb-4">{c.footerLaunch}</p>
+                    <PriceBlock c={c} />
+                    <p className="text-platinum/60 text-sm mt-1 mb-4">{c.footerLaunch}</p>
                   <CtaButton label={c.cta} />
                 </td>
               </tr>
@@ -138,8 +162,8 @@ export function Comparison() {
             </p>
             <div>
               <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
-              <p className="text-gold text-sm mt-1">{c.footerPrice}</p>
-              <p className="text-platinum/60 text-sm mt-1">{c.footerLaunch}</p>
+                <PriceBlock c={c} />
+                <p className="text-platinum/60 text-sm mt-1">{c.footerLaunch}</p>
             </div>
             <CtaButton label={c.cta} />
           </div>
