@@ -35,25 +35,6 @@ export function Comparison() {
           <p className="text-platinum/60 text-lg leading-relaxed text-pretty">{c.subtitle}</p>
         </motion.header>
 
-        {/* Stat proof bar */}
-        <motion.ul
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-12"
-        >
-          {c.stats.map((stat) => (
-            <li
-              key={stat}
-              className="flex items-center gap-2 border border-gold/30 bg-gold/5 px-4 py-2 text-sm text-platinum"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true" />
-              {stat}
-            </li>
-          ))}
-        </motion.ul>
-
         {/* Desktop table */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
