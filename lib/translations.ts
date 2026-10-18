@@ -248,7 +248,7 @@ export const translations = {
     // Comparison
     comparison: {
       label: "The Switch",
-      title: "Why Goldsmiths Switch to GoldBench",
+      title: "Why Switch to Goldbench?",
       subtitle: "Less admin, more time for you.",
       stats: ["Proven Daily in a Swiss Atelier", "75% Done by Voice", "88 Hours Given Back"],
       colTask: "Task",
