@@ -258,7 +258,7 @@ export const translations = {
       rows: [
         { task: "How You Work", traditional: "Walk to PC, type & click", goldbench: "Just speak in App", badge: "75% via Voice" },
         { task: "Product & Model Photos", traditional: "Lightbox, cables & retouching", goldbench: "Studio & model shot in 15s", badge: "No studio needed" },
-        { task: "Valuations, Quotes & Invoices", traditional: "Slow typing in Word & Excel", goldbench: "Dictated by voice in seconds", badge: "Saves ~10h / mo" },
+        { task: "Valuations & Invoices", traditional: "Slow typing in Word & Excel", goldbench: "Dictated by voice in seconds", badge: "Saves ~10h / mo" },
         { task: "Inventory, Customers & Reminders", traditional: "4 separate tools + sticky notes", goldbench: "All-in-one via voice & web", badge: "1 place instead of 4" },
         { task: "Receipts & Bookkeeping", traditional: "Paper folders & manual counting", goldbench: "Snap receipt in chat → auto-logged", badge: "Easy year-end tax return" },
         { task: "Data & Privacy", traditional: "Local PC or scattered apps", goldbench: "100% Swiss Cloud hosting", badge: "DSG Compliant" },
