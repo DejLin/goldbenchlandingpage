@@ -202,6 +202,9 @@ export default function EarlyAccessPage() {
                       {t.earlyAccess.nameLabel}
                     </label>
                     <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       type="text"
                       id="name"
                       required
@@ -225,6 +228,9 @@ export default function EarlyAccessPage() {
                       {t.earlyAccess.emailLabel}
                     </label>
                     <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       type="email"
                       id="email"
                       required
@@ -249,6 +255,9 @@ export default function EarlyAccessPage() {
                       <span className="text-platinum/30">{t.earlyAccess.atelierOptional}</span>
                     </label>
                     <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       type="text"
                       id="atelier"
                       value={formData.atelier}
@@ -279,6 +288,9 @@ export default function EarlyAccessPage() {
                             .replace("{num2}", captcha.num2.toString())}
                         </div>
                         <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                           type="text"
                           id="captcha"
                           required
