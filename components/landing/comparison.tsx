@@ -25,7 +25,7 @@ function TrialCard({ trial }: { trial: TrialCopy }) {
       </p>
 
       <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
-        <h3 id="trial-title" className="font-serif text-5xl font-medium leading-none text-gold md:text-6xl">
+        <h3 id="trial-title" className="font-serif text-5xl font-medium leading-none text-gold lining-nums md:text-6xl">
           {trial.headline}
         </h3>
         <span className="rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-medium text-gold">
