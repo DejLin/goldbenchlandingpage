@@ -233,7 +233,7 @@ export const translations = {
     },
     // Mid CTA
     midCta: {
-      cta: "Request Early Access",
+      cta: "Try 1 Month Free",
       subtitle: "Ditch the keyboard. Get back to the bench.",
     },
     // Use Cases
@@ -605,7 +605,7 @@ export const translations = {
     },
     // Mid CTA
     midCta: {
-      cta: "Frühzugang anfragen",
+      cta: "1 Monat gratis testen",
       subtitle: "Weg mit der Tastatur. Zurück an die Werkbank.",
     },
     // Use Cases
@@ -977,7 +977,7 @@ export const translations = {
     },
     // Mid CTA
     midCta: {
-      cta: "Demander un accès anticipé",
+      cta: "Essayer 1 mois gratuit",
       subtitle: "Abandonnez le clavier. Retournez à l'établi.",
     },
     // Use Cases
@@ -1349,7 +1349,7 @@ export const translations = {
     },
     // Mid CTA
     midCta: {
-      cta: "Richiedi accesso anticipato",
+      cta: "Prova 1 mese gratis",
       subtitle: "Abbandona la tastiera. Torna al banco.",
     },
     // Use Cases
