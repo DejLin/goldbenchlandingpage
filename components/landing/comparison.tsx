@@ -2,38 +2,75 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Check, X, ArrowRight } from "lucide-react";
+import { Check, X, ArrowRight, LayoutGrid, Handshake, FileLock2, Unlock } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
+import { LimitedSpots } from "./limited-spots";
 
-type ComparisonCopy = (typeof translations)["en"]["comparison"];
+type TrialCopy = (typeof translations)["en"]["comparison"]["trial"];
 
-function PriceBlock({ c }: { c: ComparisonCopy }) {
+const perkIcons = [LayoutGrid, Handshake, FileLock2, Unlock];
+
+function TrialCard({ trial }: { trial: TrialCopy }) {
   return (
-    <div className="mt-3">
-      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="font-serif text-3xl text-gold leading-none">
-          {c.footerPriceNew}
-          <span className="font-sans text-sm text-platinum/70">{c.footerPricePeriod}</span>
-        </span>
-        <span className="text-platinum/50 text-sm line-through">
-          <span className="sr-only">Regular price </span>
-          {c.footerPriceOld}
-          {c.footerPricePeriod}
-        </span>
-        <span className="bg-gold text-obsidian text-[11px] font-medium uppercase tracking-wider px-2 py-0.5">
-          {c.footerPriceBadge}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="relative mt-10 border border-gold/60 bg-obsidian-light p-6 shadow-[0_0_60px_rgba(212,175,55,0.12)] md:p-10"
+      aria-labelledby="trial-title"
+    >
+      <p className="inline-flex border border-gold/40 bg-gold/10 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-gold md:text-[11px]">
+        {trial.badge}
+      </p>
+
+      <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <h3 id="trial-title" className="font-serif text-5xl font-medium leading-none text-gold lining-nums md:text-6xl">
+          {trial.headline}
+        </h3>
+        <span className="rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-medium text-gold">
+          {trial.pricePill}
         </span>
       </div>
-      <p className="text-gold/90 text-sm mt-2">{c.footerPriceNote}</p>
-    </div>
+
+      <p className="mt-4 max-w-xl text-base leading-relaxed text-platinum/70 text-pretty">
+        {trial.subtitle}
+      </p>
+
+      <ul className="mt-8 grid grid-cols-1 gap-px border border-glass-border bg-glass-border sm:grid-cols-2">
+        {trial.perks.map((perk, i) => {
+          const Icon = perkIcons[i] ?? Check;
+          return (
+            <li key={perk.title} className="flex items-start gap-4 bg-obsidian-light p-5">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center border border-gold/40 bg-gold/10">
+                <Icon className="h-4 w-4 text-gold" aria-hidden="true" />
+              </span>
+              <span>
+                <span className="block font-medium text-platinum">{perk.title}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-platinum/55">{perk.description}</span>
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col items-start gap-3">
+          <LimitedSpots />
+          <p className="max-w-md text-xs leading-relaxed text-platinum/45">{trial.postTrialNote}</p>
+        </div>
+        <CtaButton label={trial.cta} />
+      </div>
+    </motion.div>
   );
 }
 
 export function Comparison() {
   const { t } = useLanguage();
-  // Falls back to English until the other locales are translated
   const c = t.comparison ?? translations.en.comparison;
+  // Falls back to English until the trial copy is translated
+  const trial = c.trial ?? translations.en.comparison.trial;
 
   return (
     <section
@@ -117,11 +154,8 @@ export function Comparison() {
                 <td className="pt-6 pb-6 px-5 align-top text-platinum/50 leading-relaxed">
                   {c.footerTraditional}
                 </td>
-                <td className="pt-6 pb-6 px-5 border-x border-b border-gold bg-gold/10">
+                <td className="pt-6 pb-6 px-5 align-top border-x border-b border-gold bg-gold/10">
                   <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
-                    <PriceBlock c={c} />
-                    <p className="text-platinum/60 text-sm mt-1 mb-4">{c.footerLaunch}</p>
-                  <CtaButton label={c.cta} />
                 </td>
               </tr>
             </tfoot>
@@ -155,19 +189,16 @@ export function Comparison() {
             </article>
           ))}
 
-          <div className="flex flex-col gap-4 border border-gold bg-gold/10 p-5">
+          <div className="flex flex-col gap-2 border border-gold bg-gold/10 p-5">
             <p className="text-sm text-platinum/50">
               <span className="sr-only">{c.colTraditional}: </span>
               {c.footerTraditional}
             </p>
-            <div>
-              <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
-                <PriceBlock c={c} />
-                <p className="text-platinum/60 text-sm mt-1">{c.footerLaunch}</p>
-            </div>
-            <CtaButton label={c.cta} />
+            <p className="font-medium text-platinum leading-relaxed">{c.footerGoldbench}</p>
           </div>
         </div>
+
+        <TrialCard trial={trial} />
       </div>
     </section>
   );
@@ -177,7 +208,7 @@ function CtaButton({ label }: { label: string }) {
   return (
     <Link
       href="/early-access"
-      className="group inline-flex items-center justify-center gap-2 bg-gold px-6 py-3 text-xs font-medium uppercase tracking-wider text-obsidian transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+      className="group inline-flex shrink-0 items-center justify-center gap-2 bg-gold px-6 py-3 text-xs font-medium uppercase tracking-wider text-obsidian transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
     >
       {label}
       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />

@@ -240,6 +240,9 @@ export default function ContactPage() {
                       {t.contact.nameLabel} *
                     </label>
                     <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       type="text"
                       required
                       value={formState.name}
@@ -258,6 +261,9 @@ export default function ContactPage() {
                       {t.contact.emailLabel} *
                     </label>
                     <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       type="email"
                       required
                       value={formState.email}
@@ -276,6 +282,9 @@ export default function ContactPage() {
                       {t.contact.companyLabel}
                     </label>
                     <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       type="text"
                       value={formState.company}
                       onChange={(e) => setFormState({ ...formState, company: e.target.value })}
@@ -289,6 +298,9 @@ export default function ContactPage() {
                       {t.contact.messageLabel} *
                     </label>
                     <textarea
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                       required
                       rows={5}
                       value={formState.message}
@@ -324,6 +336,9 @@ export default function ContactPage() {
                         </button>
                       </div>
                       <input
+                      data-lpignore="true"
+                      data-1p-ignore
+                      data-bwignore
                         type="text"
                         required
                         inputMode="numeric"
