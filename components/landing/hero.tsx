@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Mic } from "lucide-react";
+import { LimitedSpots } from "./limited-spots";
 import { Logo } from "./logo";
 import { useLanguage } from "@/lib/language-context";
 
@@ -308,20 +309,15 @@ export function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               </motion.button>
             </Link>
-            {t.hero.trustItems ? (
-              <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-5 text-platinum/60 text-xs tracking-wide">
-                {t.hero.trustItems.map((item) => (
-                  <li key={item} className="flex items-center gap-1.5">
-                    <Check className="w-3.5 h-3.5 text-gold" aria-hidden="true" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-platinum/50 text-xs mt-4 tracking-wide">
-                {t.hero.ctaSubtext}
-              </p>
-            )}
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-5 text-platinum/60 text-xs tracking-wide">
+              {t.hero.trustItems.map((item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-gold" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <LimitedSpots className="mt-5" />
           </motion.div>
         </motion.div>
 

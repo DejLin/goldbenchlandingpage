@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Logo } from "./logo";
 import { useLanguage } from "@/lib/language-context";
+import { LimitedSpots } from "./limited-spots";
 
 export function FinalCTA() {
   const { t } = useLanguage();
@@ -67,6 +68,7 @@ export function FinalCTA() {
             <p className="text-platinum/50 text-sm mt-5 tracking-wide">
               {t.finalCta.ctaSubtext}
             </p>
+            <LimitedSpots className="mt-4" />
           </div>
         </motion.div>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, X, ArrowRight, LayoutGrid, Handshake, FileLock2, Unlock } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { translations } from "@/lib/translations";
+import { LimitedSpots } from "./limited-spots";
 
 type TrialCopy = (typeof translations)["en"]["comparison"]["trial"];
 
@@ -55,7 +56,10 @@ function TrialCard({ trial }: { trial: TrialCopy }) {
       </ul>
 
       <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p className="max-w-md text-xs leading-relaxed text-platinum/45">{trial.postTrialNote}</p>
+        <div className="flex flex-col items-start gap-3">
+          <LimitedSpots />
+          <p className="max-w-md text-xs leading-relaxed text-platinum/45">{trial.postTrialNote}</p>
+        </div>
         <CtaButton label={trial.cta} />
       </div>
     </motion.div>

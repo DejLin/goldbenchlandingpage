@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useLanguage } from "@/lib/language-context";
+import { LimitedSpots } from "./limited-spots";
 
 export function MidCTA() {
   const { t } = useLanguage();
@@ -41,6 +42,7 @@ export function MidCTA() {
             <p className="text-platinum/50 text-sm mt-5 tracking-wide">
               {t.midCta.subtitle}
             </p>
+            <LimitedSpots className="mt-4" />
           </motion.div>
         </motion.div>
       </div>

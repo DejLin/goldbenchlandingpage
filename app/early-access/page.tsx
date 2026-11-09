@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Loader2, RefreshCw } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+import { LimitedSpots } from "@/components/landing/limited-spots";
 
 const WEB3FORMS_ACCESS_KEY = "2084ab2a-7f42-4f23-ada5-8a28b5d39b7a";
 
@@ -151,6 +152,7 @@ export default function EarlyAccessPage() {
               >
                 {/* Header */}
                 <div className="text-center mb-6">
+                  <LimitedSpots className="mb-5" />
                   <h1 className="text-2xl md:text-3xl font-light text-platinum tracking-tight text-balance mb-4">
                     {t.earlyAccess.title && <>{t.earlyAccess.title} </>}
                     <span className="text-gold">{t.earlyAccess.titleHighlight}</span> {t.earlyAccess.titleEnd}

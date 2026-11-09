@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Hourglass, Banknote } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+import { LimitedSpots } from "./limited-spots";
 
 const WEEKS_PER_YEAR = 46;
 const RECLAIM_RATE = 0.8;
@@ -206,9 +207,8 @@ export function BenchCalculator() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   </motion.button>
                 </Link>
-                {t.calculator.ctaMicro && (
-                  <p className="text-platinum/50 text-xs sm:text-right">{t.calculator.ctaMicro}</p>
-                )}
+                <p className="text-platinum/50 text-xs sm:text-right">{t.calculator.ctaMicro}</p>
+                <LimitedSpots className="mt-1" />
               </div>
             </div>
           </div>

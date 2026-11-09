@@ -343,6 +343,7 @@ export const translations = {
       email: "Please enter a valid email address.",
     },
     common: {
+      limitedSpots: "Limited trial spots available",
       backToHome: "Back to Home",
       lastUpdated: "Last updated: May 2026",
     },
@@ -717,6 +718,7 @@ export const translations = {
       email: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
     },
     common: {
+      limitedSpots: "Nur begrenzte Testplätze verfügbar",
       backToHome: "Zurück zur Startseite",
       lastUpdated: "Zuletzt aktualisiert: Mai 2026",
     },
@@ -1091,6 +1093,7 @@ export const translations = {
       email: "Veuillez saisir une adresse e-mail valide.",
     },
     common: {
+      limitedSpots: "Places d'essai limitées",
       backToHome: "Retour à l'accueil",
       lastUpdated: "Dernière mise à jour : Mai 2026",
     },
@@ -1465,6 +1468,7 @@ export const translations = {
       email: "Inserisci un indirizzo e-mail valido.",
     },
     common: {
+      limitedSpots: "Posti di prova limitati",
       backToHome: "Torna alla home",
       lastUpdated: "Ultimo aggiornamento: Maggio 2026",
     },
