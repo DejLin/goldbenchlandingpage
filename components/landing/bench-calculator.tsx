@@ -195,16 +195,21 @@ export function BenchCalculator() {
                 </span>{" "}
                 {t.calculator.reclaimUnit}
               </p>
-              <Link href="/early-access" className="shrink-0">
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative px-6 py-3 bg-gold text-obsidian font-medium tracking-wider uppercase text-xs overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
-                >
-                  <span className="relative z-10">{t.hero.cta}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                </motion.button>
-              </Link>
+              <div className="flex shrink-0 flex-col items-start gap-2 sm:items-end">
+                <Link href="/early-access">
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group relative px-6 py-3 bg-gold text-obsidian font-medium tracking-wider uppercase text-xs overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
+                  >
+                    <span className="relative z-10">{t.calculator.cta ?? t.hero.cta}</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                  </motion.button>
+                </Link>
+                {t.calculator.ctaMicro && (
+                  <p className="text-platinum/50 text-xs sm:text-right">{t.calculator.ctaMicro}</p>
+                )}
+              </div>
             </div>
           </div>
         </motion.div>

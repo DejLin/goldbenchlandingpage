@@ -14,8 +14,9 @@ export const translations = {
       title1: "Your hands craft the gold.",
       title2: "Your voice runs the business.",
       subtitle: "Goldbench is the first voice-powered workspace built exclusively by Goldsmiths for Goldsmiths. Dictate quotes, track materials, and manage clients in seconds—without ever putting down your tools.",
-      cta: "Request Early Access",
+      cta: "Try 1 Month Free",
       ctaSubtext: "Limited spots available for independent goldsmiths.",
+      trustItems: ["30 days 100% free", "Personal 1-on-1 setup included", "Cancel anytime"],
       scroll: "Scroll",
       commands: [
         "Log 14 grams of 18k gold, Miller ring",
@@ -55,6 +56,8 @@ export const translations = {
       moneyPerYear: "of bench time burned on paperwork",
       reclaimTitle: "Goldbench gives you back",
       reclaimUnit: "hours a year",
+      cta: "Start Your Free Month",
+      ctaMicro: "Test it in your atelier for 30 days. Zero cost, zero risk.",
       footnote: "Based on 46 working weeks. Early users automate roughly 8 of every 10 admin hours.",
     },
     // Friction section
@@ -265,13 +268,20 @@ export const translations = {
       ],
       footerTraditional: "10+ hours lost to admin every month",
       footerGoldbench: "Saves 10+ hours of admin every month",
-      footerPriceOld: "CHF 250",
-      footerPriceNew: "CHF 99",
-      footerPricePeriod: "/mo",
-      footerPriceBadge: "Save 60%",
-      footerPriceNote: "Founding member price · Early founders round only",
-      footerLaunch: "Launch on 11th November 2026",
-      cta: "Request Early Access",
+      trial: {
+        badge: "Risk-free bench test · Launching 11th November 2026",
+        headline: "1 Month Free",
+        pricePill: "CHF 0 for 30 days",
+        subtitle: "Experience how much bench time you win back before you pay a single Franc.",
+        perks: [
+          { title: "Full Workspace Access", description: "Voice admin, invoicing, stock & studio photos" },
+          { title: "Done-For-You Onboarding", description: "We set up your templates & gold rates together" },
+          { title: "100% Data Ownership", description: "Keep all generated PDFs & records even if you cancel" },
+          { title: "Zero Lock-In", description: "Don't love it? Just tell your assistant to cancel" },
+        ],
+        postTrialNote: "After your 30-day free trial, continue with a simple monthly plan. No annual contracts.",
+        cta: "Claim Your Free Month",
+      },
     },
     // Security
     security: {
@@ -286,8 +296,8 @@ export const translations = {
       title1: "Reclaim your time.",
       title2: "Protect your craft.",
       subtitle: "Let Goldbench handle the admin so your hands can stay at the bench.",
-      cta: "Secure Your Early Access",
-      ctaSubtext: "Join the exclusive waitlist for independent goldsmiths.",
+      cta: "Start Your 30-Day Free Trial",
+      ctaSubtext: "Built by goldsmiths, for goldsmiths. Try it at your bench for 1 month free.",
       location: "Switzerland",
     },
     // Footer
