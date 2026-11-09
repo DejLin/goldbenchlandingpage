@@ -70,11 +70,11 @@ export default function EarlyAccessPage() {
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: "New early access request from Goldbench",
-          from_name: "Goldbench Early Access",
+          subject: "New free trial request from Goldbench",
+          from_name: "Goldbench Free Trial",
           name: formData.name,
           email: formData.email,
-          atelier: formData.atelier || "Not provided",
+          atelier_or_phone: formData.atelier || "Not provided",
           botcheck: formData.botcheck,
         }),
       });
@@ -150,14 +150,32 @@ export default function EarlyAccessPage() {
                 transition={{ duration: 0.3 }}
               >
                 {/* Header */}
-                <div className="text-center mb-8">
-                  <h1 className="text-2xl md:text-3xl font-light text-platinum tracking-tight mb-4">
-                    {t.earlyAccess.title} <span className="text-gold">{t.earlyAccess.titleHighlight}</span> {t.earlyAccess.titleEnd}
+                <div className="text-center mb-6">
+                  <h1 className="text-2xl md:text-3xl font-light text-platinum tracking-tight text-balance mb-4">
+                    {t.earlyAccess.title && <>{t.earlyAccess.title} </>}
+                    <span className="text-gold">{t.earlyAccess.titleHighlight}</span> {t.earlyAccess.titleEnd}
                   </h1>
-                  <p className="text-platinum/60 text-sm leading-relaxed">
+                  <p className="text-platinum/60 text-sm leading-relaxed text-pretty">
                     {t.earlyAccess.subtitle}
                   </p>
                 </div>
+
+                {/* How it works */}
+                <section
+                  aria-label={t.earlyAccess.stepsLabel}
+                  className="mb-6 border border-white/10 bg-obsidian/50 px-4 py-3"
+                >
+                  <ol className="flex flex-col gap-2.5">
+                    {t.earlyAccess.steps.map((step, i) => (
+                      <li key={step} className="flex items-center gap-3 text-xs text-platinum/75">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center border border-gold/50 text-[10px] font-medium text-gold">
+                          {i + 1}
+                        </span>
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                </section>
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -249,34 +267,40 @@ export default function EarlyAccessPage() {
                       >
                         {t.earlyAccess.captchaLabel}
                       </label>
-                      <div className="flex items-center gap-3">
-                        <div className="flex-1 bg-obsidian/50 border border-white/10 px-4 py-3 text-sm text-gold font-medium">
+                      <div className="flex items-stretch gap-2">
+                        <div
+                          id="captcha-question"
+                          className="flex shrink-0 items-center bg-obsidian/50 border border-white/10 px-4 py-3 text-sm text-gold font-medium whitespace-nowrap"
+                        >
                           {t.earlyAccess.captchaQuestion
                             .replace("{num1}", captcha.num1.toString())
                             .replace("{num2}", captcha.num2.toString())}
                         </div>
+                        <input
+                          type="text"
+                          id="captcha"
+                          required
+                          inputMode="numeric"
+                          aria-describedby="captcha-question"
+                          value={formData.captchaAnswer}
+                          onInvalid={(e) => applyValidationMessage(e.currentTarget)}
+                          onChange={(e) => {
+                            e.currentTarget.setCustomValidity("");
+                            setFormData({ ...formData, captchaAnswer: e.target.value });
+                          }}
+                          className="min-w-0 flex-1 bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
+                          placeholder={t.earlyAccess.captchaPlaceholder}
+                        />
                         <button
                           type="button"
                           onClick={generateCaptcha}
-                          className="p-3 bg-obsidian/50 border border-white/10 hover:border-gold/50 text-platinum/50 hover:text-gold transition-colors duration-300"
+                          className="shrink-0 px-3 bg-obsidian/50 border border-white/10 hover:border-gold/50 text-platinum/50 hover:text-gold transition-colors duration-300"
                           title="New question"
+                          aria-label="New question"
                         >
-                          <RefreshCw className="w-4 h-4" />
+                          <RefreshCw className="w-4 h-4" aria-hidden="true" />
                         </button>
                       </div>
-                      <input
-                        type="text"
-                        id="captcha"
-                        required
-                        value={formData.captchaAnswer}
-                        onInvalid={(e) => applyValidationMessage(e.currentTarget)}
-                        onChange={(e) => {
-                          e.currentTarget.setCustomValidity("");
-                          setFormData({ ...formData, captchaAnswer: e.target.value });
-                        }}
-                        className="w-full mt-2 bg-obsidian/50 border border-white/10 focus:border-gold/50 text-platinum px-4 py-3 text-sm outline-none transition-colors duration-300 placeholder:text-platinum/30"
-                        placeholder={t.earlyAccess.captchaPlaceholder}
-                      />
                     </div>
                   )}
 
@@ -297,7 +321,7 @@ export default function EarlyAccessPage() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="group relative w-full mt-8 px-8 py-4 bg-gold text-obsidian font-medium tracking-wider uppercase text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="group relative w-full mt-6 px-8 py-4 bg-gold text-obsidian font-medium tracking-wider uppercase text-sm overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       {isSubmitting ? (
@@ -315,7 +339,7 @@ export default function EarlyAccessPage() {
                 </form>
 
                 {/* Privacy note */}
-                <p className="text-platinum/30 text-[10px] text-center mt-6 tracking-wide">
+                <p className="text-platinum/45 text-xs text-center mt-5 tracking-wide text-pretty">
                   {t.earlyAccess.privacyNote}
                 </p>
               </motion.div>

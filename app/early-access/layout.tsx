@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Früher Zugang | Goldbench",
+  title: "30 Tage kostenlos testen | Goldbench",
   description:
-    "Sichern Sie sich frühen Zugang zu Goldbench, dem Sprachassistenten exklusiv für unabhängige Goldschmiede und Schmuckateliers.",
+    "Teste Goldbench 30 Tage kostenlos – inklusive persönlichem 15-Minuten-Onboarding. Der sprachgesteuerte Arbeitsplatz für unabhängige Goldschmiede und Schmuckateliers.",
   alternates: {
     canonical: "/early-access",
   },
