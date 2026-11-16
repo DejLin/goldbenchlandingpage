@@ -269,7 +269,7 @@ export const translations = {
       footerTraditional: "10+ hours lost to admin every month",
       footerGoldbench: "Saves 10+ hours of admin every month",
       trial: {
-        badge: "Risk-free bench test · Launching 11th November 2026",
+        badge: "Risk-free bench test",
         headline: "1 Month Free",
         pricePill: "CHF 0 for 30 days",
         subtitle: "Experience how much bench time you win back before you pay a single Franc.",
@@ -644,7 +644,7 @@ export const translations = {
       footerTraditional: "Über 10 Stunden Verwaltung pro Monat verloren",
       footerGoldbench: "Spart jeden Monat über 10 Stunden Verwaltung",
       trial: {
-        badge: "Risikofreier Werkbank-Test · Launch am 11. November 2026",
+        badge: "Risikofreier Werkbank-Test",
         headline: "1 Monat gratis",
         pricePill: "CHF 0 für 30 Tage",
         subtitle: "Erlebe, wie viel Werkbankzeit du zurückgewinnst, bevor du einen einzigen Franken bezahlst.",
@@ -1019,7 +1019,7 @@ export const translations = {
       footerTraditional: "Plus de 10 heures perdues en administratif chaque mois",
       footerGoldbench: "Économise plus de 10 heures d'administratif chaque mois",
       trial: {
-        badge: "Essai à l'établi sans risque · Lancement le 11 novembre 2026",
+        badge: "Essai à l'établi sans risque",
         headline: "1 mois gratuit",
         pricePill: "CHF 0 pendant 30 jours",
         subtitle: "Découvrez combien de temps d'établi vous regagnez avant de payer le moindre franc.",
@@ -1394,7 +1394,7 @@ export const translations = {
       footerTraditional: "Oltre 10 ore perse in burocrazia ogni mese",
       footerGoldbench: "Risparmia oltre 10 ore di burocrazia ogni mese",
       trial: {
-        badge: "Prova al banco senza rischi · Lancio l'11 novembre 2026",
+        badge: "Prova al banco senza rischi",
         headline: "1 mese gratis",
         pricePill: "CHF 0 per 30 giorni",
         subtitle: "Scopri quanto tempo al banco recuperi prima di pagare un solo franco.",
