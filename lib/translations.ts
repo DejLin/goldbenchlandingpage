@@ -13,7 +13,7 @@ export const translations = {
     hero: {
       title1: "Your hands craft the gold.",
       title2: "Your voice runs the business.",
-      subtitle: "Goldbench is the first voice-powered workspace built exclusively by Goldsmiths for Goldsmiths. Dictate quotes, track materials, and manage clients in seconds—without ever putting down your tools.",
+      subtitle: "Goldbench is the first voice-powered workspace built exclusively by Goldsmiths for Goldsmiths. Dictate quotes, track materials, and manage clients in seconds.",
       cta: "Try 1 Month Free",
       ctaSubtext: "Limited spots available for independent goldsmiths.",
       trustItems: ["30 days 100% free", "Personal 1-on-1 setup included", "Cancel anytime"],
